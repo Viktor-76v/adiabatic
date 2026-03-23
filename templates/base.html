@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{% load i18n %}<!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE|default:'uk' }}">
 
 <head>
@@ -61,7 +61,7 @@
 
 <body>
     <!-- Skip to main content for accessibility -->
-    <a href="#main" class="sr-only btn">Перейти до основного контенту</a>
+    <a href="#main" class="sr-only btn">{% trans "Перейти до основного контенту" %}</a>
 
 
     <!-- Header -->
@@ -70,7 +70,7 @@
             <div class="header-content">
                 <!-- Desktop Burger Button (only visible on desktop) -->
                 <button class="desktop-burger-btn" type="button" aria-expanded="false"
-                    aria-controls="animated-desktop-menu" aria-label="Відкрити меню">
+                    aria-controls="animated-desktop-menu" aria-label="{% trans "Відкрити меню" %}">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -78,7 +78,7 @@
 
                 <!-- Mobile Burger Button (only visible on mobile) -->
                 <button class="mobile-burger-btn" type="button" aria-expanded="false"
-                    aria-controls="mobile-menu" aria-label="Відкрити меню">
+                    aria-controls="mobile-menu" aria-label="{% trans "Відкрити меню" %}">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -96,12 +96,11 @@
                 <div class="animated-desktop-menu" id="animated-desktop-menu">
                     <nav role="navigation" aria-label="Анімоване меню">
                         <ul class="animated-nav-list">
-                            <li><a href="{% url 'pages:catalog' %}" class="animated-nav-link">Каталог</a></li>
-                            <li><a href="{% url 'pages:products' %}" class="animated-nav-link">Сфери застосування</a>
-                            </li>
-                            <li><a href="{% url 'pages:about' %}" class="animated-nav-link">Про компанію</a></li>
-                            <li><a href="{% url 'pages:partners' %}" class="animated-nav-link">Партнери</a></li>
-                            <li><a href="{% url 'pages:blog' %}" class="animated-nav-link">Корисна інформація</a></li>
+                            <li><a href="{% url 'pages:catalog' %}" class="animated-nav-link">{% trans "Каталог" %}</a></li>
+                            <li><a href="{% url 'pages:products' %}" class="animated-nav-link">{% trans "Сфери застосування" %}</a></li>
+                            <li><a href="{% url 'pages:about' %}" class="animated-nav-link">{% trans "Про компанію" %}</a></li>
+                            <li><a href="{% url 'pages:partners' %}" class="animated-nav-link">{% trans "Партнери" %}</a></li>
+                            <li><a href="{% url 'pages:blog' %}" class="animated-nav-link">{% trans "Корисна інформація" %}</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -109,11 +108,11 @@
                 <!-- Desktop Navigation (fallback for smaller screens) -->
                 <nav class="nav" role="navigation" aria-label="Головне меню">
                     <ul class="nav-list">
-                        <li><a href="{% url 'pages:catalog' %}" class="nav-link">Каталог</a></li>
-                        <li><a href="{% url 'pages:products' %}" class="nav-link">Сфери застосування</a></li>
-                        <li><a href="{% url 'pages:about' %}" class="nav-link">Про компанію</a></li>
-                        <li><a href="{% url 'pages:partners' %}" class="nav-link">Партнери</a></li>
-                        <li><a href="{% url 'pages:blog' %}" class="nav-link">Корисна інформація</a></li>
+                        <li><a href="{% url 'pages:catalog' %}" class="nav-link">{% trans "Каталог" %}</a></li>
+                        <li><a href="{% url 'pages:products' %}" class="nav-link">{% trans "Сфери застосування" %}</a></li>
+                        <li><a href="{% url 'pages:about' %}" class="nav-link">{% trans "Про компанію" %}</a></li>
+                        <li><a href="{% url 'pages:partners' %}" class="nav-link">{% trans "Партнери" %}</a></li>
+                        <li><a href="{% url 'pages:blog' %}" class="nav-link">{% trans "Корисна інформація" %}</a></li>
                     </ul>
                 </nav>
 
@@ -128,10 +127,15 @@
                     </div>
 
                     <!-- Language Switcher (hidden on mobile) -->
+                    {% get_current_language as CURRENT_LANGUAGE %}
                     <div class="lang-switcher desktop-only">
-                        <a href="#" class="lang-link active">UA</a>
-                        <a href="#" class="lang-link">RU</a>
-                        <a href="#" class="lang-link">EN</a>
+                        <form action="{% url 'set_language' %}" method="post" class="lang-form">
+                            {% csrf_token %}
+                            <input type="hidden" name="next" value="{{ request.path }}">
+                            <button type="submit" name="language" value="uk" class="lang-link{% if CURRENT_LANGUAGE == 'uk' %} active{% endif %}"{% if CURRENT_LANGUAGE == 'uk' %} aria-current="true"{% endif %}>UA</button>
+                            <button type="submit" name="language" value="ru" class="lang-link{% if CURRENT_LANGUAGE == 'ru' %} active{% endif %}"{% if CURRENT_LANGUAGE == 'ru' %} aria-current="true"{% endif %}>RU</button>
+                            <button type="submit" name="language" value="en" class="lang-link{% if CURRENT_LANGUAGE == 'en' %} active{% endif %}"{% if CURRENT_LANGUAGE == 'en' %} aria-current="true"{% endif %}>EN</button>
+                        </form>
                     </div>
                 </div>
 
@@ -143,22 +147,27 @@
             <div class="mobile-menu-content">
                 <nav role="navigation" aria-label="Мобільне меню">
                     <ul class="mobile-nav-list">
-                        <li><a href="{% url 'pages:home' %}" class="mobile-nav-link mobile-nav-home">Головна</a></li>
-                        <li><a href="{% url 'pages:catalog' %}" class="mobile-nav-link">Каталог</a></li>
-                        <li><a href="{% url 'pages:products' %}" class="mobile-nav-link">Сфери застосування</a></li>
-                        <li><a href="{% url 'pages:about' %}" class="mobile-nav-link">Про компанію</a></li>
-                        <li><a href="{% url 'pages:partners' %}" class="mobile-nav-link">Партнери</a></li>
-                        <li><a href="{% url 'pages:blog' %}" class="mobile-nav-link">Корисна інформація</a></li>
-                        <li><a href="{% url 'pages:contacts' %}" class="mobile-nav-link">Контакти</a></li>
+                        <li><a href="{% url 'pages:home' %}" class="mobile-nav-link mobile-nav-home">{% trans "Головна" %}</a></li>
+                        <li><a href="{% url 'pages:catalog' %}" class="mobile-nav-link">{% trans "Каталог" %}</a></li>
+                        <li><a href="{% url 'pages:products' %}" class="mobile-nav-link">{% trans "Сфери застосування" %}</a></li>
+                        <li><a href="{% url 'pages:about' %}" class="mobile-nav-link">{% trans "Про компанію" %}</a></li>
+                        <li><a href="{% url 'pages:partners' %}" class="mobile-nav-link">{% trans "Партнери" %}</a></li>
+                        <li><a href="{% url 'pages:blog' %}" class="mobile-nav-link">{% trans "Корисна інформація" %}</a></li>
+                        <li><a href="{% url 'pages:contacts' %}" class="mobile-nav-link">{% trans "Контакти" %}</a></li>
                     </ul>
 
                     <!-- Mobile Actions -->
                     <div class="mobile-actions">
                         <!-- Language Switcher (mobile only) -->
+                        {% get_current_language as CURRENT_LANGUAGE %}
                         <div class="lang-switcher mobile-only">
-                            <a href="#" class="lang-link active">UA</a>
-                            <a href="#" class="lang-link">RU</a>
-                            <a href="#" class="lang-link">EN</a>
+                            <form action="{% url 'set_language' %}" method="post" class="lang-form">
+                                {% csrf_token %}
+                                <input type="hidden" name="next" value="{{ request.path }}">
+                                <button type="submit" name="language" value="uk" class="lang-link{% if CURRENT_LANGUAGE == 'uk' %} active{% endif %}"{% if CURRENT_LANGUAGE == 'uk' %} aria-current="true"{% endif %}>UA</button>
+                                <button type="submit" name="language" value="ru" class="lang-link{% if CURRENT_LANGUAGE == 'ru' %} active{% endif %}"{% if CURRENT_LANGUAGE == 'ru' %} aria-current="true"{% endif %}>RU</button>
+                                <button type="submit" name="language" value="en" class="lang-link{% if CURRENT_LANGUAGE == 'en' %} active{% endif %}"{% if CURRENT_LANGUAGE == 'en' %} aria-current="true"{% endif %}>EN</button>
+                            </form>
                         </div>
 
                         {% if site_settings.contact_phone %}
@@ -168,7 +177,7 @@
                         {% endif %}
 
                         <a href="{% url 'leads:submit' %}" class="mobile-cta btn">
-                            Зворотний дзвінок
+                            {% trans "Зворотний дзвінок" %}
                         </a>
                     </div>
                 </nav>
@@ -198,7 +207,7 @@
                 <div class="footer-section">
                     <h3 class="footer-title">{{ site_settings.site_name|default:'ADIABATIC' }}</h3>
                     <p class="footer-description">
-                        Надійний постачальник енергетичного обладнання для промислових процесів
+                        {% trans "Надійний постачальник енергетичного обладнання для промислових процесів" %}
                     </p>
                     <div class="footer-social">
                         <a href="#" class="social-link" title="Telegram">📱</a>
@@ -208,27 +217,27 @@
                 </div>
 
                 <div class="footer-section">
-                    <h4 class="footer-subtitle">Продукція</h4>
+                    <h4 class="footer-subtitle">{% trans "Продукція" %}</h4>
                     <ul class="footer-list">
-                        <li><a href="{% url 'pages:catalog' %}">Каталог обладнання</a></li>
-                        <li><a href="{% url 'pages:products' %}">Сфери застосування</a></li>
-                        <li><a href="#" class="download-link">Завантажити каталог</a></li>
-                        <li><a href="#" class="download-link">Завантажити опитувальний лист</a></li>
+                        <li><a href="{% url 'pages:catalog' %}">{% trans "Каталог обладнання" %}</a></li>
+                        <li><a href="{% url 'pages:products' %}">{% trans "Сфери застосування" %}</a></li>
+                        <li><a href="#" class="download-link">{% trans "Завантажити каталог" %}</a></li>
+                        <li><a href="#" class="download-link">{% trans "Завантажити опитувальний лист" %}</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
-                    <h4 class="footer-subtitle">Компанія</h4>
+                    <h4 class="footer-subtitle">{% trans "Компанія" %}</h4>
                     <ul class="footer-list">
-                        <li><a href="{% url 'pages:about' %}">Про компанію</a></li>
-                        <li><a href="{% url 'pages:partners' %}">Партнери</a></li>
-                        <li><a href="{% url 'pages:blog' %}">Корисна інформація</a></li>
-                        <li><a href="{% url 'pages:contacts' %}">Контакти</a></li>
+                        <li><a href="{% url 'pages:about' %}">{% trans "Про компанію" %}</a></li>
+                        <li><a href="{% url 'pages:partners' %}">{% trans "Партнери" %}</a></li>
+                        <li><a href="{% url 'pages:blog' %}">{% trans "Корисна інформація" %}</a></li>
+                        <li><a href="{% url 'pages:contacts' %}">{% trans "Контакти" %}</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
-                    <h4 class="footer-subtitle">Контакти</h4>
+                    <h4 class="footer-subtitle">{% trans "Контакти" %}</h4>
                     <div class="footer-contacts">
                         <div class="contact-item">
                             📍 {{ site_settings.address|default:"Україна, 61020, м. Харків, вул. Промислова, 6" }}
@@ -248,14 +257,14 @@
             </div>
 
             <div class="footer-bottom">
-                <p>© {% now "Y" %} {{ site_settings.site_name|default:'ADIABATIC' }}. Всі права захищені.</p>
+                <p>© {% now "Y" %} {{ site_settings.site_name|default:'ADIABATIC' }}. {% trans "Всі права захищені." %}</p>
             </div>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop" title="Вгору"
-        aria-label="Повернутися вгору">
+    <button class="back-to-top" id="backToTop" title="{% trans "Вгору" %}"
+        aria-label="{% trans "Повернутися вгору" %}">
         ↑
     </button>
 

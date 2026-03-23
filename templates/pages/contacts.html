@@ -1,22 +1,22 @@
 {% extends 'base.html' %}
 {% load i18n %}
 
-{% block title %}{{ page.get_title }}{% endblock %}
-{% block og_title %}{{ page.get_title }}{% endblock %}
-{% block og_description %}{{ page.get_meta_description }}{% endblock %}
+{% block title %}{% trans "Контакти - Adiabatic" %}{% endblock %}
+{% block og_title %}{% trans "Контакти - Adiabatic" %}{% endblock %}
+{% block og_description %}{% trans "Зв'яжіться з Adiabatic. Телефон, email, адреса офісу в Харкові." %}{% endblock %}
 
 {% block page_css %}
 <link rel="stylesheet" href="/static/css/pages/contacts.css">
 {% endblock %}
 
 {% block content %}
-<!-- Contacts Section (ADIABATIC Style) -->
+<!-- Contacts Section -->
 <section class="section">
     <div class="container">
         <div class="section-header js-observe">
-            <p class="section-subtitle">Контактна інформація</p>
+            <p class="section-subtitle">{% trans "Контактна інформація" %}</p>
             <h1 class="section-title">
-                Зв'яжіться з <span class="section-accent">нами</span>
+                {% trans "Зв'яжіться з" %} <span class="section-accent">{% trans "нами" %}</span>
             </h1>
             <div class="section-underline"></div>
         </div>
@@ -24,16 +24,16 @@
         <div class="contacts-content">
             <div class="contacts-main js-observe">
                 <h2 class="section-title">
-                    Ми готові
-                    <span class="section-accent">допомогти вам</span>
+                    {% trans "Ми готові" %}
+                    <span class="section-accent">{% trans "допомогти вам" %}</span>
                 </h2>
                 <p class="contacts-description">
-                    Напишіть, якщо у вас є питання. Ми розмістимо вашу інформацію в короткі терміни.
+                    {% trans "Напишіть, якщо у вас є питання. Ми розмістимо вашу інформацію в короткі терміни." %}
                 </p>
                 <div class="contacts-info">
                     <div class="contact-item">
                         <span class="contact-item__icon">📍</span>
-                        <span class="contact-item__text">Україна, 61020, м. Харків, вул. Промислова, 6</span>
+                        <span class="contact-item__text">{% trans "Україна, 61020, м. Харків, вул. Промислова, 6" %}</span>
                     </div>
                     <div class="contact-item">
                         <span class="contact-item__icon">📞</span>
@@ -45,12 +45,12 @@
                     </div>
                 </div>
                 <a href="{% url 'leads:submit' %}" class="btn btn--primary btn--large">
-                    Надіслати повідомлення
+                    {% trans "Надіслати повідомлення" %}
                 </a>
             </div>
 
             <div class="contacts-methods js-observe">
-                <h3 class="section-subtitle">Способи зв'язку</h3>
+                <h3 class="section-subtitle">{% trans "Способи зв'язку" %}</h3>
                 <div class="cards-grid">
                     <div class="card">
                         <div class="card-image">📱</div>
@@ -80,7 +80,7 @@
 
                 <div class="contact-map">
                     <div class="adiabatic-placeholder contact-map__placeholder">
-                        🗺️ Мапа місцезнаходження
+                        🗺️ {% trans "Мапа місцезнаходження" %}
                     </div>
                 </div>
             </div>
@@ -92,21 +92,21 @@
 <section class="cta-section">
     <div class="cta-container">
         <div class="cta-content js-observe">
-            <p class="cta-question">Маєте питання?</p>
+            <p class="cta-question">{% trans "Маєте питання?" %}</p>
             <h2 class="cta-title">
-                Давайте разом вирішимо
-                <span class="cta-title-accent">вашу задачу</span>
+                {% trans "Давайте разом вирішимо" %}
+                <span class="cta-title-accent">{% trans "вашу задачу" %}</span>
             </h2>
             <p class="cta-description">
-                Наші фахівці готові надати професійну консультацію та допомогти з вибором обладнання
+                {% trans "Наші фахівці готові надати професійну консультацію та допомогти з вибором обладнання" %}
             </p>
             <a href="{% url 'leads:submit' %}" class="btn btn--primary btn--large">
-                Відправити заявку
+                {% trans "Відправити заявку" %}
             </a>
         </div>
         <div class="js-observe">
             <div class="adiabatic-placeholder">
-                🏢 Контакти
+                🏢 {% trans "Контакти" %}
             </div>
         </div>
     </div>

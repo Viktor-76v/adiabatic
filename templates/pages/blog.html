@@ -1,17 +1,16 @@
 {% extends 'base.html' %}
 {% load i18n %}
 
-{% block title %}Корисна інформація - Adiabatic{% endblock %}
-{% block og_title %}Корисна інформація - Adiabatic{% endblock %}
-{% block og_description %}Корисні статті про теплообмінне обладнання, технічні рішення, експлуатацію та обслуговування
-промислового обладнання.{% endblock %}
+{% block title %}{% trans "Корисна інформація - Adiabatic" %}{% endblock %}
+{% block og_title %}{% trans "Корисна інформація - Adiabatic" %}{% endblock %}
+{% block og_description %}{% trans "Корисні статті про теплообмінне обладнання, технічні рішення, експлуатацію та обслуговування промислового обладнання." %}{% endblock %}
 
 {% block content %}
 <!-- Hero Section -->
 <section class="hero hero--with-video">
     <video class="hero-video" autoplay muted loop playsinline poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E">
         <source src="/static/video/information.mp4" type="video/mp4">
-        Ваш браузер не підтримує відео.
+        {% trans "Ваш браузер не підтримує відео." %}
     </video>
     <div class="container">
         <div class="hero-content">
@@ -19,15 +18,15 @@
                 <img src="/static/images/logo.png" alt="ADIABATIC Logo" class="hero-logo">
             </div>
             <h1 class="hero-title">
-                Корисна
-                <span class="hero-accent">інформація</span>
+                {% trans "Корисна" %}
+                <span class="hero-accent">{% trans "інформація" %}</span>
             </h1>
             <p class="hero-description">
-                Технічні статті, інструкції та рекомендації експертів
+                {% trans "Технічні статті, інструкції та рекомендації експертів" %}
             </p>
             <div class="hero-actions">
-                <a href="#articles" class="btn btn--primary btn--large">Переглянути статті</a>
-                <a href="{% url 'leads:submit' %}" class="btn btn--secondary btn--large">Задати питання</a>
+                <a href="#articles" class="btn btn--primary btn--large">{% trans "Переглянути статті" %}</a>
+                <a href="{% url 'leads:submit' %}" class="btn btn--secondary btn--large">{% trans "Задати питання" %}</a>
             </div>
         </div>
     </div>
@@ -37,10 +36,10 @@
 <section class="section" id="articles">
     <div class="container">
         <div class="section-header">
-            <p class="section-subtitle">Категорії</p>
+            <p class="section-subtitle">{% trans "Категорії" %}</p>
             <h2 class="section-title">
-                Тематичні
-                <span class="section-accent">розділи</span>
+                {% trans "Тематичні" %}
+                <span class="section-accent">{% trans "розділи" %}</span>
             </h2>
             <div class="section-underline"></div>
         </div>
@@ -49,13 +48,13 @@
             <div class="card">
                 <div class="card-image">📚</div>
                 <div class="card-content">
-                    <h3 class="card-title">Основи теплообміну</h3>
+                    <h3 class="card-title">{% trans "Основи теплообміну" %}</h3>
                     <p class="card-description">
-                        Теоретичні основи процесів теплообміну, типи теплообмінників, принципи роботи
+                        {% trans "Теоретичні основи процесів теплообміну, типи теплообмінників, принципи роботи" %}
                     </p>
                     <div class="card-meta">
-                        <span class="card-count">12 статей</span>
-                        <a href="#basics" class="btn btn--small">Читати</a>
+                        <span class="card-count">{% trans "12 статей" %}</span>
+                        <a href="#basics" class="btn btn--small">{% trans "Читати" %}</a>
                     </div>
                 </div>
             </div>
@@ -63,13 +62,13 @@
             <div class="card">
                 <div class="card-image">🔧</div>
                 <div class="card-content">
-                    <h3 class="card-title">Монтаж та налаштування</h3>
+                    <h3 class="card-title">{% trans "Монтаж та налаштування" %}</h3>
                     <p class="card-description">
-                        Інструкції з монтажу, налаштування та введення в експлуатацію теплообмінного обладнання
+                        {% trans "Інструкції з монтажу, налаштування та введення в експлуатацію теплообмінного обладнання" %}
                     </p>
                     <div class="card-meta">
-                        <span class="card-count">8 статей</span>
-                        <a href="#installation" class="btn btn--small">Читати</a>
+                        <span class="card-count">{% trans "8 статей" %}</span>
+                        <a href="#installation" class="btn btn--small">{% trans "Читати" %}</a>
                     </div>
                 </div>
             </div>
@@ -77,13 +76,13 @@
             <div class="card">
                 <div class="card-image">⚙️</div>
                 <div class="card-content">
-                    <h3 class="card-title">Експлуатація та сервіс</h3>
+                    <h3 class="card-title">{% trans "Експлуатація та сервіс" %}</h3>
                     <p class="card-description">
-                        Рекомендації щодо експлуатації, технічного обслуговування та ремонту обладнання
+                        {% trans "Рекомендації щодо експлуатації, технічного обслуговування та ремонту обладнання" %}
                     </p>
                     <div class="card-meta">
-                        <span class="card-count">15 статей</span>
-                        <a href="#maintenance" class="btn btn--small">Читати</a>
+                        <span class="card-count">{% trans "15 статей" %}</span>
+                        <a href="#maintenance" class="btn btn--small">{% trans "Читати" %}</a>
                     </div>
                 </div>
             </div>
@@ -91,13 +90,13 @@
             <div class="card">
                 <div class="card-image">🏭</div>
                 <div class="card-content">
-                    <h3 class="card-title">Галузеві рішення</h3>
+                    <h3 class="card-title">{% trans "Галузеві рішення" %}</h3>
                     <p class="card-description">
-                        Спеціалізовані рішення для різних галузей промисловості та їх особливості
+                        {% trans "Спеціалізовані рішення для різних галузей промисловості та їх особливості" %}
                     </p>
                     <div class="card-meta">
-                        <span class="card-count">10 статей</span>
-                        <a href="#industry" class="btn btn--small">Читати</a>
+                        <span class="card-count">{% trans "10 статей" %}</span>
+                        <a href="#industry" class="btn btn--small">{% trans "Читати" %}</a>
                     </div>
                 </div>
             </div>
@@ -105,13 +104,13 @@
             <div class="card">
                 <div class="card-image">📊</div>
                 <div class="card-content">
-                    <h3 class="card-title">Розрахунки та проектування</h3>
+                    <h3 class="card-title">{% trans "Розрахунки та проектування" %}</h3>
                     <p class="card-description">
-                        Методики розрахунків, вибір оптимальних параметрів, проектування систем
+                        {% trans "Методики розрахунків, вибір оптимальних параметрів, проектування систем" %}
                     </p>
                     <div class="card-meta">
-                        <span class="card-count">6 статей</span>
-                        <a href="#calculations" class="btn btn--small">Читати</a>
+                        <span class="card-count">{% trans "6 статей" %}</span>
+                        <a href="#calculations" class="btn btn--small">{% trans "Читати" %}</a>
                     </div>
                 </div>
             </div>
@@ -119,13 +118,13 @@
             <div class="card">
                 <div class="card-image">🌱</div>
                 <div class="card-content">
-                    <h3 class="card-title">Енергоефективність</h3>
+                    <h3 class="card-title">{% trans "Енергоефективність" %}</h3>
                     <p class="card-description">
-                        Способи підвищення енергоефективності, економія ресурсів, екологічні аспекти
+                        {% trans "Способи підвищення енергоефективності, економія ресурсів, екологічні аспекти" %}
                     </p>
                     <div class="card-meta">
-                        <span class="card-count">9 статей</span>
-                        <a href="#efficiency" class="btn btn--small">Читати</a>
+                        <span class="card-count">{% trans "9 статей" %}</span>
+                        <a href="#efficiency" class="btn btn--small">{% trans "Читати" %}</a>
                     </div>
                 </div>
             </div>
@@ -137,10 +136,10 @@
 <section class="section" id="basics">
     <div class="container">
         <div class="section-header">
-            <p class="section-subtitle">Популярні статті</p>
+            <p class="section-subtitle">{% trans "Популярні статті" %}</p>
             <h2 class="section-title">
-                Найбільш
-                <span class="section-accent">читані</span>
+                {% trans "Найбільш" %}
+                <span class="section-accent">{% trans "читані" %}</span>
             </h2>
             <div class="section-underline"></div>
         </div>
@@ -149,14 +148,13 @@
             <div class="card">
                 <div class="card-image">📖</div>
                 <div class="card-content">
-                    <h3 class="card-title">Як вибрати теплообмінник: повний гід</h3>
+                    <h3 class="card-title">{% trans "Як вибрати теплообмінник: повний гід" %}</h3>
                     <p class="card-description">
-                        Детальний огляд факторів, які потрібно враховувати при виборі теплообмінного обладнання
-                        для вашого підприємства. Типи, характеристики, переваги...
+                        {% trans "Детальний огляд факторів, які потрібно враховувати при виборі теплообмінного обладнання для вашого підприємства. Типи, характеристики, переваги..." %}
                     </p>
                     <div class="card-meta">
-                        <span>15 хв читання</span>
-                        <a href="#" class="btn btn--small">Читати повністю</a>
+                        <span>{% trans "15 хв читання" %}</span>
+                        <a href="#" class="btn btn--small">{% trans "Читати повністю" %}</a>
                     </div>
                 </div>
             </div>
@@ -164,14 +162,13 @@
             <div class="card">
                 <div class="card-image">🔧</div>
                 <div class="card-content">
-                    <h3 class="card-title">Технічне обслуговування теплообмінників</h3>
+                    <h3 class="card-title">{% trans "Технічне обслуговування теплообмінників" %}</h3>
                     <p class="card-description">
-                        Практичні рекомендації щодо регулярного технічного обслуговування, графіки ТО,
-                        типові несправності та способи їх усунення...
+                        {% trans "Практичні рекомендації щодо регулярного технічного обслуговування, графіки ТО, типові несправності та способи їх усунення..." %}
                     </p>
                     <div class="card-meta">
-                        <span>12 хв читання</span>
-                        <a href="#" class="btn btn--small">Читати повністю</a>
+                        <span>{% trans "12 хв читання" %}</span>
+                        <a href="#" class="btn btn--small">{% trans "Читати повністю" %}</a>
                     </div>
                 </div>
             </div>
@@ -179,14 +176,13 @@
             <div class="card">
                 <div class="card-image">💡</div>
                 <div class="card-content">
-                    <h3 class="card-title">Енергозбереження в промисловості</h3>
+                    <h3 class="card-title">{% trans "Енергозбереження в промисловості" %}</h3>
                     <p class="card-description">
-                        Сучасні підходи до енергозбереження за допомогою ефективного теплообмінного обладнання.
-                        Утилізація тепла, рекуперація енергії...
+                        {% trans "Сучасні підходи до енергозбереження за допомогою ефективного теплообмінного обладнання. Утилізація тепла, рекуперація енергії..." %}
                     </p>
                     <div class="card-meta">
-                        <span>18 хв читання</span>
-                        <a href="#" class="btn btn--small">Читати повністю</a>
+                        <span>{% trans "18 хв читання" %}</span>
+                        <a href="#" class="btn btn--small">{% trans "Читати повністю" %}</a>
                     </div>
                 </div>
             </div>
@@ -194,14 +190,13 @@
             <div class="card">
                 <div class="card-image">⚠️</div>
                 <div class="card-content">
-                    <h3 class="card-title">Типові помилки при монтажі</h3>
+                    <h3 class="card-title">{% trans "Типові помилки при монтажі" %}</h3>
                     <p class="card-description">
-                        Найпоширеніші помилки при монтажі теплообмінного обладнання та способи їх уникнення.
-                        Чек-лист для контролю якості монтажу...
+                        {% trans "Найпоширеніші помилки при монтажі теплообмінного обладнання та способи їх уникнення. Чек-лист для контролю якості монтажу..." %}
                     </p>
                     <div class="card-meta">
-                        <span>10 хв читання</span>
-                        <a href="#" class="btn btn--small">Читати повністю</a>
+                        <span>{% trans "10 хв читання" %}</span>
+                        <a href="#" class="btn btn--small">{% trans "Читати повністю" %}</a>
                     </div>
                 </div>
             </div>
@@ -209,14 +204,13 @@
             <div class="card">
                 <div class="card-image">📊</div>
                 <div class="card-content">
-                    <h3 class="card-title">Розрахунок теплообмінника: основи</h3>
+                    <h3 class="card-title">{% trans "Розрахунок теплообмінника: основи" %}</h3>
                     <p class="card-description">
-                        Основні принципи теплового розрахунку теплообмінників. Формули, методики,
-                        практичні приклади розрахунків для різних типів обладнання...
+                        {% trans "Основні принципи теплового розрахунку теплообмінників. Формули, методики, практичні приклади розрахунків для різних типів обладнання..." %}
                     </p>
                     <div class="card-meta">
-                        <span>25 хв читання</span>
-                        <a href="#" class="btn btn--small">Читати повністю</a>
+                        <span>{% trans "25 хв читання" %}</span>
+                        <a href="#" class="btn btn--small">{% trans "Читати повністю" %}</a>
                     </div>
                 </div>
             </div>
@@ -224,14 +218,13 @@
             <div class="card">
                 <div class="card-image">🏭</div>
                 <div class="card-content">
-                    <h3 class="card-title">Теплообмінники в нафтогазовій галузі</h3>
+                    <h3 class="card-title">{% trans "Теплообмінники в нафтогазовій галузі" %}</h3>
                     <p class="card-description">
-                        Особливості застосування теплообмінного обладнання в нафтогазовій промисловості.
-                        Вимоги до матеріалів, безпека експлуатації...
+                        {% trans "Особливості застосування теплообмінного обладнання в нафтогазовій промисловості. Вимоги до матеріалів, безпека експлуатації..." %}
                     </p>
                     <div class="card-meta">
-                        <span>20 хв читання</span>
-                        <a href="#" class="btn btn--small">Читати повністю</a>
+                        <span>{% trans "20 хв читання" %}</span>
+                        <a href="#" class="btn btn--small">{% trans "Читати повністю" %}</a>
                     </div>
                 </div>
             </div>
@@ -239,15 +232,14 @@
     </div>
 </section>
 
-
 <!-- FAQ Section -->
 <section class="section">
     <div class="container">
         <div class="section-header">
-            <p class="section-subtitle">Питання та відповіді</p>
+            <p class="section-subtitle">{% trans "Питання та відповіді" %}</p>
             <h2 class="section-title">
-                Часті
-                <span class="section-accent">питання</span>
+                {% trans "Часті" %}
+                <span class="section-accent">{% trans "питання" %}</span>
             </h2>
             <div class="section-underline"></div>
         </div>
@@ -255,43 +247,36 @@
         <div>
             <div class="card">
                 <div class="card-content">
-                    <h3 class="card-title">Який термін служби теплообмінників?</h3>
+                    <h3 class="card-title">{% trans "Який термін служби теплообмінників?" %}</h3>
                     <p class="card-description">
-                        Термін служби залежить від умов експлуатації та якості обслуговування.
-                        При правильній експлуатації теплообмінники можуть працювати 15-25 років.
-                        Важливо проводити регулярне технічне обслуговування та своєчасну очистку.
+                        {% trans "Термін служби залежить від умов експлуатації та якості обслуговування. При правильній експлуатації теплообмінники можуть працювати 15-25 років. Важливо проводити регулярне технічне обслуговування та своєчасну очистку." %}
                     </p>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-content">
-                    <h3 class="card-title">Як часто потрібно проводити технічне обслуговування?</h3>
+                    <h3 class="card-title">{% trans "Як часто потрібно проводити технічне обслуговування?" %}</h3>
                     <p class="card-description">
-                        Рекомендується проводити планове ТО кожні 6-12 місяців в залежності від інтенсивності
-                        використання та умов роботи. Очистку теплообмінних поверхонь - кожні 3-6 місяців.
+                        {% trans "Рекомендується проводити планове ТО кожні 6-12 місяців в залежності від інтенсивності використання та умов роботи. Очистку теплообмінних поверхонь - кожні 3-6 місяців." %}
                     </p>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-content">
-                    <h3 class="card-title">Які матеріали використовуються для виготовлення?</h3>
+                    <h3 class="card-title">{% trans "Які матеріали використовуються для виготовлення?" %}</h3>
                     <p class="card-description">
-                        Використовуємо високоякісні матеріали: нержавіюча сталь, вуглецева сталь,
-                        титан, мідні сплави. Вибір матеріалу залежить від робочого середовища,
-                        температури та тиску в системі.
+                        {% trans "Використовуємо високоякісні матеріали: нержавіюча сталь, вуглецева сталь, титан, мідні сплави. Вибір матеріалу залежить від робочого середовища, температури та тиску в системі." %}
                     </p>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-content">
-                    <h3 class="card-title">Чи надаєте ви гарантію на обладнання?</h3>
+                    <h3 class="card-title">{% trans "Чи надаєте ви гарантію на обладнання?" %}</h3>
                     <p class="card-description">
-                        Так, ми надаємо гарантію на всю нашу продукцію. Термін гарантії залежить від
-                        типу обладнання та становить від 12 до 36 місяців. Також надаємо
-                        післягарантійне сервісне обслуговування.
+                        {% trans "Так, ми надаємо гарантію на всю нашу продукцію. Термін гарантії залежить від типу обладнання та становить від 12 до 36 місяців. Також надаємо післягарантійне сервісне обслуговування." %}
                     </p>
                 </div>
             </div>
@@ -304,22 +289,21 @@
     <div class="container">
         <div class="text-center">
             <h2 class="cta-title">
-                Не знайшли потрібну
-                <span class="hero-accent">інформацію?</span>
+                {% trans "Не знайшли потрібну" %}
+                <span class="hero-accent">{% trans "інформацію?" %}</span>
             </h2>
             <p class="cta-description">
-                Задайте питання нашим експертам і отримайте кваліфіковану консультацію протягом години
+                {% trans "Задайте питання нашим експертам і отримайте кваліфіковану консультацію протягом години" %}
             </p>
             <div class="hero-actions">
                 <a href="{% url 'leads:submit' %}" class="btn btn--primary btn--large">
-                    Задати питання експерту
+                    {% trans "Задати питання експерту" %}
                 </a>
                 <a href="{% url 'pages:contacts' %}" class="btn btn--secondary btn--large">
-                    Зв'язатися з нами
+                    {% trans "Зв'язатися з нами" %}
                 </a>
             </div>
         </div>
     </div>
 </section>
-
 {% endblock %}

@@ -1,17 +1,16 @@
 {% extends 'base.html' %}
 {% load i18n %}
 
-{% block title %}Сфери застосування - Adiabatic{% endblock %}
-{% block og_title %}Сфери застосування - Adiabatic{% endblock %}
-{% block og_description %}Сфери застосування теплообмінного обладнання Adiabatic: нафтогазова галузь, енергетика,
-хімічна промисловість, металургія та інші.{% endblock %}
+{% block title %}{% trans "Сфери застосування - Adiabatic" %}{% endblock %}
+{% block og_title %}{% trans "Сфери застосування - Adiabatic" %}{% endblock %}
+{% block og_description %}{% trans "Сфери застосування теплообмінного обладнання Adiabatic: нафтогазова галузь, енергетика, хімічна промисловість, металургія та інші." %}{% endblock %}
 
 {% block content %}
 <!-- Hero Section -->
 <section class="hero hero--with-video">
     <video class="hero-video" autoplay muted loop playsinline poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E">
         <source src="/static/video/Industries.mp4" type="video/mp4">
-        Ваш браузер не підтримує відео.
+        {% trans "Ваш браузер не підтримує відео." %}
     </video>
     <div class="container">
         <div class="hero-content">
@@ -19,15 +18,15 @@
                 <img src="/static/images/logo.png" alt="ADIABATIC Logo" class="hero-logo">
             </div>
             <h1 class="hero-title">
-                Галузі які ми
-                <span class="hero-accent">обслуговуємо</span>
+                {% trans "Галузі які ми" %}
+                <span class="hero-accent">{% trans "обслуговуємо" %}</span>
             </h1>
             <p class="hero-description">
-                Професійні рішення для різних галузей промисловості
+                {% trans "Професійні рішення для різних галузей промисловості" %}
             </p>
             <div class="hero-actions">
-                <a href="{% url 'leads:submit' %}" class="btn btn--primary btn--large">Розрахунок теплообмінника</a>
-                <a href="{% url 'pages:contacts' %}" class="btn btn--secondary btn--large">Консультація</a>
+                <a href="{% url 'leads:submit' %}" class="btn btn--primary btn--large">{% trans "Розрахунок теплообмінника" %}</a>
+                <a href="{% url 'pages:contacts' %}" class="btn btn--secondary btn--large">{% trans "Консультація" %}</a>
             </div>
         </div>
     </div>
@@ -37,10 +36,10 @@
 <section class="section">
     <div class="container">
         <div class="section-header">
-            <p class="section-subtitle">Галузі промисловості</p>
+            <p class="section-subtitle">{% trans "Галузі промисловості" %}</p>
             <h2 class="section-title">
-                Наші основні
-                <span class="section-accent">напрямки</span>
+                {% trans "Наші основні" %}
+                <span class="section-accent">{% trans "напрямки" %}</span>
             </h2>
             <div class="section-underline"></div>
         </div>
@@ -49,13 +48,12 @@
             <div class="card">
                 <div class="card-image">🛢️</div>
                 <div class="card-content">
-                    <h3 class="card-title">Нафтогазова галузь</h3>
+                    <h3 class="card-title">{% trans "Нафтогазова галузь" %}</h3>
                     <p class="card-description">
-                        Комплексні рішення для нафтопереробних заводів, газопереробних підприємств,
-                        хімічних комбінатів. Обладнання для роботи з агресивними середовищами.
+                        {% trans "Комплексні рішення для нафтопереробних заводів, газопереробних підприємств, хімічних комбінатів. Обладнання для роботи з агресивними середовищами." %}
                     </p>
                     <div class="card-meta">
-                        <a href="#oil-gas" class="btn btn--small btn--gradient">Детальніше</a>
+                        <a href="#oil-gas" class="btn btn--small btn--gradient">{% trans "Детальніше" %}</a>
                     </div>
                 </div>
             </div>
@@ -63,13 +61,12 @@
             <div class="card">
                 <div class="card-image">⚡</div>
                 <div class="card-content">
-                    <h3 class="card-title">Енергетична галузь</h3>
+                    <h3 class="card-title">{% trans "Енергетична галузь" %}</h3>
                     <p class="card-description">
-                        Теплообмінне обладнання для ТЕС, АЕС, когенераційних установок,
-                        відновлювальної енергетики та систем централізованого теплопостачання.
+                        {% trans "Теплообмінне обладнання для ТЕС, АЕС, когенераційних установок, відновлювальної енергетики та систем централізованого теплопостачання." %}
                     </p>
                     <div class="card-meta">
-                        <a href="#energy" class="btn btn--small btn--gradient">Детальніше</a>
+                        <a href="#energy" class="btn btn--small btn--gradient">{% trans "Детальніше" %}</a>
                     </div>
                 </div>
             </div>
@@ -77,13 +74,12 @@
             <div class="card">
                 <div class="card-image">🏭</div>
                 <div class="card-content">
-                    <h3 class="card-title">Хімічна промисловість</h3>
+                    <h3 class="card-title">{% trans "Хімічна промисловість" %}</h3>
                     <p class="card-description">
-                        Спеціалізовані теплообмінники для хімічних процесів, реакторів,
-                        дистиляційних установок та виробництва полімерів.
+                        {% trans "Спеціалізовані теплообмінники для хімічних процесів, реакторів, дистиляційних установок та виробництва полімерів." %}
                     </p>
                     <div class="card-meta">
-                        <a href="#chemical" class="btn btn--small btn--gradient">Детальніше</a>
+                        <a href="#chemical" class="btn btn--small btn--gradient">{% trans "Детальніше" %}</a>
                     </div>
                 </div>
             </div>
@@ -91,13 +87,12 @@
             <div class="card">
                 <div class="card-image">🏗️</div>
                 <div class="card-content">
-                    <h3 class="card-title">Металургійна галузь</h3>
+                    <h3 class="card-title">{% trans "Металургійна галузь" %}</h3>
                     <p class="card-description">
-                        Системи охолодження для металургійних печей, прокатних станів,
-                        утилізації тепла та очищення газів.
+                        {% trans "Системи охолодження для металургійних печей, прокатних станів, утилізації тепла та очищення газів." %}
                     </p>
                     <div class="card-meta">
-                        <a href="#metallurgy" class="btn btn--small btn--gradient">Детальніше</a>
+                        <a href="#metallurgy" class="btn btn--small btn--gradient">{% trans "Детальніше" %}</a>
                     </div>
                 </div>
             </div>
@@ -105,13 +100,12 @@
             <div class="card">
                 <div class="card-image">🍼</div>
                 <div class="card-content">
-                    <h3 class="card-title">Харчова промисловість</h3>
+                    <h3 class="card-title">{% trans "Харчова промисловість" %}</h3>
                     <p class="card-description">
-                        Пастеризатори, охолоджувачі, випарники для молочної, м'ясної,
-                        пивної та кондитерської промисловості.
+                        {% trans "Пастеризатори, охолоджувачі, випарники для молочної, м'ясної, пивної та кондитерської промисловості." %}
                     </p>
                     <div class="card-meta">
-                        <a href="#food" class="btn btn--small btn--gradient">Детальніше</a>
+                        <a href="#food" class="btn btn--small btn--gradient">{% trans "Детальніше" %}</a>
                     </div>
                 </div>
             </div>
@@ -119,13 +113,12 @@
             <div class="card">
                 <div class="card-image">🚢</div>
                 <div class="card-content">
-                    <h3 class="card-title">Морське та суднове обладнання</h3>
+                    <h3 class="card-title">{% trans "Морське та суднове обладнання" %}</h3>
                     <p class="card-description">
-                        Теплообмінники для суднових двигунів, опріснювальних установок,
-                        морських платформ та портового обладнання.
+                        {% trans "Теплообмінники для суднових двигунів, опріснювальних установок, морських платформ та портового обладнання." %}
                     </p>
                     <div class="card-meta">
-                        <a href="#marine" class="btn btn--small btn--gradient">Детальніше</a>
+                        <a href="#marine" class="btn btn--small btn--gradient">{% trans "Детальніше" %}</a>
                     </div>
                 </div>
             </div>
@@ -137,18 +130,20 @@
 <section class="section bg-gray" id="oil-gas">
     <div class="container">
         <div class="section-header">
-            <p class="section-subtitle">Нафтогазова галузь</p>
+            <p class="section-subtitle">{% trans "Нафтогазова галузь" %}</p>
             <h2 class="section-title">
-                Рішення для
-                <span class="section-accent">нафтогазової промисловості</span>
+                {% trans "Рішення для" %}
+                <span class="section-accent">{% trans "нафтогазової промисловості" %}</span>
             </h2>
             <div class="section-underline"></div>
         </div>
 
         <div class="max-w-800 text-center">
             <p class="fs-1-1rem lh-1-7">
+                {% blocktrans trimmed %}
                 Наше обладнання успішно працює на великих нафтопереробних заводах, газопереробних підприємствах
                 та хімічних комбінатах. Ми маємо досвід роботи з найскладнішими технологічними процесами.
+                {% endblocktrans %}
             </p>
         </div>
 
@@ -156,12 +151,12 @@
             <div class="card">
                 <div class="card-image">🔥</div>
                 <div class="card-content">
-                    <h3 class="card-title">Нафтопереробка</h3>
+                    <h3 class="card-title">{% trans "Нафтопереробка" %}</h3>
                     <p class="card-description">
-                        • Конденсатори та випарники для дистиляційних колон<br>
-                        • Теплообмінники для установок каталітичного крекінгу<br>
-                        • Охолоджувачі продуктів та сировини<br>
-                        • Утилізатори тепла димових газів
+                        {% trans "• Конденсатори та випарники для дистиляційних колон" %}<br>
+                        {% trans "• Теплообмінники для установок каталітичного крекінгу" %}<br>
+                        {% trans "• Охолоджувачі продуктів та сировини" %}<br>
+                        {% trans "• Утилізатори тепла димових газів" %}
                     </p>
                 </div>
             </div>
@@ -169,12 +164,12 @@
             <div class="card">
                 <div class="card-image">💨</div>
                 <div class="card-content">
-                    <h3 class="card-title">Газопереробка</h3>
+                    <h3 class="card-title">{% trans "Газопереробка" %}</h3>
                     <p class="card-description">
-                        • Теплообмінники для низькотемпературної сепарації<br>
-                        • Конденсатори для установок зрідження газу<br>
-                        • Регенератори тепла в циклах очищення<br>
-                        • Охолоджувачі компресорних станцій
+                        {% trans "• Теплообмінники для низькотемпературної сепарації" %}<br>
+                        {% trans "• Конденсатори для установок зрідження газу" %}<br>
+                        {% trans "• Регенератори тепла в циклах очищення" %}<br>
+                        {% trans "• Охолоджувачі компресорних станцій" %}
                     </p>
                 </div>
             </div>
@@ -182,12 +177,12 @@
             <div class="card">
                 <div class="card-image">⚗️</div>
                 <div class="card-content">
-                    <h3 class="card-title">Хімічні процеси</h3>
+                    <h3 class="card-title">{% trans "Хімічні процеси" %}</h3>
                     <p class="card-description">
-                        • Реактори з теплообмінними рубашками<br>
-                        • Конденсатори для ректифікаційних колон<br>
-                        • Охолоджувачі для полімеризації<br>
-                        • Випарники для концентрування розчинів
+                        {% trans "• Реактори з теплообмінними рубашками" %}<br>
+                        {% trans "• Конденсатори для ректифікаційних колон" %}<br>
+                        {% trans "• Охолоджувачі для полімеризації" %}<br>
+                        {% trans "• Випарники для концентрування розчинів" %}
                     </p>
                 </div>
             </div>
@@ -195,12 +190,12 @@
             <div class="card">
                 <div class="card-image">🛡️</div>
                 <div class="card-content">
-                    <h3 class="card-title">Спеціальні вимоги</h3>
+                    <h3 class="card-title">{% trans "Спеціальні вимоги" %}</h3>
                     <p class="card-description">
-                        • Корозійностійкі матеріали (Hastelloy, Inconel)<br>
-                        • Високі температури (до 600°C) та тиски (до 100 бар)<br>
-                        • Вибухозахищене виконання<br>
-                        • Сертифікація за стандартами ASME, PED
+                        {% trans "• Корозійностійкі матеріали (Hastelloy, Inconel)" %}<br>
+                        {% trans "• Високі температури (до 600°C) та тиски (до 100 бар)" %}<br>
+                        {% trans "• Вибухозахищене виконання" %}<br>
+                        {% trans "• Сертифікація за стандартами ASME, PED" %}
                     </p>
                 </div>
             </div>
@@ -212,10 +207,10 @@
 <section class="section" id="energy">
     <div class="container">
         <div class="section-header">
-            <p class="section-subtitle">Енергетика</p>
+            <p class="section-subtitle">{% trans "Енергетика" %}</p>
             <h2 class="section-title">
-                Обладнання для
-                <span class="section-accent">енергетичної галузі</span>
+                {% trans "Обладнання для" %}
+                <span class="section-accent">{% trans "енергетичної галузі" %}</span>
             </h2>
             <div class="section-underline"></div>
         </div>
@@ -224,12 +219,12 @@
             <div class="card">
                 <div class="card-image">🏭</div>
                 <div class="card-content">
-                    <h3 class="card-title">Теплові електростанції</h3>
+                    <h3 class="card-title">{% trans "Теплові електростанції" %}</h3>
                     <p class="card-description">
-                        • Регенеративні підігрівачі живильної води<br>
-                        • Конденсатори парових турбін<br>
-                        • Охолоджувачі генераторного газу<br>
-                        • Підігрівачі паливного газу
+                        {% trans "• Регенеративні підігрівачі живильної води" %}<br>
+                        {% trans "• Конденсатори парових турбін" %}<br>
+                        {% trans "• Охолоджувачі генераторного газу" %}<br>
+                        {% trans "• Підігрівачі паливного газу" %}
                     </p>
                 </div>
             </div>
@@ -237,12 +232,12 @@
             <div class="card">
                 <div class="card-image">⚛️</div>
                 <div class="card-content">
-                    <h3 class="card-title">Атомні електростанції</h3>
+                    <h3 class="card-title">{% trans "Атомні електростанції" %}</h3>
                     <p class="card-description">
-                        • Парогенератори допоміжних систем<br>
-                        • Теплообмінники систем безпеки<br>
-                        • Охолоджувачі басейнів витримки<br>
-                        • Вентиляційні охолоджувачі
+                        {% trans "• Парогенератори допоміжних систем" %}<br>
+                        {% trans "• Теплообмінники систем безпеки" %}<br>
+                        {% trans "• Охолоджувачі басейнів витримки" %}<br>
+                        {% trans "• Вентиляційні охолоджувачі" %}
                     </p>
                 </div>
             </div>
@@ -250,12 +245,12 @@
             <div class="card">
                 <div class="card-image">♻️</div>
                 <div class="card-content">
-                    <h3 class="card-title">Когенерація</h3>
+                    <h3 class="card-title">{% trans "Когенерація" %}</h3>
                     <p class="card-description">
-                        • Утилізатори тепла відхідних газів<br>
-                        • Теплообмінники для тригенерації<br>
-                        • Абсорбційні холодильні машини<br>
-                        • Системи акумулювання тепла
+                        {% trans "• Утилізатори тепла відхідних газів" %}<br>
+                        {% trans "• Теплообмінники для тригенерації" %}<br>
+                        {% trans "• Абсорбційні холодильні машини" %}<br>
+                        {% trans "• Системи акумулювання тепла" %}
                     </p>
                 </div>
             </div>
@@ -263,12 +258,12 @@
             <div class="card">
                 <div class="card-image">🌿</div>
                 <div class="card-content">
-                    <h3 class="card-title">Відновлювальна енергетика</h3>
+                    <h3 class="card-title">{% trans "Відновлювальна енергетика" %}</h3>
                     <p class="card-description">
-                        • Теплообмінники для геотермальних систем<br>
-                        • Охолоджувачі для сонячних електростанцій<br>
-                        • Системи акумулювання енергії<br>
-                        • Теплові насоси великої потужності
+                        {% trans "• Теплообмінники для геотермальних систем" %}<br>
+                        {% trans "• Охолоджувачі для сонячних електростанцій" %}<br>
+                        {% trans "• Системи акумулювання енергії" %}<br>
+                        {% trans "• Теплові насоси великої потужності" %}
                     </p>
                 </div>
             </div>
@@ -280,10 +275,10 @@
 <section class="section bg-gray">
     <div class="container">
         <div class="section-header">
-            <p class="section-subtitle">Приклади застосування</p>
+            <p class="section-subtitle">{% trans "Приклади застосування" %}</p>
             <h2 class="section-title">
-                Реалізовані
-                <span class="section-accent">проекти</span>
+                {% trans "Реалізовані" %}
+                <span class="section-accent">{% trans "проекти" %}</span>
             </h2>
             <div class="section-underline"></div>
         </div>
@@ -292,13 +287,12 @@
             <div class="card">
                 <div class="card-image">🏭</div>
                 <div class="card-content">
-                    <h3 class="card-title">Лисичанський НПЗ</h3>
+                    <h3 class="card-title">{% trans "Лисичанський НПЗ" %}</h3>
                     <p class="card-description">
-                        Модернізація установки первинної переробки нафти. Поставка 15 теплообмінників
-                        різних типів для технологічних процесів.
+                        {% trans "Модернізація установки первинної переробки нафти. Поставка 15 теплообмінників різних типів для технологічних процесів." %}
                     </p>
                     <div class="card-meta">
-                        <span class="text-accent fw-800">Потужність: 2.6 млн т/рік</span>
+                        <span class="text-accent fw-800">{% trans "Потужність: 2.6 млн т/рік" %}</span>
                     </div>
                 </div>
             </div>
@@ -306,13 +300,12 @@
             <div class="card">
                 <div class="card-image">⚡</div>
                 <div class="card-content">
-                    <h3 class="card-title">Трипільська ТЕС</h3>
+                    <h3 class="card-title">{% trans "Трипільська ТЕС" %}</h3>
                     <p class="card-description">
-                        Заміна застарілих підігрівачів живильної води на енергоефективні моделі.
-                        Економія палива склала 8%.
+                        {% trans "Заміна застарілих підігрівачів живильної води на енергоефективні моделі. Економія палива склала 8%." %}
                     </p>
                     <div class="card-meta">
-                        <span class="text-accent fw-800">Потужність: 1800 МВт</span>
+                        <span class="text-accent fw-800">{% trans "Потужність: 1800 МВт" %}</span>
                     </div>
                 </div>
             </div>
@@ -320,13 +313,12 @@
             <div class="card">
                 <div class="card-image">🧪</div>
                 <div class="card-content">
-                    <h3 class="card-title">Концерн "Стирол"</h3>
+                    <h3 class="card-title">{% trans "Концерн \"Стирол\"" %}</h3>
                     <p class="card-description">
-                        Постачання спеціалізованих теплообмінників для виробництва аміаку.
-                        Робота при температурі до 450°C.
+                        {% trans "Постачання спеціалізованих теплообмінників для виробництва аміаку. Робота при температурі до 450°C." %}
                     </p>
                     <div class="card-meta">
-                        <span class="text-accent fw-800">Продуктивність: 1350 т/добу</span>
+                        <span class="text-accent fw-800">{% trans "Продуктивність: 1350 т/добу" %}</span>
                     </div>
                 </div>
             </div>
@@ -334,13 +326,12 @@
             <div class="card">
                 <div class="card-image">🏗️</div>
                 <div class="card-content">
-                    <h3 class="card-title">ArcelorMittal Кривий Ріг</h3>
+                    <h3 class="card-title">ArcelorMittal {% trans "Кривий Ріг" %}</h3>
                     <p class="card-description">
-                        Система охолодження доменного газу та утилізації тепла.
-                        Підвищення енергоефективності на 12%.
+                        {% trans "Система охолодження доменного газу та утилізації тепла. Підвищення енергоефективності на 12%." %}
                     </p>
                     <div class="card-meta">
-                        <span class="text-accent fw-800">Виробництво: 6 млн т сталі/рік</span>
+                        <span class="text-accent fw-800">{% trans "Виробництво: 6 млн т сталі/рік" %}</span>
                     </div>
                 </div>
             </div>
@@ -352,10 +343,10 @@
 <section class="section">
     <div class="container">
         <div class="section-header">
-            <p class="section-subtitle">Технічні можливості</p>
+            <p class="section-subtitle">{% trans "Технічні можливості" %}</p>
             <h2 class="section-title">
-                Параметри
-                <span class="section-accent">обладнання</span>
+                {% trans "Параметри" %}
+                <span class="section-accent">{% trans "обладнання" %}</span>
             </h2>
             <div class="section-underline"></div>
         </div>
@@ -363,43 +354,42 @@
         <div class="cards-grid">
             <div class="card stats-card">
                 <div class="card-image">🌡️</div>
-                <h3 class="stats-title">Температура</h3>
-                <div class="stats-number fs-2rem">
-                    -50°C до +600°C</div>
-                <p class="stats-description">Широкий діапазон робочих температур</p>
+                <h3 class="stats-title">{% trans "Температура" %}</h3>
+                <div class="stats-number fs-2rem">-50°C {% trans "до" %} +600°C</div>
+                <p class="stats-description">{% trans "Широкий діапазон робочих температур" %}</p>
             </div>
 
             <div class="card stats-card">
                 <div class="card-image">💪</div>
-                <h3 class="stats-title">Тиск</h3>
-                <div class="stats-number fs-2rem">до 100 бар</div>
-                <p class="stats-description">Високонапірне обладнання</p>
+                <h3 class="stats-title">{% trans "Тиск" %}</h3>
+                <div class="stats-number fs-2rem">{% trans "до 100 бар" %}</div>
+                <p class="stats-description">{% trans "Високонапірне обладнання" %}</p>
             </div>
 
             <div class="card stats-card">
                 <div class="card-image">⚡</div>
-                <h3 class="stats-title">Потужність</h3>
-                <div class="stats-number fs-2rem">до 50 МВт</div>
-                <p class="stats-description">Високопродуктивні системи</p>
+                <h3 class="stats-title">{% trans "Потужність" %}</h3>
+                <div class="stats-number fs-2rem">{% trans "до 50 МВт" %}</div>
+                <p class="stats-description">{% trans "Високопродуктивні системи" %}</p>
             </div>
 
             <div class="card stats-card">
                 <div class="card-image">📏</div>
-                <h3 class="stats-title">Площа теплообміну</h3>
-                <div class="stats-number fs-2rem">до 10,000 м²</div>
-                <p class="stats-description">Великогабаритне обладнання</p>
+                <h3 class="stats-title">{% trans "Площа теплообміну" %}</h3>
+                <div class="stats-number fs-2rem">{% trans "до 10,000 м²" %}</div>
+                <p class="stats-description">{% trans "Великогабаритне обладнання" %}</p>
             </div>
         </div>
 
         <div class="max-w-800 text-center mt-12">
-            <h3 class="text-primary mb-4">Матеріали виготовлення:</h3>
+            <h3 class="text-primary mb-4">{% trans "Матеріали виготовлення:" %}</h3>
             <div class="grid-auto-fit">
-                <div>• Нержавіюча сталь 304, 316, 321</div>
-                <div>• Вуглецева сталь 20, 09Г2С</div>
-                <div>• Титан ВТ1-0, ВТ1-00</div>
-                <div>• Мідь та мідні сплави</div>
+                <div>• {% trans "Нержавіюча сталь 304, 316, 321" %}</div>
+                <div>• {% trans "Вуглецева сталь 20, 09Г2С" %}</div>
+                <div>• {% trans "Титан ВТ1-0, ВТ1-00" %}</div>
+                <div>• {% trans "Мідь та мідні сплави" %}</div>
                 <div>• Hastelloy, Inconel</div>
-                <div>• Дуплексні сталі</div>
+                <div>• {% trans "Дуплексні сталі" %}</div>
             </div>
         </div>
     </div>
@@ -410,18 +400,18 @@
     <div class="container">
         <div class="text-center">
             <h2 class="cta-title">
-                Потрібне обладнання для
-                <span class="hero-accent">вашої галузі?</span>
+                {% trans "Потрібне обладнання для" %}
+                <span class="hero-accent">{% trans "вашої галузі?" %}</span>
             </h2>
             <p class="cta-description">
-                Наші інженери розроблять оптимальне рішення для ваших технічних вимог та умов експлуатації
+                {% trans "Наші інженери розроблять оптимальне рішення для ваших технічних вимог та умов експлуатації" %}
             </p>
             <div class="hero-actions">
                 <a href="{% url 'leads:submit' %}" class="btn btn--primary btn--large">
-                    Розрахунок теплообмінника
+                    {% trans "Розрахунок теплообмінника" %}
                 </a>
                 <a href="{% url 'pages:contacts' %}" class="btn btn--secondary btn--large">
-                    Консультація інженера
+                    {% trans "Консультація інженера" %}
                 </a>
             </div>
         </div>

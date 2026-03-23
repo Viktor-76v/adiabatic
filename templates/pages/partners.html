@@ -1,17 +1,16 @@
 {% extends 'base.html' %}
 {% load i18n %}
 
-{% block title %}Партнери - Adiabatic{% endblock %}
-{% block og_title %}Партнери - Adiabatic{% endblock %}
-{% block og_description %}Співпраця з Adiabatic. Програми для монтажників, проєктантів та торгових агентів. Вигідні
-умови партнерства.{% endblock %}
+{% block title %}{% trans "Партнери - Adiabatic" %}{% endblock %}
+{% block og_title %}{% trans "Партнери - Adiabatic" %}{% endblock %}
+{% block og_description %}{% trans "Співпраця з Adiabatic. Програми для монтажників, проєктантів та торгових агентів. Вигідні умови партнерства." %}{% endblock %}
 
 {% block content %}
 <!-- Hero Section -->
 <section class="hero hero--with-video">
     <video class="hero-video" autoplay muted loop playsinline poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E">
         <source src="/static/video/partners.mp4" type="video/mp4">
-        Ваш браузер не підтримує відео.
+        {% trans "Ваш браузер не підтримує відео." %}
     </video>
     <div class="container">
         <div class="hero-content">
@@ -19,15 +18,15 @@
                 <img src="/static/images/logo.png" alt="ADIABATIC Logo" class="hero-logo">
             </div>
             <h1 class="hero-title">
-                Стань нашим
-                <span class="hero-accent">партнером</span>
+                {% trans "Стань нашим" %}
+                <span class="hero-accent">{% trans "партнером" %}</span>
             </h1>
             <p class="hero-description">
-                Вигідні умови співпраці для всіх учасників ринку
+                {% trans "Вигідні умови співпраці для всіх учасників ринку" %}
             </p>
             <div class="hero-actions">
-                <a href="{% url 'leads:submit' %}" class="btn btn--primary btn--large">Стати партнером</a>
-                <a href="{% url 'pages:contacts' %}" class="btn btn--secondary btn--large">Зв'язатися</a>
+                <a href="{% url 'leads:submit' %}" class="btn btn--primary btn--large">{% trans "Стати партнером" %}</a>
+                <a href="{% url 'pages:contacts' %}" class="btn btn--secondary btn--large">{% trans "Зв'язатися" %}</a>
             </div>
         </div>
     </div>
@@ -37,10 +36,10 @@
 <section class="section">
     <div class="container">
         <div class="section-header">
-            <p class="section-subtitle">Програми партнерства</p>
+            <p class="section-subtitle">{% trans "Програми партнерства" %}</p>
             <h2 class="section-title">
-                Типи
-                <span class="section-accent">партнерства</span>
+                {% trans "Типи" %}
+                <span class="section-accent">{% trans "партнерства" %}</span>
             </h2>
             <div class="section-underline"></div>
         </div>
@@ -49,13 +48,12 @@
             <div class="card">
                 <div class="card-image">🏗️</div>
                 <div class="card-content">
-                    <h3 class="card-title">Монтажні організації</h3>
+                    <h3 class="card-title">{% trans "Монтажні організації" %}</h3>
                     <p class="card-description">
-                        Спеціальні умови для монтажних компаній. Технічна підтримка, навчання персоналу,
-                        пріоритетна доставка обладнання.
+                        {% trans "Спеціальні умови для монтажних компаній. Технічна підтримка, навчання персоналу, пріоритетна доставка обладнання." %}
                     </p>
                     <div class="card-meta">
-                        <a href="{% url 'leads:submit' %}" class="btn btn--small">Приєднатися</a>
+                        <a href="{% url 'leads:submit' %}" class="btn btn--small">{% trans "Приєднатися" %}</a>
                     </div>
                 </div>
             </div>
@@ -63,13 +61,12 @@
             <div class="card">
                 <div class="card-image">📋</div>
                 <div class="card-content">
-                    <h3 class="card-title">Проєктні інститути</h3>
+                    <h3 class="card-title">{% trans "Проєктні інститути" %}</h3>
                     <p class="card-description">
-                        Партнерство з проєктними організаціями. Легка інтеграція ТЗ в проєкт,
-                        технічні консультації, типові рішення.
+                        {% trans "Партнерство з проєктними організаціями. Легка інтеграція ТЗ в проєкт, технічні консультації, типові рішення." %}
                     </p>
                     <div class="card-meta">
-                        <a href="{% url 'leads:submit' %}" class="btn btn--small">Співпрацювати</a>
+                        <a href="{% url 'leads:submit' %}" class="btn btn--small">{% trans "Співпрацювати" %}</a>
                     </div>
                 </div>
             </div>
@@ -77,13 +74,12 @@
             <div class="card">
                 <div class="card-image">🤝</div>
                 <div class="card-content">
-                    <h3 class="card-title">Торгові агенти</h3>
+                    <h3 class="card-title">{% trans "Торгові агенти" %}</h3>
                     <p class="card-description">
-                        Програма винагород для торгових агентів. Комісійні від продажів,
-                        маркетингова підтримка, навчальні матеріали.
+                        {% trans "Програма винагород для торгових агентів. Комісійні від продажів, маркетингова підтримка, навчальні матеріали." %}
                     </p>
                     <div class="card-meta">
-                        <a href="{% url 'leads:submit' %}" class="btn btn--small">Стати агентом</a>
+                        <a href="{% url 'leads:submit' %}" class="btn btn--small">{% trans "Стати агентом" %}</a>
                     </div>
                 </div>
             </div>
@@ -91,13 +87,12 @@
             <div class="card">
                 <div class="card-image">🏭</div>
                 <div class="card-content">
-                    <h3 class="card-title">Промислові підприємства</h3>
+                    <h3 class="card-title">{% trans "Промислові підприємства" %}</h3>
                     <p class="card-description">
-                        Довготривалі контракти з промисловими підприємствами. Гнучкі умови оплати,
-                        технічний супровід, сервісне обслуговування.
+                        {% trans "Довготривалі контракти з промисловими підприємствами. Гнучкі умови оплати, технічний супровід, сервісне обслуговування." %}
                     </p>
                     <div class="card-meta">
-                        <a href="{% url 'leads:submit' %}" class="btn btn--small">Обговорити умови</a>
+                        <a href="{% url 'leads:submit' %}" class="btn btn--small">{% trans "Обговорити умови" %}</a>
                     </div>
                 </div>
             </div>
@@ -109,10 +104,10 @@
 <section class="section">
     <div class="container">
         <div class="section-header">
-            <p class="section-subtitle">Переваги</p>
+            <p class="section-subtitle">{% trans "Переваги" %}</p>
             <h2 class="section-title">
-                Чому обирають
-                <span class="section-accent">нас</span>
+                {% trans "Чому обирають" %}
+                <span class="section-accent">{% trans "нас" %}</span>
             </h2>
             <div class="section-underline"></div>
         </div>
@@ -121,9 +116,9 @@
             <div class="card">
                 <div class="card-image">💰</div>
                 <div class="card-content">
-                    <h3 class="card-title">Вигідні умови</h3>
+                    <h3 class="card-title">{% trans "Вигідні умови" %}</h3>
                     <p class="card-description">
-                        Конкурентні ціни, гнучка система знижок, спеціальні умови для постійних партнерів
+                        {% trans "Конкурентні ціни, гнучка система знижок, спеціальні умови для постійних партнерів" %}
                     </p>
                 </div>
             </div>
@@ -131,9 +126,9 @@
             <div class="card">
                 <div class="card-image">⚡</div>
                 <div class="card-content">
-                    <h3 class="card-title">Швидкі терміни</h3>
+                    <h3 class="card-title">{% trans "Швидкі терміни" %}</h3>
                     <p class="card-description">
-                        Мінімальні терміни виготовлення та доставки обладнання завдяки оптимізованому виробництву
+                        {% trans "Мінімальні терміни виготовлення та доставки обладнання завдяки оптимізованому виробництву" %}
                     </p>
                 </div>
             </div>
@@ -141,9 +136,9 @@
             <div class="card">
                 <div class="card-image">🎓</div>
                 <div class="card-content">
-                    <h3 class="card-title">Технічна підтримка</h3>
+                    <h3 class="card-title">{% trans "Технічна підтримка" %}</h3>
                     <p class="card-description">
-                        Навчання персоналу, технічні консультації, супровід проектів досвідченими інженерами
+                        {% trans "Навчання персоналу, технічні консультації, супровід проектів досвідченими інженерами" %}
                     </p>
                 </div>
             </div>
@@ -151,9 +146,9 @@
             <div class="card">
                 <div class="card-image">🏆</div>
                 <div class="card-content">
-                    <h3 class="card-title">Якість продукції</h3>
+                    <h3 class="card-title">{% trans "Якість продукції" %}</h3>
                     <p class="card-description">
-                        Європейські стандарти якості, сертифіковане обладнання, гарантія на всю продукцію
+                        {% trans "Європейські стандарти якості, сертифіковане обладнання, гарантія на всю продукцію" %}
                     </p>
                 </div>
             </div>
@@ -161,9 +156,9 @@
             <div class="card">
                 <div class="card-image">📊</div>
                 <div class="card-content">
-                    <h3 class="card-title">Маркетингова підтримка</h3>
+                    <h3 class="card-title">{% trans "Маркетингова підтримка" %}</h3>
                     <p class="card-description">
-                        Рекламні матеріали, участь у виставках, спільні маркетингові активності
+                        {% trans "Рекламні матеріали, участь у виставках, спільні маркетингові активності" %}
                     </p>
                 </div>
             </div>
@@ -171,9 +166,9 @@
             <div class="card">
                 <div class="card-image">🔧</div>
                 <div class="card-content">
-                    <h3 class="card-title">Сервісне обслуговування</h3>
+                    <h3 class="card-title">{% trans "Сервісне обслуговування" %}</h3>
                     <p class="card-description">
-                        Повний спектр сервісних послуг, ремонт, модернізація існуючого обладнання
+                        {% trans "Повний спектр сервісних послуг, ремонт, модернізація існуючого обладнання" %}
                     </p>
                 </div>
             </div>
@@ -181,15 +176,14 @@
     </div>
 </section>
 
-
 <!-- Agent Program Section -->
 <section class="section">
     <div class="container">
         <div class="section-header">
-            <p class="section-subtitle">Для агентів</p>
+            <p class="section-subtitle">{% trans "Для агентів" %}</p>
             <h2 class="section-title">
-                Програма винагород
-                <span class="section-accent">для агентів</span>
+                {% trans "Програма винагород" %}
+                <span class="section-accent">{% trans "для агентів" %}</span>
             </h2>
             <div class="section-underline"></div>
         </div>
@@ -197,39 +191,40 @@
         <div>
             <div class="card">
                 <h3>
-                    Заробляйте до <span>15%</span> з кожного продажу
+                    {% trans "Заробляйте до" %} <span>15%</span> {% trans "з кожного продажу" %}
                 </h3>
 
-                <div
-                   >
+                <div>
                     <div>
-                        <h4>Ставки комісії:</h4>
+                        <h4>{% trans "Ставки комісії:" %}</h4>
                         <ul>
-                            <li>✓ 5-10% - стандартне обладнання</li>
-                            <li>✓ 10-15% - спеціальні рішення</li>
-                            <li>✓ Бонуси за обсяги продажів</li>
-                            <li>✓ Додаткові премії за нових клієнтів</li>
+                            <li>✓ {% trans "5-10% - стандартне обладнання" %}</li>
+                            <li>✓ {% trans "10-15% - спеціальні рішення" %}</li>
+                            <li>✓ {% trans "Бонуси за обсяги продажів" %}</li>
+                            <li>✓ {% trans "Додаткові премії за нових клієнтів" %}</li>
                         </ul>
                     </div>
 
                     <div>
-                        <h4>Що ми надаємо:</h4>
+                        <h4>{% trans "Що ми надаємо:" %}</h4>
                         <ul>
-                            <li>✓ Навчальні матеріали</li>
-                            <li>✓ Технічну підтримку</li>
-                            <li>✓ Маркетингові матеріали</li>
-                            <li>✓ Персонального менеджера</li>
+                            <li>✓ {% trans "Навчальні матеріали" %}</li>
+                            <li>✓ {% trans "Технічну підтримку" %}</li>
+                            <li>✓ {% trans "Маркетингові матеріали" %}</li>
+                            <li>✓ {% trans "Персонального менеджера" %}</li>
                         </ul>
                     </div>
                 </div>
 
                 <p>
+                    {% blocktrans trimmed %}
                     Процедура отримання винагороди: клієнт оформлює замовлення з зазначенням вашого агентського коду,
                     винагорода нараховується після оплати замовлення клієнтом і виплачується щомісяця.
+                    {% endblocktrans %}
                 </p>
 
                 <a href="{% url 'leads:submit' %}" class="btn btn--primary btn--large">
-                    Стати агентом зараз
+                    {% trans "Стати агентом зараз" %}
                 </a>
             </div>
         </div>
@@ -240,10 +235,10 @@
 <section class="section">
     <div class="container">
         <div class="section-header">
-            <p class="section-subtitle">Наші партнери</p>
+            <p class="section-subtitle">{% trans "Наші партнери" %}</p>
             <h2 class="section-title">
-                Ключові
-                <span class="section-accent">клієнти</span>
+                {% trans "Ключові" %}
+                <span class="section-accent">{% trans "клієнти" %}</span>
             </h2>
             <div class="section-underline"></div>
         </div>
@@ -252,9 +247,9 @@
             <div class="card">
                 <div class="card-image">🏭</div>
                 <div class="card-content">
-                    <h3 class="card-title">Великі промислові підприємства</h3>
+                    <h3 class="card-title">{% trans "Великі промислові підприємства" %}</h3>
                     <p class="card-description">
-                        Співпрацюємо з провідними підприємствами нафтогазової, хімічної та енергетичної галузей
+                        {% trans "Співпрацюємо з провідними підприємствами нафтогазової, хімічної та енергетичної галузей" %}
                     </p>
                 </div>
             </div>
@@ -262,9 +257,9 @@
             <div class="card">
                 <div class="card-image">🏗️</div>
                 <div class="card-content">
-                    <h3 class="card-title">Будівельні компанії</h3>
+                    <h3 class="card-title">{% trans "Будівельні компанії" %}</h3>
                     <p class="card-description">
-                        Довготривалі контракти з будівельними та монтажними організаціями по всій Україні
+                        {% trans "Довготривалі контракти з будівельними та монтажними організаціями по всій Україні" %}
                     </p>
                 </div>
             </div>
@@ -272,9 +267,9 @@
             <div class="card">
                 <div class="card-image">📐</div>
                 <div class="card-content">
-                    <h3 class="card-title">Проєктні інститути</h3>
+                    <h3 class="card-title">{% trans "Проєктні інститути" %}</h3>
                     <p class="card-description">
-                        Партнерство з провідними проєктними та інжиніринговими компаніями України та СНД
+                        {% trans "Партнерство з провідними проєктними та інжиніринговими компаніями України та СНД" %}
                     </p>
                 </div>
             </div>
@@ -282,9 +277,9 @@
             <div class="card">
                 <div class="card-image">🌍</div>
                 <div class="card-content">
-                    <h3 class="card-title">Міжнародні проекти</h3>
+                    <h3 class="card-title">{% trans "Міжнародні проекти" %}</h3>
                     <p class="card-description">
-                        Участь у міжнародних проектах, експорт обладнання в країни Європи та Азії
+                        {% trans "Участь у міжнародних проектах, експорт обладнання в країни Європи та Азії" %}
                     </p>
                 </div>
             </div>
@@ -297,18 +292,18 @@
     <div class="container">
         <div class="text-center">
             <h2 class="cta-title">
-                Готові розпочати
-                <span class="hero-accent">співпрацю?</span>
+                {% trans "Готові розпочати" %}
+                <span class="hero-accent">{% trans "співпрацю?" %}</span>
             </h2>
             <p class="cta-description">
-                Залишіте заявку і наш менеджер зв'яжеться з вами протягом години для обговорення умов партнерства
+                {% trans "Залишіте заявку і наш менеджер зв'яжеться з вами протягом години для обговорення умов партнерства" %}
             </p>
             <div class="hero-actions">
                 <a href="{% url 'leads:submit' %}" class="btn btn--primary btn--large">
-                    Подати заявку на партнерство
+                    {% trans "Подати заявку на партнерство" %}
                 </a>
                 <a href="{% url 'pages:contacts' %}" class="btn btn--secondary btn--large">
-                    Зв'язатися з менеджером
+                    {% trans "Зв'язатися з менеджером" %}
                 </a>
             </div>
         </div>

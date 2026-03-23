@@ -130,6 +130,10 @@
     font-size: 0.9rem;
 }
 
+.lang-form {
+    display: contents;
+}
+
 .lang-switcher {
     display: flex;
     gap: var(--space-1);
@@ -143,6 +147,11 @@
     font-weight: 600;
     border-radius: var(--space-1);
     transition: var(--transition);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    line-height: inherit;
 }
 
 .lang-link.active {
