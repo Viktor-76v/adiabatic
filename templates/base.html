@@ -15,21 +15,21 @@
     <title>{% block title %}{{ site_settings.site_name|default:'Adiabatic' }}{% endblock %}</title>
 
     <!-- SEO Meta Tags -->
+    {% trans "Енергетичне обладнання та теплообмінники" as default_meta_desc %}
+    {% trans "теплообмінники, енергетичне обладнання, Adiabatic" as default_meta_keywords %}
     {% if page %}
     <meta name="description" content="{{ page.get_meta_description }}">
     <meta name="keywords" content="{{ page.get_meta_keywords }}">
     {% else %}
-    <meta name="description"
-        content="{{ site_settings.meta_description|default:'Енергетичне обладнання та теплообмінники' }}">
-    <meta name="keywords"
-        content="{{ site_settings.meta_keywords|default:'теплообмінники, енергетичне обладнання, Adiabatic' }}">
+    <meta name="description" content="{{ site_settings.meta_description|default:default_meta_desc }}">
+    <meta name="keywords" content="{{ site_settings.meta_keywords|default:default_meta_keywords }}">
     {% endif %}
 
     <!-- Open Graph -->
     <meta property="og:title"
         content="{% block og_title %}{{ site_settings.site_name|default:'Adiabatic' }}{% endblock %}">
     <meta property="og:description"
-        content="{% block og_description %}{{ site_settings.meta_description|default:'Енергетичне обладнання та теплообмінники' }}{% endblock %}">
+        content="{% block og_description %}{{ site_settings.meta_description|default:default_meta_desc }}{% endblock %}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}">
 
@@ -271,7 +271,7 @@
     <!-- Base JavaScript -->
     <script src="/static/js/base.js" type="module" defer></script>
     <script src="/static/js/desktop-menu.js" type="module" defer></script>
-    <script src="/static/js/form-validation.js" defer></script>
+    <script src="/static/js/form-validation.js" type="module"></script>
     <script src="/static/js/video.js" defer></script>
     <script src="/static/js/htmx-integration.js" defer></script>
 

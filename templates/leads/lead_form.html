@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% load i18n %}
 
-{% block title %}Залишити заявку{% endblock %}
-{% block og_title %}Залишити заявку{% endblock %}
-{% block og_description %}Залиште заявку для отримання консультації{% endblock %}
+{% block title %}{% trans "Залишити заявку" %}{% endblock %}
+{% block og_title %}{% trans "Залишити заявку" %}{% endblock %}
+{% block og_description %}{% trans "Залиште заявку для отримання консультації" %}{% endblock %}
 
 {% block page_css %}
 <link rel="stylesheet" href="/static/css/leads/lead_form.css">
@@ -14,22 +14,21 @@
 {% endblock %}
 
 {% block content %}
-<!-- Lead Form Section (ADIABATIC Style) -->
+<!-- Lead Form Section -->
 <section class="catalog-section">
     <div class="container">
         <div class="catalog-header js-observe">
-            <p class="catalog-subtitle">Залишити заявку</p>
+            <p class="catalog-subtitle">{% trans "Залишити заявку" %}</p>
             <h1 class="catalog-title">
-                Отримати
-                <span class="catalog-title-accent">консультацію</span>
+                {% trans "Отримати" %}
+                <span class="catalog-title-accent">{% trans "консультацію" %}</span>
             </h1>
             <div class="catalog-underline"></div>
         </div>
 
         <div class="about-content js-observe">
             <p class="about-description">
-                Заповніть форму нижче і наші фахівці зв'яжуться з вами найближчим часом для надання професійної
-                консультації.
+                {% trans "Заповніть форму нижче і наші фахівці зв'яжуться з вами найближчим часом для надання професійної консультації." %}
             </p>
         </div>
 
@@ -39,29 +38,29 @@
                 {% csrf_token %}
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="name">Ім'я *</label>
+                        <label for="name">{% trans "Ім'я *" %}</label>
                         <input type="text" id="name" name="name" required>
                     </div>
                     <div class="form-group">
-                        <label for="phone">Телефон *</label>
+                        <label for="phone">{% trans "Телефон *" %}</label>
                         <input type="tel" inputmode="tel" id="phone" name="phone" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email *</label>
+                    <label for="email">{% trans "Email *" %}</label>
                     <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label for="company">Компанія</label>
+                    <label for="company">{% trans "Компанія" %}</label>
                     <input type="text" id="company" name="company">
                 </div>
                 <div class="form-group">
-                    <label for="message">Повідомлення</label>
+                    <label for="message">{% trans "Повідомлення" %}</label>
                     <textarea id="message" name="message" rows="4"
-                        placeholder="Опишіть ваші потреби або запитання..."></textarea>
+                        placeholder="{% trans "Опишіть ваші потреби або запитання..." %}"></textarea>
                 </div>
                 <button type="submit" class="btn btn--primary btn--large">
-                    Відправити заявку
+                    {% trans "Відправити заявку" %}
                 </button>
             </form>
         </div>
@@ -72,21 +71,21 @@
 <section class="cta-section">
     <div class="cta-container">
         <div class="cta-content js-observe">
-            <p class="cta-question">Потрібна додаткова інформація?</p>
+            <p class="cta-question">{% trans "Потрібна додаткова інформація?" %}</p>
             <h2 class="cta-title">
-                Зв'яжіться з нами
-                <span class="cta-title-accent">безпосередньо!</span>
+                {% trans "Зв'яжіться з нами" %}
+                <span class="cta-title-accent">{% trans "безпосередньо!" %}</span>
             </h2>
             <p class="cta-description">
-                Наші фахівці готові відповісти на всі ваші запитання та надати детальну консультацію
+                {% trans "Наші фахівці готові відповісти на всі ваші запитання та надати детальну консультацію" %}
             </p>
             <a href="{% url 'pages:contacts' %}" class="btn btn--secondary btn--large">
-                Контакти
+                {% trans "Контакти" %}
             </a>
         </div>
         <div class="js-observe">
             <div class="adiabatic-placeholder">
-                📞 Форма
+                📞 {% trans "Форма" %}
             </div>
         </div>
     </div>

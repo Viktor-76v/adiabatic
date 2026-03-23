@@ -1,5 +1,20 @@
 /* ===== FORM VALIDATION ===== */
 
+import MESSAGES_UK from './locale/form-validation-uk.js';
+import MESSAGES_RU from './locale/form-validation-ru.js';
+import MESSAGES_EN from './locale/form-validation-en.js';
+
+const LOCALE_MAP = {
+    uk: MESSAGES_UK,
+    ru: MESSAGES_RU,
+    en: MESSAGES_EN,
+};
+
+function getMessages() {
+    const lang = document.documentElement.lang?.slice(0, 2) || 'uk';
+    return LOCALE_MAP[lang] || LOCALE_MAP.uk;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     initFormValidation();
 });
@@ -14,7 +29,6 @@ function initFormValidation() {
             }
         });
 
-        // Real-time validation
         const inputs = form.querySelectorAll('input, textarea, select');
         inputs.forEach(input => {
             input.addEventListener('blur', function () {
@@ -45,29 +59,27 @@ function validateField(field) {
     const value = field.value.trim();
     const type = field.type;
     const isRequired = field.hasAttribute('required');
+    const msg = getMessages();
 
     clearFieldError(field);
 
-    // Required validation
     if (isRequired && !value) {
-        showFieldError(field, "Це поле обов'язкове");
+        showFieldError(field, msg.required);
         return false;
     }
 
-    // Email validation
     if (type === 'email' && value) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(value)) {
-            showFieldError(field, 'Введіть коректний email');
+            showFieldError(field, msg.email);
             return false;
         }
     }
 
-    // Phone validation
     if (type === 'tel' && value) {
-        const phoneRegex = /^[+]?[0-9\s\-()]{10,}$/;
+        const phoneRegex = /^[+]?[0-9\s\-(]{9,}[0-9]$/;
         if (!phoneRegex.test(value)) {
-            showFieldError(field, 'Введіть коректний номер телефону');
+            showFieldError(field, msg.phone);
             return false;
         }
     }
@@ -76,18 +88,12 @@ function validateField(field) {
 }
 
 function showFieldError(field, message) {
-    const error = document.createElement('div');
+    const error = document.createElement('span');
     error.className = 'field-error';
     error.textContent = message;
-    error.style.cssText = `
-        color: var(--secondary);
-        font-size: 0.875rem;
-        margin-top: 0.25rem;
-    `;
 
     field.parentNode.appendChild(error);
     field.classList.add('error');
-    field.style.borderColor = 'var(--secondary)';
 }
 
 function clearFieldError(field) {
@@ -96,5 +102,4 @@ function clearFieldError(field) {
         error.remove();
     }
     field.classList.remove('error');
-    field.style.borderColor = '';
 }

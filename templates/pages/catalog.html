@@ -1,10 +1,9 @@
 {% extends 'base.html' %}
 {% load i18n static %}
 
-{% block title %}Каталог обладнання - Adiabatic{% endblock %}
-{% block og_title %}Каталог обладнання - Adiabatic{% endblock %}
-{% block og_description %}Повний каталог теплообмінного обладнання Adiabatic: пластинчасті, кожухотрубні, АПО,
-калорифери та комплектуючі.{% endblock %}
+{% block title %}{% trans "Каталог обладнання - Adiabatic" %}{% endblock %}
+{% block og_title %}{% trans "Каталог обладнання - Adiabatic" %}{% endblock %}
+{% block og_description %}{% trans "Повний каталог теплообмінного обладнання Adiabatic: пластинчасті, кожухотрубні, АПО, калорифери та комплектуючі." %}{% endblock %}
 
 {% block page_css %}
 <link rel="stylesheet" href="/static/css/pages/catalog.css">
@@ -19,7 +18,7 @@
 <section class="hero hero--with-video">
     <video class="hero-video" autoplay muted loop playsinline poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E">
         <source src="/static/video/equipment.mp4" type="video/mp4">
-        Ваш браузер не підтримує відео.
+        {% trans "Ваш браузер не підтримує відео." %}
     </video>
     <div class="container">
         <div class="hero-content">
@@ -27,15 +26,15 @@
                 <img src="/static/images/logo.png" alt="ADIABATIC Logo" class="hero-logo">
             </div>
             <h1 class="hero-title">
-                Каталог
-                <span class="hero-accent">обладнання</span>
+                {% trans "Каталог" %}
+                <span class="hero-accent">{% trans "обладнання" %}</span>
             </h1>
             <p class="hero-description">
-                Професійні рішення для теплообміну
+                {% trans "Професійні рішення для теплообміну" %}
             </p>
             <div class="hero-actions">
-                <a href="#" class="btn btn--primary btn--large">Завантажити каталог</a>
-                <a href="{% url 'leads:submit' %}" class="btn btn--secondary btn--large">Розрахунок теплообмінника</a>
+                <a href="#" class="btn btn--primary btn--large">{% trans "Завантажити каталог" %}</a>
+                <a href="{% url 'leads:submit' %}" class="btn btn--secondary btn--large">{% trans "Розрахунок теплообмінника" %}</a>
             </div>
         </div>
     </div>
@@ -45,10 +44,10 @@
 <section class="section catalog-section">
     <div class="container">
         <div class="section-header">
-            <p class="section-subtitle">Продукція</p>
+            <p class="section-subtitle">{% trans "Продукція" %}</p>
             <h2 class="section-title">
-                Наша
-                <span class="section-accent">продукція</span>
+                {% trans "Наша" %}
+                <span class="section-accent">{% trans "продукція" %}</span>
             </h2>
             <div class="section-underline"></div>
         </div>
@@ -59,20 +58,20 @@
                 <!-- Головне фото товару -->
                 <div class="card-image">
                     {% if product.image1 %}
-                    <img src="{% static product.image1 %}" alt="{{ product.title_uk }}" class="product-main-image">
+                    <img src="{% static product.image1 %}" alt="{{ product.get_title }}" class="product-main-image">
                     {% else %}
                     <div class="product-placeholder">{{ product.icon_emoji }}</div>
                     {% endif %}
                 </div>
 
                 <div class="card-content">
-                    <h3 class="card-title">{{ product.title_uk }}</h3>
-                    <p class="card-description">{{ product.short_description_uk }}</p>
+                    <h3 class="card-title">{{ product.get_title }}</h3>
+                    <p class="card-description">{{ product.get_short_description }}</p>
 
                     <!-- Кнопка розгортання -->
                     <button class="product-toggle btn btn--small btn--gradient" data-product-id="{{ product.id }}"
                         type="button">
-                        Детальніше <span class="toggle-icon">▼</span>
+                        {% trans "Детальніше" %} <span class="toggle-icon">▼</span>
                     </button>
 
                     <!-- Accordion контент (приховано за замовчуванням) -->
@@ -81,14 +80,14 @@
                         <!-- Галерея додаткових фото (горизонтальна прокрутка) -->
                         {% if product.image2 or product.image3 %}
                         <div class="product-section product-gallery-section">
-                            <h4>Додаткові фото</h4>
+                            <h4>{% trans "Додаткові фото" %}</h4>
                             <div class="product-gallery">
                                 {% if product.image2 %}
-                                <img src="{% static product.image2 %}" alt="{{ product.title_uk }} - фото 2"
+                                <img src="{% static product.image2 %}" alt="{{ product.get_title }} - {% trans "фото 2" %}"
                                     class="gallery-image">
                                 {% endif %}
                                 {% if product.image3 %}
-                                <img src="{% static product.image3 %}" alt="{{ product.title_uk }} - фото 3"
+                                <img src="{% static product.image3 %}" alt="{{ product.get_title }} - {% trans "фото 3" %}"
                                     class="gallery-image">
                                 {% endif %}
                             </div>
@@ -97,14 +96,14 @@
 
                         <!-- Повний опис -->
                         <div class="product-section">
-                            <h4>Опис</h4>
-                            <p>{{ product.full_description_uk }}</p>
+                            <h4>{% trans "Опис" %}</h4>
+                            <p>{{ product.get_full_description }}</p>
                         </div>
 
                         <!-- Технічні характеристики -->
                         {% if product.specifications %}
                         <div class="product-section">
-                            <h4>Технічні характеристики</h4>
+                            <h4>{% trans "Технічні характеристики" %}</h4>
                             <table class="specs-table">
                                 {% for key, value in product.specifications.items %}
                                 <tr class="specs-table__row">
@@ -117,25 +116,25 @@
                         {% endif %}
 
                         <!-- Переваги -->
-                        {% if product.advantages_uk %}
+                        {% with adv=product.get_advantages %}{% if adv %}
                         <div class="product-section">
-                            <h4>Переваги</h4>
-                            <div class="product-advantages">{{ product.advantages_uk|linebreaks }}</div>
+                            <h4>{% trans "Переваги" %}</h4>
+                            <div class="product-advantages">{{ adv|linebreaks }}</div>
                         </div>
-                        {% endif %}
+                        {% endif %}{% endwith %}
 
                         <!-- Галузі застосування -->
-                        {% if product.applications_uk %}
+                        {% with apps=product.get_applications %}{% if apps %}
                         <div class="product-section">
-                            <h4>Галузі застосування</h4>
-                            <p>{{ product.applications_uk }}</p>
+                            <h4>{% trans "Галузі застосування" %}</h4>
+                            <p>{{ apps }}</p>
                         </div>
-                        {% endif %}
+                        {% endif %}{% endwith %}
 
                         <!-- CTA -->
                         <div class="product-actions">
                             <a href="{% url 'leads:submit' %}" class="btn btn--primary">
-                                Замовити розрахунок
+                                {% trans "Замовити розрахунок" %}
                             </a>
                         </div>
                     </div>
@@ -144,7 +143,7 @@
             {% empty %}
             <div class="card">
                 <div class="card-content">
-                    <p>Товари не знайдено. Виконайте команду: python manage.py setup_products_catalog</p>
+                    <p>{% trans "Товари не знайдено." %}</p>
                 </div>
             </div>
             {% endfor %}
@@ -157,23 +156,21 @@
     <div class="container">
         <div class="text-center">
             <h2 class="cta-title">
-                Потрібна
-                <span class="hero-accent">консультація?</span>
+                {% trans "Потрібна" %}
+                <span class="hero-accent">{% trans "консультація?" %}</span>
             </h2>
             <p class="cta-description">
-                Наші інженери допоможуть підібрати оптимальне рішення для ваших технічних вимог
+                {% trans "Наші інженери допоможуть підібрати оптимальне рішення для ваших технічних вимог" %}
             </p>
             <div class="hero-actions">
                 <a href="{% url 'leads:submit' %}" class="btn btn--primary btn--large">
-                    Зворотній дзвінок
+                    {% trans "Зворотній дзвінок" %}
                 </a>
                 <a href="{% url 'pages:contacts' %}" class="btn btn--secondary btn--large">
-                    Контакти
+                    {% trans "Контакти" %}
                 </a>
             </div>
         </div>
     </div>
 </section>
 {% endblock %}
-
-

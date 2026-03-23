@@ -406,3 +406,18 @@
         font-size: 1rem;
     }
 }
+
+/* ===== FORM VALIDATION ERRORS ===== */
+.field-error {
+    color: var(--secondary);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+.form__input.error,
+input.error,
+textarea.error,
+select.error {
+    border-color: var(--secondary);
+}

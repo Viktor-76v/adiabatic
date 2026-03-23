@@ -1,0 +1,3030 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-23 15:16+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+#: core/admin.py:11 core/admin.py:78 leads/admin.py:41 leads/admin.py:110
+#: pages/admin.py:23 pages/admin.py:58 pages/admin.py:98
+msgid "Основна інформація"
+msgstr ""
+
+#: core/admin.py:14
+msgid "SEO налаштування"
+msgstr ""
+
+#: core/admin.py:17
+msgid "Соціальні мережі"
+msgstr ""
+
+#: core/admin.py:20
+msgid "Аналітика"
+msgstr ""
+
+#: core/admin.py:60
+msgid "Кількість елементів"
+msgstr ""
+
+#: core/admin.py:81
+msgid "Monobank інтеграція"
+msgstr ""
+
+#: core/admin.py:84
+msgid "Банківські реквізити"
+msgstr ""
+
+#: core/admin.py:108
+msgid "Подія"
+msgstr ""
+
+#: core/admin.py:111 leads/models.py:249
+msgid "Користувач"
+msgstr ""
+
+#: core/admin.py:114 core/models.py:164
+msgid "Додаткові дані"
+msgstr ""
+
+#: core/admin.py:117
+msgid "Мета-дані"
+msgstr ""
+
+#: core/models.py:7
+msgid "Назва сайту"
+msgstr ""
+
+#: core/models.py:8
+msgid "Опис сайту"
+msgstr ""
+
+#: core/models.py:9
+msgid "Контактний email"
+msgstr ""
+
+#: core/models.py:10
+msgid "Контактний телефон"
+msgstr ""
+
+#: core/models.py:11
+msgid "Адреса"
+msgstr ""
+
+#: core/models.py:14
+msgid "Meta title"
+msgstr ""
+
+#: core/models.py:15
+msgid "Meta description"
+msgstr ""
+
+#: core/models.py:16
+msgid "Meta keywords"
+msgstr ""
+
+#: core/models.py:19
+msgid "Facebook URL"
+msgstr ""
+
+#: core/models.py:20
+msgid "Instagram URL"
+msgstr ""
+
+#: core/models.py:21
+msgid "LinkedIn URL"
+msgstr ""
+
+#: core/models.py:24
+msgid "Google Analytics ID"
+msgstr ""
+
+#: core/models.py:25
+msgid "Yandex Metrika ID"
+msgstr ""
+
+#: core/models.py:27 core/models.py:135 core/models.py:166 leads/models.py:15
+#: leads/models.py:94 leads/models.py:159 leads/models.py:205
+#: leads/models.py:237 leads/models.py:251 pages/models.py:47
+#: pages/models.py:251
+msgid "Створено"
+msgstr ""
+
+#: core/models.py:28 core/models.py:136 leads/models.py:95 leads/models.py:160
+#: leads/models.py:206 pages/models.py:48 pages/models.py:252
+msgid "Оновлено"
+msgstr ""
+
+#: core/models.py:31 core/models.py:32
+msgid "Налаштування сайту"
+msgstr ""
+
+#: core/models.py:46
+msgid "Код мови"
+msgstr ""
+
+#: core/models.py:47
+msgid "Назва мови"
+msgstr ""
+
+#: core/models.py:48
+msgid "Назва мови місцевою мовою"
+msgstr ""
+
+#: core/models.py:49 pages/models.py:150
+msgid "Активна"
+msgstr ""
+
+#: core/models.py:50
+msgid "За замовчуванням"
+msgstr ""
+
+#: core/models.py:51
+msgid "Прапор"
+msgstr ""
+
+#: core/models.py:54 leads/models.py:84
+msgid "Мова"
+msgstr ""
+
+#: core/models.py:55
+msgid "Мови"
+msgstr ""
+
+#: core/models.py:71
+msgid "Верхнє меню"
+msgstr ""
+
+#: core/models.py:72
+msgid "Нижнє меню"
+msgstr ""
+
+#: core/models.py:73
+msgid "Мобільне меню"
+msgstr ""
+
+#: core/models.py:76
+msgid "Назва меню"
+msgstr ""
+
+#: core/models.py:77
+msgid "Тип меню"
+msgstr ""
+
+#: core/models.py:78 core/models.py:97 leads/models.py:13
+msgid "Активне"
+msgstr ""
+
+#: core/models.py:81 core/models.py:82 core/models.py:91
+msgid "Меню"
+msgstr ""
+
+#: core/models.py:92
+msgid "Батьківський елемент"
+msgstr ""
+
+#: core/models.py:93
+msgid "Заголовок"
+msgstr ""
+
+#: core/models.py:94
+msgid "URL"
+msgstr ""
+
+#: core/models.py:95 pages/models.py:51 pages/models.py:114
+msgid "Сторінка"
+msgstr ""
+
+#: core/models.py:96 pages/models.py:118 pages/models.py:151
+#: pages/models.py:184 pages/models.py:238
+msgid "Порядок"
+msgstr ""
+
+#: core/models.py:98
+msgid "Зовнішнє посилання"
+msgstr ""
+
+#: core/models.py:99
+msgid "Відкривати в новій вкладці"
+msgstr ""
+
+#: core/models.py:102
+msgid "Елемент меню"
+msgstr ""
+
+#: core/models.py:103
+msgid "Елементи меню"
+msgstr ""
+
+#: core/models.py:121 leads/forms.py:263
+msgid "Назва компанії"
+msgstr ""
+
+#: core/models.py:122 leads/models.py:248 pages/models.py:183
+#: templates/pages/catalog.html:99
+msgid "Опис"
+msgstr "Описание"
+
+#: core/models.py:125
+msgid "Monobank Token"
+msgstr ""
+
+#: core/models.py:126
+msgid "Webhook URL"
+msgstr ""
+
+#: core/models.py:129
+msgid "IBAN"
+msgstr ""
+
+#: core/models.py:130
+msgid "Ім'я отримувача"
+msgstr ""
+
+#: core/models.py:131
+msgid "Код отримувача"
+msgstr ""
+
+#: core/models.py:133
+msgid "Активні"
+msgstr ""
+
+#: core/models.py:139 core/models.py:140
+msgid "Налаштування платежів"
+msgstr ""
+
+#: core/models.py:150
+msgid "Перегляд сторінки"
+msgstr ""
+
+#: core/models.py:151
+msgid "Відправка форми"
+msgstr ""
+
+#: core/models.py:152
+msgid "Завантаження"
+msgstr ""
+
+#: core/models.py:153
+msgid "Контакт"
+msgstr ""
+
+#: core/models.py:154
+msgid "Перегляд продукту"
+msgstr ""
+
+#: core/models.py:157
+msgid "Тип події"
+msgstr ""
+
+#: core/models.py:158
+msgid "Назва події"
+msgstr ""
+
+#: core/models.py:159
+msgid "URL сторінки"
+msgstr ""
+
+#: core/models.py:160 leads/models.py:83
+msgid "User Agent"
+msgstr ""
+
+#: core/models.py:161 leads/models.py:82
+msgid "IP адреса"
+msgstr ""
+
+#: core/models.py:169
+msgid "Подія аналітики"
+msgstr ""
+
+#: core/models.py:170
+msgid "Події аналітики"
+msgstr ""
+
+#: leads/admin.py:44 templates/leads/thank_you_detail.html:26
+msgid "Деталі заявки"
+msgstr "Детали заявки"
+
+#: leads/admin.py:47
+msgid "Статус та примітки"
+msgstr ""
+
+#: leads/admin.py:50
+msgid "Технічна інформація"
+msgstr ""
+
+#: leads/admin.py:54
+msgid "GDPR згода"
+msgstr ""
+
+#: leads/admin.py:57
+msgid "Дати"
+msgstr ""
+
+#: leads/admin.py:69
+msgid "Повний контакт"
+msgstr ""
+
+#: leads/admin.py:80
+msgid "Позначити як \"Зв'язалися\""
+msgstr ""
+
+#: leads/admin.py:89
+msgid "Позначити як спам"
+msgstr ""
+
+#: leads/admin.py:113 pages/admin.py:26 pages/admin.py:61 pages/admin.py:105
+msgid "Українська мова"
+msgstr ""
+
+#: leads/admin.py:116 pages/admin.py:29 pages/admin.py:64 pages/admin.py:114
+msgid "Російська мова"
+msgstr ""
+
+#: leads/admin.py:119 pages/admin.py:32 pages/admin.py:67 pages/admin.py:124
+msgid "Англійська мова"
+msgstr ""
+
+#: leads/admin.py:131
+msgid "Email налаштування"
+msgstr ""
+
+#: leads/admin.py:136
+msgid "Telegram налаштування"
+msgstr ""
+
+#: leads/admin.py:141
+msgid "Viber налаштування"
+msgstr ""
+
+#: leads/admin.py:146
+msgid "Загальні налаштування"
+msgstr ""
+
+#: leads/forms.py:19 leads/models.py:57
+msgid "Телефон"
+msgstr "Телефон"
+
+#: leads/forms.py:24
+msgid "Введіть коректний номер телефону (наприклад: +380501234567)"
+msgstr ""
+
+#: leads/forms.py:31
+msgid "Формат: +380501234567"
+msgstr ""
+
+#: leads/forms.py:47 leads/forms.py:176 leads/forms.py:251
+msgid "Ваше ім'я"
+msgstr ""
+
+#: leads/forms.py:52 leads/forms.py:186 leads/forms.py:255
+msgid "Ваш email"
+msgstr ""
+
+#: leads/forms.py:57
+msgid "Назва компанії (опційно)"
+msgstr ""
+
+#: leads/forms.py:61
+msgid "Ваша посада"
+msgstr ""
+
+#: leads/forms.py:68
+msgid "Тип обладнання або продукт"
+msgstr ""
+
+#: leads/forms.py:72
+msgid "Тема запиту"
+msgstr ""
+
+#: leads/forms.py:76
+msgid "Опишіть ваш запит детальніше..."
+msgstr ""
+
+#: leads/forms.py:82
+msgid "Наприклад: $10,000 - $50,000"
+msgstr ""
+
+#: leads/forms.py:86
+msgid "Наприклад: протягом 3 місяців"
+msgstr ""
+
+#: leads/forms.py:98 leads/forms.py:205 templates/leads/lead_form.html:41
+msgid "Ім'я *"
+msgstr "Имя *"
+
+#: leads/forms.py:99 leads/forms.py:207 templates/leads/lead_form.html:50
+msgid "Email *"
+msgstr "Email *"
+
+#: leads/forms.py:100 leads/forms.py:206 templates/leads/lead_form.html:45
+msgid "Телефон *"
+msgstr "Телефон *"
+
+#: leads/forms.py:101 leads/models.py:60 templates/base.html:230
+#: templates/leads/lead_form.html:54
+msgid "Компанія"
+msgstr "Компания"
+
+#: leads/forms.py:102 leads/models.py:61
+msgid "Посада"
+msgstr "Должность"
+
+#: leads/forms.py:103 leads/models.py:64
+msgid "Тип запиту"
+msgstr "Тип запроса"
+
+#: leads/forms.py:104 leads/models.py:65
+msgid "Продукт"
+msgstr "Продукт"
+
+#: leads/forms.py:105 leads/models.py:67
+msgid "Тема"
+msgstr "Тема"
+
+#: leads/forms.py:106
+msgid "Повідомлення *"
+msgstr ""
+
+#: leads/forms.py:107
+msgid "Бюджет проекту"
+msgstr ""
+
+#: leads/forms.py:108
+msgid "Терміни реалізації"
+msgstr ""
+
+#: leads/forms.py:109
+msgid "Я погоджуюся на обробку персональних даних *"
+msgstr ""
+
+#: leads/forms.py:110
+msgid "Я погоджуюся на отримання маркетингових повідомлень"
+msgstr ""
+
+#: leads/forms.py:123
+msgid "Запит щодо"
+msgstr ""
+
+#: leads/forms.py:129 leads/forms.py:225 leads/forms.py:286
+msgid "Спам детектовано."
+msgstr ""
+
+#: leads/forms.py:141
+msgid "Телефон є обов'язковим полем."
+msgstr ""
+
+#: leads/forms.py:158
+msgid "Необхідно надати згоду на обробку персональних даних."
+msgstr ""
+
+#: leads/forms.py:191
+msgid "Тип обладнання"
+msgstr ""
+
+#: leads/forms.py:195
+msgid "Додаткові коментарі (опційно)"
+msgstr ""
+
+#: leads/forms.py:208
+msgid "Коментарі"
+msgstr ""
+
+#: leads/forms.py:209
+msgid "Згода на обробку даних *"
+msgstr ""
+
+#: leads/forms.py:231
+msgid "Швидкий запит ціни"
+msgstr ""
+
+#: leads/forms.py:231
+msgid "Загальний запит"
+msgstr ""
+
+#: leads/forms.py:270
+msgid "Тема повідомлення"
+msgstr ""
+
+#: leads/forms.py:274
+msgid "Ваше повідомлення..."
+msgstr ""
+
+#: leads/forms.py:302
+msgid "Внутрішні примітки..."
+msgstr ""
+
+#: leads/models.py:9
+msgid "Назва джерела"
+msgstr ""
+
+#: leads/models.py:10
+msgid "UTM Source"
+msgstr ""
+
+#: leads/models.py:11
+msgid "UTM Medium"
+msgstr ""
+
+#: leads/models.py:12
+msgid "UTM Campaign"
+msgstr ""
+
+#: leads/models.py:18
+msgid "Джерело заявки"
+msgstr ""
+
+#: leads/models.py:19
+msgid "Джерела заявок"
+msgstr ""
+
+#: leads/models.py:30
+msgid "Нова"
+msgstr "Новая"
+
+#: leads/models.py:31
+msgid "Зв'язалися"
+msgstr "Связались"
+
+#: leads/models.py:32
+msgid "Відправили пропозицію"
+msgstr "Отправили предложение"
+
+#: leads/models.py:33
+msgid "Закрито (продано)"
+msgstr "Закрыто (продано)"
+
+#: leads/models.py:34
+msgid "Закрито (втрачено)"
+msgstr "Закрыто (потеряно)"
+
+#: leads/models.py:35
+msgid "Спам"
+msgstr "Спам"
+
+#: leads/models.py:39
+msgid "Запит ціни"
+msgstr "Запрос цены"
+
+#: leads/models.py:40
+msgid "Технічна консультація"
+msgstr "Технічна консультація"
+
+#: leads/models.py:41
+msgid "Партнерство"
+msgstr "Партнёрство"
+
+#: leads/models.py:42 templates/pages/about.html:238
+msgid "Сервіс"
+msgstr "Сервис"
+
+#: leads/models.py:43
+msgid "Інше"
+msgstr "Другое"
+
+#: leads/models.py:49
+msgid "Ім'я"
+msgstr "Имя"
+
+#: leads/models.py:50
+msgid "Email"
+msgstr "Email"
+
+#: leads/models.py:55
+msgid "Номер телефону має бути у форматі: \"+380501234567\". До 15 цифр."
+msgstr ""
+
+#: leads/models.py:66
+msgid "Назва продукту або тип обладнання"
+msgstr ""
+
+#: leads/models.py:68 templates/leads/lead_form.html:58
+msgid "Повідомлення"
+msgstr "Сообщение"
+
+#: leads/models.py:71
+msgid "Бюджет"
+msgstr "Бюджет"
+
+#: leads/models.py:72
+msgid "Орієнтовний бюджет проекту"
+msgstr ""
+
+#: leads/models.py:73
+msgid "Терміни проекту"
+msgstr "Сроки проекта"
+
+#: leads/models.py:77
+msgid "Джерело"
+msgstr ""
+
+#: leads/models.py:78
+msgid "Сторінка джерела"
+msgstr ""
+
+#: leads/models.py:79
+msgid "Реферер"
+msgstr ""
+
+#: leads/models.py:87
+msgid "Статус"
+msgstr ""
+
+#: leads/models.py:90
+msgid "Згода на обробку даних"
+msgstr ""
+
+#: leads/models.py:91
+msgid "Згода на маркетинг"
+msgstr ""
+
+#: leads/models.py:96
+msgid "Дата контакту"
+msgstr ""
+
+#: leads/models.py:99
+msgid "Внутрішні примітки"
+msgstr ""
+
+#: leads/models.py:100
+msgid "Примітки для команди (не видимі клієнту)"
+msgstr ""
+
+#: leads/models.py:103
+msgid "Заявка"
+msgstr ""
+
+#: leads/models.py:104
+msgid "Заявки"
+msgstr ""
+
+#: leads/models.py:136
+msgid "Email увімкнено"
+msgstr ""
+
+#: leads/models.py:137
+msgid "Email одержувачі"
+msgstr ""
+
+#: leads/models.py:138
+msgid "Email адреси через кому"
+msgstr ""
+
+#: leads/models.py:140
+msgid "Шаблон теми email"
+msgstr ""
+
+#: leads/models.py:144
+msgid "Telegram увімкнено"
+msgstr ""
+
+#: leads/models.py:145
+msgid "Telegram Bot Token"
+msgstr ""
+
+#: leads/models.py:146
+msgid "Telegram Chat ID"
+msgstr ""
+
+#: leads/models.py:149
+msgid "Viber увімкнено"
+msgstr ""
+
+#: leads/models.py:150
+msgid "Viber Bot Token"
+msgstr ""
+
+#: leads/models.py:151
+msgid "Viber Admin ID"
+msgstr ""
+
+#: leads/models.py:154
+msgid "Затримка нотифікації (сек)"
+msgstr ""
+
+#: leads/models.py:156
+msgid "Затримка перед відправкою"
+msgstr ""
+
+#: leads/models.py:157
+msgid "Максимум спроб"
+msgstr ""
+
+#: leads/models.py:163 leads/models.py:164
+msgid "Налаштування нотифікацій"
+msgstr ""
+
+#: leads/models.py:186
+msgid "Нова заявка"
+msgstr ""
+
+#: leads/models.py:187
+msgid "Підтвердження заявки"
+msgstr ""
+
+#: leads/models.py:188
+msgid "Пропозиція відправлена"
+msgstr ""
+
+#: leads/models.py:189
+msgid "Нагадування"
+msgstr ""
+
+#: leads/models.py:192
+msgid "Назва шаблону"
+msgstr ""
+
+#: leads/models.py:193
+msgid "Тип шаблону"
+msgstr ""
+
+#: leads/models.py:195
+msgid "Тема (УК)"
+msgstr ""
+
+#: leads/models.py:196
+msgid "Тема (РУ)"
+msgstr ""
+
+#: leads/models.py:197
+msgid "Тема (EN)"
+msgstr ""
+
+#: leads/models.py:199
+msgid "Контент (УК)"
+msgstr ""
+
+#: leads/models.py:200
+msgid "Контент (РУ)"
+msgstr ""
+
+#: leads/models.py:201
+msgid "Контент (EN)"
+msgstr ""
+
+#: leads/models.py:203
+msgid "Активний"
+msgstr ""
+
+#: leads/models.py:209
+msgid "Email шаблон"
+msgstr ""
+
+#: leads/models.py:210
+msgid "Email шаблони"
+msgstr ""
+
+#: leads/models.py:238
+msgid "Email відправлено"
+msgstr ""
+
+#: leads/models.py:239
+msgid "Telegram відправлено"
+msgstr ""
+
+#: leads/models.py:240
+msgid "Viber відправлено"
+msgstr ""
+
+#: leads/models.py:241
+msgid "Статус змінено"
+msgstr ""
+
+#: leads/models.py:242
+msgid "Контакт здійснено"
+msgstr ""
+
+#: leads/models.py:243
+msgid "Додано примітку"
+msgstr ""
+
+#: leads/models.py:247
+msgid "Тип активності"
+msgstr ""
+
+#: leads/models.py:254
+msgid "Активність заявки"
+msgstr ""
+
+#: leads/models.py:255
+msgid "Активності заявок"
+msgstr ""
+
+#: pages/admin.py:70
+msgid "Кнопка"
+msgstr ""
+
+#: pages/admin.py:101 pages/models.py:106
+msgid "Зображення"
+msgstr ""
+
+#: pages/admin.py:134
+msgid "Технічні характеристики (JSON)"
+msgstr ""
+
+#: pages/admin.py:138
+msgid "SEO"
+msgstr ""
+
+#: pages/admin.py:146
+msgid "Системна інформація"
+msgstr ""
+
+#: pages/models.py:18 templates/base.html:150
+msgid "Головна"
+msgstr "Главная"
+
+#: pages/models.py:19 templates/base.html:101 templates/base.html:113
+#: templates/base.html:153 templates/base.html:232
+msgid "Про компанію"
+msgstr "О компании"
+
+#: pages/models.py:20 templates/base.html:156 templates/base.html:235
+#: templates/base.html:240 templates/leads/lead_form.html:83
+#: templates/pages/about.html:28 templates/pages/catalog.html:170
+#: templates/pages/contacts.html:109 templates/pages/home.html:46
+msgid "Контакти"
+msgstr "Контакты"
+
+#: pages/models.py:21 templates/base.html:220 templates/pages/catalog.html:47
+#: templates/pages/home.html:58
+msgid "Продукція"
+msgstr "Продукция"
+
+#: pages/models.py:22
+msgid "Кастомна сторінка"
+msgstr ""
+
+#: pages/models.py:25
+msgid "Тип сторінки"
+msgstr ""
+
+#: pages/models.py:26 pages/models.py:204
+msgid "Slug"
+msgstr ""
+
+#: pages/models.py:29 pages/models.py:132
+msgid "Заголовок (укр)"
+msgstr ""
+
+#: pages/models.py:30 pages/models.py:133
+msgid "Заголовок (рус)"
+msgstr ""
+
+#: pages/models.py:31 pages/models.py:134
+msgid "Заголовок (англ)"
+msgstr ""
+
+#: pages/models.py:33
+msgid "Контент (укр)"
+msgstr ""
+
+#: pages/models.py:34
+msgid "Контент (рус)"
+msgstr ""
+
+#: pages/models.py:35
+msgid "Контент (англ)"
+msgstr ""
+
+#: pages/models.py:38 pages/models.py:242
+msgid "Meta title (укр)"
+msgstr ""
+
+#: pages/models.py:39 pages/models.py:243
+msgid "Meta title (рус)"
+msgstr ""
+
+#: pages/models.py:40 pages/models.py:244
+msgid "Meta title (англ)"
+msgstr ""
+
+#: pages/models.py:42 pages/models.py:246
+msgid "Meta description (укр)"
+msgstr ""
+
+#: pages/models.py:43 pages/models.py:247
+msgid "Meta description (рус)"
+msgstr ""
+
+#: pages/models.py:44 pages/models.py:248
+msgid "Meta description (англ)"
+msgstr ""
+
+#: pages/models.py:46 pages/models.py:119 pages/models.py:185
+#: pages/models.py:239
+msgid "Опубліковано"
+msgstr ""
+
+#: pages/models.py:52
+msgid "Сторінки"
+msgstr ""
+
+#: pages/models.py:104 pages/models.py:154
+msgid "Hero секція"
+msgstr ""
+
+#: pages/models.py:105
+msgid "Текстова секція"
+msgstr ""
+
+#: pages/models.py:107
+msgid "Галерея"
+msgstr ""
+
+#: pages/models.py:108
+msgid "Особливості"
+msgstr ""
+
+#: pages/models.py:109
+msgid "Відгуки"
+msgstr ""
+
+#: pages/models.py:110
+msgid "Call to Action"
+msgstr ""
+
+#: pages/models.py:111
+msgid "Контактна форма"
+msgstr ""
+
+#: pages/models.py:115
+msgid "Тип секції"
+msgstr ""
+
+#: pages/models.py:116
+msgid "Заголовок секції"
+msgstr ""
+
+#: pages/models.py:117
+msgid "Контент секції"
+msgstr ""
+
+#: pages/models.py:122
+msgid "Секція"
+msgstr ""
+
+#: pages/models.py:123
+msgid "Секції"
+msgstr ""
+
+#: pages/models.py:136
+msgid "Підзаголовок (укр)"
+msgstr ""
+
+#: pages/models.py:137
+msgid "Підзаголовок (рус)"
+msgstr ""
+
+#: pages/models.py:138
+msgid "Підзаголовок (англ)"
+msgstr ""
+
+#: pages/models.py:140
+msgid "Опис (укр)"
+msgstr ""
+
+#: pages/models.py:141
+msgid "Опис (рус)"
+msgstr ""
+
+#: pages/models.py:142
+msgid "Опис (англ)"
+msgstr ""
+
+#: pages/models.py:144
+msgid "Фонове зображення"
+msgstr ""
+
+#: pages/models.py:145
+msgid "Текст кнопки (укр)"
+msgstr ""
+
+#: pages/models.py:145 pages/models.py:146 pages/models.py:147
+msgid "Дізнатися більше"
+msgstr ""
+
+#: pages/models.py:146
+msgid "Текст кнопки (рус)"
+msgstr ""
+
+#: pages/models.py:147
+msgid "Текст кнопки (англ)"
+msgstr ""
+
+#: pages/models.py:148
+msgid "URL кнопки"
+msgstr ""
+
+#: pages/models.py:155
+msgid "Hero секції"
+msgstr ""
+
+#: pages/models.py:180
+msgid "Назва"
+msgstr ""
+
+#: pages/models.py:181
+msgid "Логотип"
+msgstr ""
+
+#: pages/models.py:182
+msgid "Веб-сайт"
+msgstr ""
+
+#: pages/models.py:188
+msgid "Партнер"
+msgstr ""
+
+#: pages/models.py:189 templates/base.html:102 templates/base.html:114
+#: templates/base.html:154 templates/base.html:233
+#: templates/pages/home.html:276
+msgid "Партнери"
+msgstr "Партнёры"
+
+#: pages/models.py:200
+msgid "Назва (укр)"
+msgstr ""
+
+#: pages/models.py:201
+msgid "Назва (рус)"
+msgstr ""
+
+#: pages/models.py:202
+msgid "Назва (англ)"
+msgstr ""
+
+#: pages/models.py:207
+msgid "Короткий опис (укр)"
+msgstr ""
+
+#: pages/models.py:208
+msgid "Короткий опис (рус)"
+msgstr ""
+
+#: pages/models.py:209
+msgid "Короткий опис (англ)"
+msgstr ""
+
+#: pages/models.py:212
+msgid "Повний опис (укр)"
+msgstr ""
+
+#: pages/models.py:213
+msgid "Повний опис (рус)"
+msgstr ""
+
+#: pages/models.py:214
+msgid "Повний опис (англ)"
+msgstr ""
+
+#: pages/models.py:217
+msgid "Зображення 1"
+msgstr ""
+
+#: pages/models.py:218
+msgid "Зображення 2"
+msgstr ""
+
+#: pages/models.py:219
+msgid "Зображення 3"
+msgstr ""
+
+#: pages/models.py:222 templates/pages/catalog.html:106
+msgid "Технічні характеристики"
+msgstr "Технические характеристики"
+
+#: pages/models.py:225
+msgid "Переваги (укр)"
+msgstr ""
+
+#: pages/models.py:226
+msgid "Переваги (рус)"
+msgstr ""
+
+#: pages/models.py:227
+msgid "Переваги (англ)"
+msgstr ""
+
+#: pages/models.py:230
+msgid "Галузі застосування (укр)"
+msgstr ""
+
+#: pages/models.py:231
+msgid "Галузі застосування (рус)"
+msgstr ""
+
+#: pages/models.py:232
+msgid "Галузі застосування (англ)"
+msgstr ""
+
+#: pages/models.py:235
+msgid "Іконка (emoji)"
+msgstr ""
+
+#: pages/models.py:255
+msgid "Товар"
+msgstr ""
+
+#: pages/models.py:256
+msgid "Товари"
+msgstr ""
+
+#: templates/base.html:18
+msgid "Енергетичне обладнання та теплообмінники"
+msgstr "Энергетическое оборудование и теплообменники"
+
+#: templates/base.html:19
+msgid "теплообмінники, енергетичне обладнання, Adiabatic"
+msgstr "теплообменники, энергетическое оборудование, Adiabatic"
+
+#: templates/base.html:64
+msgid "Перейти до основного контенту"
+msgstr "Перейти к основному содержимому"
+
+#: templates/base.html:73 templates/base.html:81
+msgid "Відкрити меню"
+msgstr "Открыть меню"
+
+#: templates/base.html:99 templates/base.html:111 templates/base.html:151
+#: templates/pages/catalog.html:29
+msgid "Каталог"
+msgstr "Каталог"
+
+#: templates/base.html:100 templates/base.html:112 templates/base.html:152
+#: templates/base.html:223 templates/pages/home.html:164
+msgid "Сфери застосування"
+msgstr "Сферы применения"
+
+#: templates/base.html:103 templates/base.html:115 templates/base.html:155
+#: templates/base.html:234
+msgid "Корисна інформація"
+msgstr "Полезная информация"
+
+#: templates/base.html:180
+msgid "Зворотний дзвінок"
+msgstr "Обратный звонок"
+
+#: templates/base.html:210 templates/pages/about.html:25
+msgid "Надійний постачальник енергетичного обладнання для промислових процесів"
+msgstr "Надёжный поставщик энергетического оборудования для промышленных процессов"
+
+#: templates/base.html:222
+msgid "Каталог обладнання"
+msgstr "Каталог оборудования"
+
+#: templates/base.html:224 templates/pages/catalog.html:36
+#: templates/pages/home.html:264
+msgid "Завантажити каталог"
+msgstr "Скачать каталог"
+
+#: templates/base.html:225
+msgid "Завантажити опитувальний лист"
+msgstr "Скачать опросный лист"
+
+#: templates/base.html:260
+msgid "Всі права захищені."
+msgstr "Все права защищены."
+
+#: templates/base.html:266
+msgid "Вгору"
+msgstr "Вверх"
+
+#: templates/base.html:267
+msgid "Повернутися вгору"
+msgstr "Вернуться вверх"
+
+#: templates/leads/lead_form.html:4 templates/leads/lead_form.html:5
+#: templates/leads/lead_form.html:21
+msgid "Залишити заявку"
+msgstr "Оставить заявку"
+
+#: templates/leads/lead_form.html:6
+msgid "Залиште заявку для отримання консультації"
+msgstr "Оставьте заявку для получения консультации"
+
+#: templates/leads/lead_form.html:23
+msgid "Отримати"
+msgstr "Получить"
+
+#: templates/leads/lead_form.html:24
+msgid "консультацію"
+msgstr "консультацию"
+
+#: templates/leads/lead_form.html:31
+msgid ""
+"Заповніть форму нижче і наші фахівці зв'яжуться з вами найближчим часом для "
+"надання професійної консультації."
+msgstr ""
+
+#: templates/leads/lead_form.html:60
+msgid "Опишіть ваші потреби або запитання..."
+msgstr "Опишите ваши потребности или вопросы..."
+
+#: templates/leads/lead_form.html:63 templates/pages/contacts.html:104
+msgid "Відправити заявку"
+msgstr "Отправить заявку"
+
+#: templates/leads/lead_form.html:74
+msgid "Потрібна додаткова інформація?"
+msgstr "Нужна дополнительная информация?"
+
+#: templates/leads/lead_form.html:76
+msgid "Зв'яжіться з нами"
+msgstr "Свяжитесь с нами"
+
+#: templates/leads/lead_form.html:77
+msgid "безпосередньо!"
+msgstr "напрямую!"
+
+#: templates/leads/lead_form.html:80
+msgid ""
+"Наші фахівці готові відповісти на всі ваші запитання та надати детальну "
+"консультацію"
+msgstr ""
+
+#: templates/leads/lead_form.html:88
+msgid "Форма"
+msgstr "Форма"
+
+#: templates/leads/thank_you.html:16 templates/leads/thank_you_detail.html:16
+msgid "Дякуємо за заявку!"
+msgstr "Спасибо за заявку!"
+
+#: templates/leads/thank_you.html:19
+msgid ""
+"Ваша заявка успішно відправлена. Наш менеджер зв'яжеться з вами найближчим "
+"часом."
+msgstr ""
+
+#: templates/leads/thank_you.html:24 templates/leads/thank_you_detail.html:63
+msgid "Очікуваний час відповіді: протягом 2 годин у робочий час."
+msgstr "Ожидаемое время ответа: в течение 2 часов в рабочее время."
+
+#: templates/leads/thank_you.html:32 templates/leads/thank_you_detail.html:74
+msgid "На головну"
+msgstr "На главную"
+
+#: templates/leads/thank_you.html:35 templates/leads/thank_you_detail.html:77
+msgid "Переглянути каталог"
+msgstr "Просмотреть каталог"
+
+#: templates/leads/thank_you.html:42 templates/leads/thank_you_detail.html:89
+msgid "Додаткові контакти"
+msgstr "Дополнительные контакты"
+
+#: templates/leads/thank_you_detail.html:19
+#, python-format
+msgid "Дякуємо, %(name)s! Ваша заявка успішно відправлена."
+msgstr ""
+
+#: templates/leads/thank_you_detail.html:30
+msgid "Номер заявки:"
+msgstr "Номер заявки:"
+
+#: templates/leads/thank_you_detail.html:36
+msgid "Продукт:"
+msgstr "Продукт:"
+
+#: templates/leads/thank_you_detail.html:42
+msgid "Тип запиту:"
+msgstr "Тип запроса:"
+
+#: templates/leads/thank_you_detail.html:47
+msgid "Дата створення:"
+msgstr "Дата создания:"
+
+#: templates/leads/thank_you_detail.html:53
+msgid "Тема:"
+msgstr "Тема:"
+
+#: templates/leads/thank_you_detail.html:66
+msgid "Ви отримаете повідомлення на email:"
+msgstr "Вы получите уведомление на email:"
+
+#: templates/leads/thank_you_detail.html:81
+msgid "Повернутися до продукту"
+msgstr "Вернуться к продукту"
+
+#: templates/pages/about.html:4 templates/pages/about.html:5
+msgid "Про компанію - Adiabatic"
+msgstr "О компании - Adiabatic"
+
+#: templates/pages/about.html:6
+msgid "ТОВ \\"
+msgstr ""
+
+#: templates/pages/about.html:13 templates/pages/blog.html:13
+#: templates/pages/catalog.html:21 templates/pages/home.html:24
+#: templates/pages/home.html:29 templates/pages/partners.html:13
+#: templates/pages/products.html:13
+msgid "Ваш браузер не підтримує відео."
+msgstr "Ваш браузер не поддерживает видео."
+
+#: templates/pages/about.html:21
+msgid "ТОВ"
+msgstr "ООО"
+
+#: templates/pages/about.html:29
+msgid "Розрахунок обладнання"
+msgstr "Расчёт оборудования"
+
+#: templates/pages/about.html:39
+msgid "Наша місія"
+msgstr "Наша миссия"
+
+#: templates/pages/about.html:41
+msgid "Ефективні рішення для"
+msgstr "Эффективные решения для"
+
+#: templates/pages/about.html:42
+msgid "енергозбереження"
+msgstr "энергосбережения"
+
+#: templates/pages/about.html:49
+msgid ""
+"ADIABATIC є сучасною динамічно розвиваючоюся компанією, яка прагне стати "
+"провідним постачальником продуктів і рішень для організації процесів "
+"теплообміну та управління потоками."
+msgstr ""
+
+#: templates/pages/about.html:55
+msgid ""
+"Ми розробляємо рішення в таких напрямках, як оптимізація використання "
+"енергії, скорочення витрат підприємств на експлуатацію технологічних "
+"позицій, пов'язаних з процесами теплообміну, а також по охороні "
+"навколишнього середовища."
+msgstr ""
+
+#: templates/pages/about.html:71
+msgid "Років досвіду"
+msgstr "Лет опыта"
+
+#: templates/pages/about.html:72
+msgid "У сфері енергетичного обладнання"
+msgstr "В сфере энергетического оборудования"
+
+#: templates/pages/about.html:77
+msgid "Проектів"
+msgstr "Проектов"
+
+#: templates/pages/about.html:78
+msgid "Успішно реалізовано"
+msgstr "Успешно реализовано"
+
+#: templates/pages/about.html:83
+msgid "Клієнтів"
+msgstr "Клиентов"
+
+#: templates/pages/about.html:84
+msgid "Довіряють нам"
+msgstr "Доверяют нам"
+
+#: templates/pages/about.html:89
+msgid "Підтримка"
+msgstr "Поддержка"
+
+#: templates/pages/about.html:90 templates/pages/partners.html:139
+msgid "Технічна підтримка"
+msgstr "Техническая поддержка"
+
+#: templates/pages/about.html:100
+msgid "Наші цінності"
+msgstr "Наши ценности"
+
+#: templates/pages/about.html:102
+msgid "Що нами"
+msgstr "Что нами"
+
+#: templates/pages/about.html:103
+msgid "керує"
+msgstr "движет"
+
+#: templates/pages/about.html:112
+msgid "Якість"
+msgstr "Качество"
+
+#: templates/pages/about.html:114
+msgid ""
+"Всі наші продукти відповідають європейським стандартам якості та безпеки. Ми "
+"використовуємо тільки сертифіковані матеріали та комплектуючі."
+msgstr ""
+
+#: templates/pages/about.html:122
+msgid "Надійність"
+msgstr "Надёжность"
+
+#: templates/pages/about.html:124
+msgid ""
+"Довготривалі партнерські відносини з клієнтами базуються на взаємній довірі, "
+"дотриманні зобов'язань та прозорості у співпраці."
+msgstr ""
+
+#: templates/pages/about.html:132
+msgid "Інновації"
+msgstr "Инновации"
+
+#: templates/pages/about.html:134
+msgid ""
+"Ми постійно впроваджуємо нові технології та рішення для підвищення "
+"ефективності та енергозбереження нашого обладнання."
+msgstr ""
+
+#: templates/pages/about.html:142
+msgid "Ефективність"
+msgstr "Эффективность"
+
+#: templates/pages/about.html:144
+msgid ""
+"Оптимізовані процеси виробництва дозволяють нам забезпечувати мінімальні "
+"терміни виготовлення та конкурентні ціни."
+msgstr ""
+
+#: templates/pages/about.html:152
+msgid "Екологічність"
+msgstr "Экологичность"
+
+#: templates/pages/about.html:154
+msgid ""
+"Наше обладнання сприяє зменшенню споживання енергії та скороченню викидів "
+"шкідливих речовин в атмосферу."
+msgstr ""
+
+#: templates/pages/about.html:162 templates/pages/about.html:328
+msgid "Команда"
+msgstr "Команда"
+
+#: templates/pages/about.html:164
+msgid ""
+"Професійна команда досвідчених інженерів та фахівців забезпечує високий "
+"рівень технічної підтримки та сервісу."
+msgstr ""
+
+#: templates/pages/about.html:176
+msgid "Послуги"
+msgstr "Услуги"
+
+#: templates/pages/about.html:178
+msgid "Повний цикл"
+msgstr "Полный цикл"
+
+#: templates/pages/about.html:179
+msgid "обслуговування"
+msgstr "обслуживания"
+
+#: templates/pages/about.html:188
+msgid "Проектування"
+msgstr "Проектирование"
+
+#: templates/pages/about.html:190
+msgid ""
+"Розробка індивідуальних проектів теплообмінного обладнання відповідно до "
+"ваших технічних вимог та умов експлуатації."
+msgstr ""
+
+#: templates/pages/about.html:198
+msgid "Виготовлення"
+msgstr "Изготовление"
+
+#: templates/pages/about.html:200
+msgid ""
+"Виробництво обладнання на сучасному обладнанні з контролем якості на всіх "
+"етапах виробничого процесу."
+msgstr ""
+
+#: templates/pages/about.html:208
+msgid "Розрахунки"
+msgstr "Расчёты"
+
+#: templates/pages/about.html:210
+msgid ""
+"Професійні теплові та гідравлічні розрахунки для оптимального підбору "
+"обладнання під ваші потреби."
+msgstr ""
+
+#: templates/pages/about.html:218
+msgid "Доставка"
+msgstr "Доставка"
+
+#: templates/pages/about.html:220
+msgid ""
+"Швидка та безпечна доставка обладнання по всій Україні з гарантією "
+"збереження та цілісності."
+msgstr ""
+
+#: templates/pages/about.html:228
+msgid "Монтаж"
+msgstr "Монтаж"
+
+#: templates/pages/about.html:230
+msgid ""
+"Професійний монтаж та налаштування обладнання досвідченими спеціалістами з "
+"дотриманням всіх технічних вимог."
+msgstr ""
+
+#: templates/pages/about.html:240
+msgid ""
+"Повне сервісне обслуговування, планові ТО, ремонт та модернізація існуючого "
+"обладнання протягом всього терміну експлуатації."
+msgstr ""
+
+#: templates/pages/about.html:252
+msgid "Галузі"
+msgstr "Отрасли"
+
+#: templates/pages/about.html:254
+msgid "Сфери"
+msgstr "Сферы"
+
+#: templates/pages/about.html:255
+msgid "застосування"
+msgstr "применения"
+
+#: templates/pages/about.html:264 templates/pages/home.html:176
+#: templates/pages/products.html:51 templates/pages/products.html:133
+msgid "Нафтогазова галузь"
+msgstr "Нефтегазовая отрасль"
+
+#: templates/pages/about.html:266
+msgid ""
+"Теплообмінники для нафтопереробки, газопереробки, хімічних процесів. Робота "
+"з агресивними середовищами при високих температурах і тисках."
+msgstr ""
+
+#: templates/pages/about.html:274 templates/pages/home.html:186
+#: templates/pages/products.html:77
+msgid "Хімічна промисловість"
+msgstr "Химическая промышленность"
+
+#: templates/pages/about.html:276 templates/pages/home.html:188
+msgid ""
+"Спеціалізовані теплообмінники для хімічних реакторів, дистиляційних колон, "
+"охолодження та нагрівання хімічних речовин."
+msgstr ""
+
+#: templates/pages/about.html:284 templates/pages/home.html:196
+#: templates/pages/products.html:210
+msgid "Енергетика"
+msgstr "Энергетика"
+
+#: templates/pages/about.html:286 templates/pages/home.html:198
+msgid ""
+"Теплообмінне обладнання для ТЕС, АЕС, когенераційних установок, системи "
+"охолодження турбін та генераторів."
+msgstr ""
+
+#: templates/pages/about.html:294 templates/pages/home.html:206
+msgid "Металургія"
+msgstr "Металлургия"
+
+#: templates/pages/about.html:296 templates/pages/home.html:208
+msgid ""
+"Охолодження металургійних печей, утилізація тепла, системи охолодження "
+"доменних газів та прокатних станів."
+msgstr ""
+
+#: templates/pages/about.html:304 templates/pages/home.html:216
+#: templates/pages/products.html:103
+msgid "Харчова промисловість"
+msgstr "Пищевая промышленность"
+
+#: templates/pages/about.html:306 templates/pages/home.html:218
+msgid ""
+"Пастеризатори, охолоджувачі, випарники для молочної, пивної та інших галузей "
+"харчової промисловості."
+msgstr ""
+
+#: templates/pages/about.html:314 templates/pages/home.html:226
+msgid "Морське обладнання"
+msgstr "Морское оборудование"
+
+#: templates/pages/about.html:316 templates/pages/home.html:228
+msgid ""
+"Теплообмінники для суднових двигунів, опріснювальних установок, систем "
+"кондиціонування на морських платформах."
+msgstr ""
+
+#: templates/pages/about.html:330
+msgid "Наші"
+msgstr "Наши"
+
+#: templates/pages/about.html:331
+msgid "експерти"
+msgstr "эксперты"
+
+#: templates/pages/about.html:340
+msgid "Керівництво"
+msgstr "Руководство"
+
+#: templates/pages/about.html:342
+msgid ""
+"Досвідчені менеджери з багаторічним досвідом роботи у сфері промислового "
+"обладнання"
+msgstr ""
+
+#: templates/pages/about.html:350
+msgid "Інженери-конструктори"
+msgstr "Инженеры-конструкторы"
+
+#: templates/pages/about.html:352
+msgid ""
+"Кваліфіковані інженери з проектування та розрахунку теплообмінного обладнання"
+msgstr ""
+
+#: templates/pages/about.html:360
+msgid "Технічні спеціалісти"
+msgstr "Технические специалисты"
+
+#: templates/pages/about.html:362
+msgid "Досвідчені фахівці з монтажу, налаштування та сервісного обслуговування"
+msgstr "Опытные специалисты по монтажу, настройке и сервисному обслуживанию"
+
+#: templates/pages/about.html:370
+msgid "Відділ продажів"
+msgstr "Отдел продаж"
+
+#: templates/pages/about.html:372
+msgid ""
+"Професійні менеджери з продажів, які допоможуть підібрати оптимальне рішення"
+msgstr ""
+
+#: templates/pages/about.html:385
+msgid "Готові працювати"
+msgstr "Готовы работать"
+
+#: templates/pages/about.html:386
+msgid "з нами?"
+msgstr "с нами?"
+
+#: templates/pages/about.html:389
+msgid ""
+"Зв'яжіться з нами для отримання детальної консультації та розрахунку "
+"вартості обладнання"
+msgstr ""
+
+#: templates/pages/about.html:393 templates/pages/catalog.html:37
+#: templates/pages/home.html:48 templates/pages/products.html:28
+#: templates/pages/products.html:411
+msgid "Розрахунок теплообмінника"
+msgstr "Расчёт теплообменника"
+
+#: templates/pages/about.html:396
+msgid "Наші контакти"
+msgstr "Наши контакты"
+
+#: templates/pages/blog.html:4 templates/pages/blog.html:5
+msgid "Корисна інформація - Adiabatic"
+msgstr "Полезная информация - Adiabatic"
+
+#: templates/pages/blog.html:6
+msgid ""
+"Корисні статті про теплообмінне обладнання, технічні рішення, експлуатацію "
+"та обслуговування промислового обладнання."
+msgstr ""
+
+#: templates/pages/blog.html:21
+msgid "Корисна"
+msgstr "Полезная"
+
+#: templates/pages/blog.html:22
+msgid "інформація"
+msgstr "информация"
+
+#: templates/pages/blog.html:25
+msgid "Технічні статті, інструкції та рекомендації експертів"
+msgstr "Технические статьи, инструкции и рекомендации экспертов"
+
+#: templates/pages/blog.html:28
+msgid "Переглянути статті"
+msgstr "Просмотреть статьи"
+
+#: templates/pages/blog.html:29
+msgid "Задати питання"
+msgstr "Задать вопрос"
+
+#: templates/pages/blog.html:39
+msgid "Категорії"
+msgstr "Категории"
+
+#: templates/pages/blog.html:41
+msgid "Тематичні"
+msgstr "Тематические"
+
+#: templates/pages/blog.html:42
+msgid "розділи"
+msgstr "разделы"
+
+#: templates/pages/blog.html:51
+msgid "Основи теплообміну"
+msgstr "Основы теплообмена"
+
+#: templates/pages/blog.html:53
+msgid ""
+"Теоретичні основи процесів теплообміну, типи теплообмінників, принципи роботи"
+msgstr ""
+
+#: templates/pages/blog.html:56
+msgid "12 статей"
+msgstr "12 статей"
+
+#: templates/pages/blog.html:57 templates/pages/blog.html:71
+#: templates/pages/blog.html:85 templates/pages/blog.html:99
+#: templates/pages/blog.html:113 templates/pages/blog.html:127
+msgid "Читати"
+msgstr "Читать"
+
+#: templates/pages/blog.html:65
+msgid "Монтаж та налаштування"
+msgstr "Монтаж и настройка"
+
+#: templates/pages/blog.html:67
+msgid ""
+"Інструкції з монтажу, налаштування та введення в експлуатацію теплообмінного "
+"обладнання"
+msgstr ""
+
+#: templates/pages/blog.html:70
+msgid "8 статей"
+msgstr "8 статей"
+
+#: templates/pages/blog.html:79
+msgid "Експлуатація та сервіс"
+msgstr "Эксплуатация и сервис"
+
+#: templates/pages/blog.html:81
+msgid ""
+"Рекомендації щодо експлуатації, технічного обслуговування та ремонту "
+"обладнання"
+msgstr ""
+
+#: templates/pages/blog.html:84
+msgid "15 статей"
+msgstr "15 статей"
+
+#: templates/pages/blog.html:93
+msgid "Галузеві рішення"
+msgstr "Отраслевые решения"
+
+#: templates/pages/blog.html:95
+msgid ""
+"Спеціалізовані рішення для різних галузей промисловості та їх особливості"
+msgstr ""
+
+#: templates/pages/blog.html:98
+msgid "10 статей"
+msgstr "10 статей"
+
+#: templates/pages/blog.html:107
+msgid "Розрахунки та проектування"
+msgstr "Расчёты и проектирование"
+
+#: templates/pages/blog.html:109
+msgid "Методики розрахунків, вибір оптимальних параметрів, проектування систем"
+msgstr "Методики расчётов, выбор оптимальных параметров, проектирование систем"
+
+#: templates/pages/blog.html:112
+msgid "6 статей"
+msgstr "6 статей"
+
+#: templates/pages/blog.html:121
+msgid "Енергоефективність"
+msgstr "Энергоэффективность"
+
+#: templates/pages/blog.html:123
+msgid ""
+"Способи підвищення енергоефективності, економія ресурсів, екологічні аспекти"
+msgstr ""
+
+#: templates/pages/blog.html:126
+msgid "9 статей"
+msgstr "9 статей"
+
+#: templates/pages/blog.html:139
+msgid "Популярні статті"
+msgstr "Популярные статьи"
+
+#: templates/pages/blog.html:141
+msgid "Найбільш"
+msgstr "Наиболее"
+
+#: templates/pages/blog.html:142
+msgid "читані"
+msgstr "читаемые"
+
+#: templates/pages/blog.html:151
+msgid "Як вибрати теплообмінник: повний гід"
+msgstr "Как выбрать теплообменник: полное руководство"
+
+#: templates/pages/blog.html:153
+msgid ""
+"Детальний огляд факторів, які потрібно враховувати при виборі теплообмінного "
+"обладнання для вашого підприємства. Типи, характеристики, переваги..."
+msgstr ""
+
+#: templates/pages/blog.html:156
+msgid "15 хв читання"
+msgstr "15 мин чтения"
+
+#: templates/pages/blog.html:157 templates/pages/blog.html:171
+#: templates/pages/blog.html:185 templates/pages/blog.html:199
+#: templates/pages/blog.html:213 templates/pages/blog.html:227
+msgid "Читати повністю"
+msgstr "Читать полностью"
+
+#: templates/pages/blog.html:165
+msgid "Технічне обслуговування теплообмінників"
+msgstr "Техническое обслуживание теплообменников"
+
+#: templates/pages/blog.html:167
+msgid ""
+"Практичні рекомендації щодо регулярного технічного обслуговування, графіки "
+"ТО, типові несправності та способи їх усунення..."
+msgstr ""
+
+#: templates/pages/blog.html:170
+msgid "12 хв читання"
+msgstr "12 мин чтения"
+
+#: templates/pages/blog.html:179
+msgid "Енергозбереження в промисловості"
+msgstr "Энергосбережение в промышленности"
+
+#: templates/pages/blog.html:181
+msgid ""
+"Сучасні підходи до енергозбереження за допомогою ефективного теплообмінного "
+"обладнання. Утилізація тепла, рекуперація енергії..."
+msgstr ""
+
+#: templates/pages/blog.html:184
+msgid "18 хв читання"
+msgstr "18 мин чтения"
+
+#: templates/pages/blog.html:193
+msgid "Типові помилки при монтажі"
+msgstr "Типичные ошибки при монтаже"
+
+#: templates/pages/blog.html:195
+msgid ""
+"Найпоширеніші помилки при монтажі теплообмінного обладнання та способи їх "
+"уникнення. Чек-лист для контролю якості монтажу..."
+msgstr ""
+
+#: templates/pages/blog.html:198
+msgid "10 хв читання"
+msgstr "10 мин чтения"
+
+#: templates/pages/blog.html:207
+msgid "Розрахунок теплообмінника: основи"
+msgstr "Расчёт теплообменника: основы"
+
+#: templates/pages/blog.html:209
+msgid ""
+"Основні принципи теплового розрахунку теплообмінників. Формули, методики, "
+"практичні приклади розрахунків для різних типів обладнання..."
+msgstr ""
+
+#: templates/pages/blog.html:212
+msgid "25 хв читання"
+msgstr "25 мин чтения"
+
+#: templates/pages/blog.html:221
+msgid "Теплообмінники в нафтогазовій галузі"
+msgstr "Теплообменники в нефтегазовой отрасли"
+
+#: templates/pages/blog.html:223
+msgid ""
+"Особливості застосування теплообмінного обладнання в нафтогазовій "
+"промисловості. Вимоги до матеріалів, безпека експлуатації..."
+msgstr ""
+
+#: templates/pages/blog.html:226
+msgid "20 хв читання"
+msgstr "20 мин чтения"
+
+#: templates/pages/blog.html:239
+msgid "Питання та відповіді"
+msgstr "Вопросы и ответы"
+
+#: templates/pages/blog.html:241
+msgid "Часті"
+msgstr "Частые"
+
+#: templates/pages/blog.html:242
+msgid "питання"
+msgstr "вопросы"
+
+#: templates/pages/blog.html:250
+msgid "Який термін служби теплообмінників?"
+msgstr "Каков срок службы теплообменников?"
+
+#: templates/pages/blog.html:252
+msgid ""
+"Термін служби залежить від умов експлуатації та якості обслуговування. При "
+"правильній експлуатації теплообмінники можуть працювати 15-25 років. Важливо "
+"проводити регулярне технічне обслуговування та своєчасну очистку."
+msgstr ""
+
+#: templates/pages/blog.html:259
+msgid "Як часто потрібно проводити технічне обслуговування?"
+msgstr "Как часто нужно проводить техническое обслуживание?"
+
+#: templates/pages/blog.html:261
+msgid ""
+"Рекомендується проводити планове ТО кожні 6-12 місяців в залежності від "
+"інтенсивності використання та умов роботи. Очистку теплообмінних поверхонь - "
+"кожні 3-6 місяців."
+msgstr ""
+
+#: templates/pages/blog.html:268
+msgid "Які матеріали використовуються для виготовлення?"
+msgstr "Какие материалы используются для изготовления?"
+
+#: templates/pages/blog.html:270
+msgid ""
+"Використовуємо високоякісні матеріали: нержавіюча сталь, вуглецева сталь, "
+"титан, мідні сплави. Вибір матеріалу залежить від робочого середовища, "
+"температури та тиску в системі."
+msgstr ""
+
+#: templates/pages/blog.html:277
+msgid "Чи надаєте ви гарантію на обладнання?"
+msgstr "Предоставляете ли вы гарантию на оборудование?"
+
+#: templates/pages/blog.html:279
+msgid ""
+"Так, ми надаємо гарантію на всю нашу продукцію. Термін гарантії залежить від "
+"типу обладнання та становить від 12 до 36 місяців. Також надаємо "
+"післягарантійне сервісне обслуговування."
+msgstr ""
+
+#: templates/pages/blog.html:292
+msgid "Не знайшли потрібну"
+msgstr "Не нашли нужную"
+
+#: templates/pages/blog.html:293
+msgid "інформацію?"
+msgstr "информацию?"
+
+#: templates/pages/blog.html:296
+msgid ""
+"Задайте питання нашим експертам і отримайте кваліфіковану консультацію "
+"протягом години"
+msgstr ""
+
+#: templates/pages/blog.html:300
+msgid "Задати питання експерту"
+msgstr "Задать вопрос эксперту"
+
+#: templates/pages/blog.html:303
+msgid "Зв'язатися з нами"
+msgstr "Связаться с нами"
+
+#: templates/pages/catalog.html:4 templates/pages/catalog.html:5
+msgid "Каталог обладнання - Adiabatic"
+msgstr "Каталог оборудования - Adiabatic"
+
+#: templates/pages/catalog.html:6
+msgid ""
+"Повний каталог теплообмінного обладнання Adiabatic: пластинчасті, "
+"кожухотрубні, АПО, калорифери та комплектуючі."
+msgstr ""
+
+#: templates/pages/catalog.html:30 templates/pages/home.html:40
+#: templates/pages/home.html:61 templates/pages/products.html:349
+msgid "обладнання"
+msgstr "оборудование"
+
+#: templates/pages/catalog.html:33
+msgid "Професійні рішення для теплообміну"
+msgstr "Профессиональные решения для теплообмена"
+
+#: templates/pages/catalog.html:49
+msgid "Наша"
+msgstr "Наша"
+
+#: templates/pages/catalog.html:50
+msgid "продукція"
+msgstr "продукция"
+
+#: templates/pages/catalog.html:74 templates/pages/home.html:293
+#: templates/pages/home.html:306 templates/pages/home.html:332
+#: templates/pages/products.html:56 templates/pages/products.html:69
+#: templates/pages/products.html:82 templates/pages/products.html:95
+#: templates/pages/products.html:108 templates/pages/products.html:121
+msgid "Детальніше"
+msgstr "Подробнее"
+
+#: templates/pages/catalog.html:83
+msgid "Додаткові фото"
+msgstr "Дополнительные фото"
+
+#: templates/pages/catalog.html:86
+msgid "фото 2"
+msgstr "фото 2"
+
+#: templates/pages/catalog.html:90
+msgid "фото 3"
+msgstr "фото 3"
+
+#: templates/pages/catalog.html:121 templates/pages/partners.html:107
+msgid "Переваги"
+msgstr "Преимущества"
+
+#: templates/pages/catalog.html:129
+msgid "Галузі застосування"
+msgstr "Отрасли применения"
+
+#: templates/pages/catalog.html:137 templates/pages/home.html:77
+#: templates/pages/home.html:92 templates/pages/home.html:107
+#: templates/pages/home.html:122 templates/pages/home.html:137
+#: templates/pages/home.html:152
+msgid "Замовити розрахунок"
+msgstr "Заказать расчёт"
+
+#: templates/pages/catalog.html:146
+msgid "Товари не знайдено."
+msgstr "Товары не найдены."
+
+#: templates/pages/catalog.html:159
+msgid "Потрібна"
+msgstr "Нужна"
+
+#: templates/pages/catalog.html:160
+msgid "консультація?"
+msgstr "консультация?"
+
+#: templates/pages/catalog.html:163
+msgid ""
+"Наші інженери допоможуть підібрати оптимальне рішення для ваших технічних "
+"вимог"
+msgstr ""
+
+#: templates/pages/catalog.html:167
+msgid "Зворотній дзвінок"
+msgstr "Обратный звонок"
+
+#: templates/pages/contacts.html:4 templates/pages/contacts.html:5
+msgid "Контакти - Adiabatic"
+msgstr "Контакты - Adiabatic"
+
+#: templates/pages/contacts.html:6
+msgid "Зв'яжіться з Adiabatic. Телефон, email, адреса офісу в Харкові."
+msgstr "Свяжитесь с Adiabatic. Телефон, email, адрес офиса в Харькове."
+
+#: templates/pages/contacts.html:17
+msgid "Контактна інформація"
+msgstr "Контактная информация"
+
+#: templates/pages/contacts.html:19
+msgid "Зв'яжіться з"
+msgstr "Свяжитесь с"
+
+#: templates/pages/contacts.html:19
+msgid "нами"
+msgstr "нами"
+
+#: templates/pages/contacts.html:27
+msgid "Ми готові"
+msgstr "Мы готовы"
+
+#: templates/pages/contacts.html:28
+msgid "допомогти вам"
+msgstr "помочь вам"
+
+#: templates/pages/contacts.html:31
+msgid ""
+"Напишіть, якщо у вас є питання. Ми розмістимо вашу інформацію в короткі "
+"терміни."
+msgstr ""
+
+#: templates/pages/contacts.html:36
+msgid "Україна, 61020, м. Харків, вул. Промислова, 6"
+msgstr "Украина, 61020, г. Харьков, ул. Промышленная, 6"
+
+#: templates/pages/contacts.html:48
+msgid "Надіслати повідомлення"
+msgstr "Отправить сообщение"
+
+#: templates/pages/contacts.html:53
+msgid "Способи зв'язку"
+msgstr "Способы связи"
+
+#: templates/pages/contacts.html:83
+msgid "Мапа місцезнаходження"
+msgstr "Карта расположения"
+
+#: templates/pages/contacts.html:95
+msgid "Маєте питання?"
+msgstr "Есть вопросы?"
+
+#: templates/pages/contacts.html:97
+msgid "Давайте разом вирішимо"
+msgstr "Давайте вместе решим"
+
+#: templates/pages/contacts.html:98
+msgid "вашу задачу"
+msgstr "вашу задачу"
+
+#: templates/pages/contacts.html:101
+msgid ""
+"Наші фахівці готові надати професійну консультацію та допомогти з вибором "
+"обладнання"
+msgstr ""
+
+#: templates/pages/home.html:4
+msgid "Adiabatic - Енергетичне обладнання та теплообмінники"
+msgstr "Adiabatic - Энергетическое оборудование и теплообменники"
+
+#: templates/pages/home.html:5
+msgid "Adiabatic - Енергетичне обладнання"
+msgstr "Adiabatic - Энергетическое оборудование"
+
+#: templates/pages/home.html:6
+msgid ""
+"Професійні рішення для теплообміну. Розрахунок теплообмінників безкоштовно. "
+"Енергетичне обладнання для промисловості."
+msgstr ""
+
+#: templates/pages/home.html:39
+msgid "Енергетичне"
+msgstr "Энергетическое"
+
+#: templates/pages/home.html:43
+msgid "і сервісне обслуговування"
+msgstr "и сервисное обслуживание"
+
+#: templates/pages/home.html:47
+msgid "Про нас"
+msgstr "О нас"
+
+#: templates/pages/home.html:60
+msgid "Промислове"
+msgstr "Промышленное"
+
+#: templates/pages/home.html:71
+msgid "Оребрені труби"
+msgstr "Оребрённые трубы"
+
+#: templates/pages/home.html:74
+msgid "Високоефективні оребрені труби для теплообмінного обладнання"
+msgstr "Высокоэффективные оребрённые трубы для теплообменного оборудования"
+
+#: templates/pages/home.html:86
+msgid "АВО (Апарати повітряного охолодження)"
+msgstr "АВО (Аппараты воздушного охлаждения)"
+
+#: templates/pages/home.html:89
+msgid "Надійні апарати повітряного охолодження для промислових процесів"
+msgstr "Надёжные аппараты воздушного охлаждения для промышленных процессов"
+
+#: templates/pages/home.html:101
+msgid "Кожухотрубні теплообмінники"
+msgstr "Кожухотрубные теплообменники"
+
+#: templates/pages/home.html:104
+msgid "Спеціалізовані теплообмінники для різних промислових застосувань"
+msgstr "Специализированные теплообменники для различных промышленных применений"
+
+#: templates/pages/home.html:116
+msgid "Утилізатори тепла димових газів"
+msgstr "Утилизаторы тепла дымовых газов"
+
+#: templates/pages/home.html:119
+msgid "Ефективні системи утилізації тепла для економії енергії"
+msgstr "Эффективные системы утилизации тепла для экономии энергии"
+
+#: templates/pages/home.html:131
+msgid "Пластинчаті теплообмінники"
+msgstr "Пластинчатые теплообменники"
+
+#: templates/pages/home.html:134
+msgid "Компактні та ефективні пластинчаті теплообмінники"
+msgstr "Компактные и эффективные пластинчатые теплообменники"
+
+#: templates/pages/home.html:146
+msgid "Спеціальні рішення"
+msgstr "Специальные решения"
+
+#: templates/pages/home.html:149
+msgid "Індивідуальні рішення для унікальних промислових задач"
+msgstr "Индивидуальные решения для уникальных промышленных задач"
+
+#: templates/pages/home.html:166 templates/pages/products.html:21
+msgid "Галузі які ми"
+msgstr "Отрасли, которые мы"
+
+#: templates/pages/home.html:167 templates/pages/products.html:22
+msgid "обслуговуємо"
+msgstr "обслуживаем"
+
+#: templates/pages/home.html:178
+msgid ""
+"Теплообмінники для нафтопереробки, газопереробки, хімічних процесів. Робота "
+"з агресивними середовищами при високих температурах та тисках."
+msgstr ""
+
+#: templates/pages/home.html:240
+msgid "Документи"
+msgstr "Документы"
+
+#: templates/pages/home.html:242
+msgid "Корисні"
+msgstr "Полезные"
+
+#: templates/pages/home.html:243
+msgid "матеріали"
+msgstr "материалы"
+
+#: templates/pages/home.html:251
+msgid "Опитувальний лист"
+msgstr "Опросный лист"
+
+#: templates/pages/home.html:253
+msgid "Заповніть опитувальний лист для точного розрахунку теплообмінника"
+msgstr "Заполните опросный лист для точного расчёта теплообменника"
+
+#: templates/pages/home.html:255
+msgid "Завантажити"
+msgstr "Скачать"
+
+#: templates/pages/home.html:260
+msgid "Каталог продукції"
+msgstr "Каталог продукции"
+
+#: templates/pages/home.html:262
+msgid "Повний каталог нашої продукції з технічними характеристиками"
+msgstr "Полный каталог нашей продукции с техническими характеристиками"
+
+#: templates/pages/home.html:278
+msgid "Наші ключові"
+msgstr "Наши ключевые"
+
+#: templates/pages/home.html:279
+msgid "партнери"
+msgstr "партнёры"
+
+#: templates/pages/home.html:288 templates/pages/partners.html:51
+msgid "Монтажні організації"
+msgstr "Монтажные организации"
+
+#: templates/pages/home.html:290
+msgid ""
+"Співпрацюємо з професійними монтажними компаніями для якісного встановлення "
+"обладнання"
+msgstr ""
+
+#: templates/pages/home.html:301 templates/pages/partners.html:64
+#: templates/pages/partners.html:270
+msgid "Проєктні інститути"
+msgstr "Проектные институты"
+
+#: templates/pages/home.html:303
+msgid ""
+"Партнерство з провідними проєктними та інжиніринговими компаніями України"
+msgstr ""
+
+#: templates/pages/home.html:314 templates/pages/partners.html:77
+msgid "Торгові агенти"
+msgstr "Торговые агенты"
+
+#: templates/pages/home.html:316
+msgid ""
+"Розвинена мережа торгових агентів по всій Україні з вигідними умовами "
+"співпраці"
+msgstr ""
+
+#: templates/pages/home.html:319 templates/pages/partners.html:82
+msgid "Стати агентом"
+msgstr "Стать агентом"
+
+#: templates/pages/home.html:327 templates/pages/partners.html:90
+msgid "Промислові підприємства"
+msgstr "Промышленные предприятия"
+
+#: templates/pages/home.html:329
+msgid ""
+"Довготривалі партнерські відносини з великими промисловими підприємствами"
+msgstr ""
+
+#: templates/pages/partners.html:4 templates/pages/partners.html:5
+msgid "Партнери - Adiabatic"
+msgstr "Партнёры - Adiabatic"
+
+#: templates/pages/partners.html:6
+msgid ""
+"Співпраця з Adiabatic. Програми для монтажників, проєктантів та торгових "
+"агентів. Вигідні умови партнерства."
+msgstr ""
+
+#: templates/pages/partners.html:21
+msgid "Стань нашим"
+msgstr "Станьте нашим"
+
+#: templates/pages/partners.html:22
+msgid "партнером"
+msgstr "партнёром"
+
+#: templates/pages/partners.html:25
+msgid "Вигідні умови співпраці для всіх учасників ринку"
+msgstr "Выгодные условия сотрудничества для всех участников рынка"
+
+#: templates/pages/partners.html:28
+msgid "Стати партнером"
+msgstr "Стать партнёром"
+
+#: templates/pages/partners.html:29
+msgid "Зв'язатися"
+msgstr "Связаться"
+
+#: templates/pages/partners.html:39
+msgid "Програми партнерства"
+msgstr "Программы партнёрства"
+
+#: templates/pages/partners.html:41
+msgid "Типи"
+msgstr "Типы"
+
+#: templates/pages/partners.html:42
+msgid "партнерства"
+msgstr "партнёрства"
+
+#: templates/pages/partners.html:53
+msgid ""
+"Спеціальні умови для монтажних компаній. Технічна підтримка, навчання "
+"персоналу, пріоритетна доставка обладнання."
+msgstr ""
+
+#: templates/pages/partners.html:56
+msgid "Приєднатися"
+msgstr "Присоединиться"
+
+#: templates/pages/partners.html:66
+msgid ""
+"Партнерство з проєктними організаціями. Легка інтеграція ТЗ в проєкт, "
+"технічні консультації, типові рішення."
+msgstr ""
+
+#: templates/pages/partners.html:69
+msgid "Співпрацювати"
+msgstr "Сотрудничать"
+
+#: templates/pages/partners.html:79
+msgid ""
+"Програма винагород для торгових агентів. Комісійні від продажів, "
+"маркетингова підтримка, навчальні матеріали."
+msgstr ""
+
+#: templates/pages/partners.html:92
+msgid ""
+"Довготривалі контракти з промисловими підприємствами. Гнучкі умови оплати, "
+"технічний супровід, сервісне обслуговування."
+msgstr ""
+
+#: templates/pages/partners.html:95
+msgid "Обговорити умови"
+msgstr "Обсудить условия"
+
+#: templates/pages/partners.html:109
+msgid "Чому обирають"
+msgstr "Почему выбирают"
+
+#: templates/pages/partners.html:110
+msgid "нас"
+msgstr "нас"
+
+#: templates/pages/partners.html:119
+msgid "Вигідні умови"
+msgstr "Выгодные условия"
+
+#: templates/pages/partners.html:121
+msgid ""
+"Конкурентні ціни, гнучка система знижок, спеціальні умови для постійних "
+"партнерів"
+msgstr ""
+
+#: templates/pages/partners.html:129
+msgid "Швидкі терміни"
+msgstr "Быстрые сроки"
+
+#: templates/pages/partners.html:131
+msgid ""
+"Мінімальні терміни виготовлення та доставки обладнання завдяки "
+"оптимізованому виробництву"
+msgstr ""
+
+#: templates/pages/partners.html:141
+msgid ""
+"Навчання персоналу, технічні консультації, супровід проектів досвідченими "
+"інженерами"
+msgstr ""
+
+#: templates/pages/partners.html:149
+msgid "Якість продукції"
+msgstr "Качество продукции"
+
+#: templates/pages/partners.html:151
+msgid ""
+"Європейські стандарти якості, сертифіковане обладнання, гарантія на всю "
+"продукцію"
+msgstr ""
+
+#: templates/pages/partners.html:159
+msgid "Маркетингова підтримка"
+msgstr "Маркетинговая поддержка"
+
+#: templates/pages/partners.html:161
+msgid "Рекламні матеріали, участь у виставках, спільні маркетингові активності"
+msgstr "Рекламные материалы, участие в выставках, совместные маркетинговые активности"
+
+#: templates/pages/partners.html:169
+msgid "Сервісне обслуговування"
+msgstr "Сервисное обслуживание"
+
+#: templates/pages/partners.html:171
+msgid ""
+"Повний спектр сервісних послуг, ремонт, модернізація існуючого обладнання"
+msgstr ""
+
+#: templates/pages/partners.html:183
+msgid "Для агентів"
+msgstr "Для агентов"
+
+#: templates/pages/partners.html:185
+msgid "Програма винагород"
+msgstr "Программа вознаграждений"
+
+#: templates/pages/partners.html:186
+msgid "для агентів"
+msgstr "для агентов"
+
+#: templates/pages/partners.html:194
+msgid "Заробляйте до"
+msgstr "Зарабатывайте до"
+
+#: templates/pages/partners.html:194
+msgid "з кожного продажу"
+msgstr "с каждой продажи"
+
+#: templates/pages/partners.html:199
+msgid "Ставки комісії:"
+msgstr "Ставки комиссии:"
+
+#: templates/pages/partners.html:201
+#, python-format
+msgid "5-10%% - стандартне обладнання"
+msgstr ""
+
+#: templates/pages/partners.html:202
+#, python-format
+msgid "10-15%% - спеціальні рішення"
+msgstr ""
+
+#: templates/pages/partners.html:203
+msgid "Бонуси за обсяги продажів"
+msgstr "Бонусы за объёмы продаж"
+
+#: templates/pages/partners.html:204
+msgid "Додаткові премії за нових клієнтів"
+msgstr "Дополнительные премии за новых клиентов"
+
+#: templates/pages/partners.html:209
+msgid "Що ми надаємо:"
+msgstr "Что мы предоставляем:"
+
+#: templates/pages/partners.html:211
+msgid "Навчальні матеріали"
+msgstr "Учебные материалы"
+
+#: templates/pages/partners.html:212
+msgid "Технічну підтримку"
+msgstr ""
+
+#: templates/pages/partners.html:213
+msgid "Маркетингові матеріали"
+msgstr "Маркетинговые материалы"
+
+#: templates/pages/partners.html:214
+msgid "Персонального менеджера"
+msgstr "Персонального менеджера"
+
+#: templates/pages/partners.html:220
+msgid ""
+"Процедура отримання винагороди: клієнт оформлює замовлення з зазначенням "
+"вашого агентського коду, винагорода нараховується після оплати замовлення "
+"клієнтом і виплачується щомісяця."
+msgstr ""
+
+#: templates/pages/partners.html:227
+msgid "Стати агентом зараз"
+msgstr "Стать агентом сейчас"
+
+#: templates/pages/partners.html:238
+msgid "Наші партнери"
+msgstr "Наши партнёры"
+
+#: templates/pages/partners.html:240
+msgid "Ключові"
+msgstr "Ключевые"
+
+#: templates/pages/partners.html:241
+msgid "клієнти"
+msgstr "клиенты"
+
+#: templates/pages/partners.html:250
+msgid "Великі промислові підприємства"
+msgstr "Крупные промышленные предприятия"
+
+#: templates/pages/partners.html:252
+msgid ""
+"Співпрацюємо з провідними підприємствами нафтогазової, хімічної та "
+"енергетичної галузей"
+msgstr ""
+
+#: templates/pages/partners.html:260
+msgid "Будівельні компанії"
+msgstr "Строительные компании"
+
+#: templates/pages/partners.html:262
+msgid ""
+"Довготривалі контракти з будівельними та монтажними організаціями по всій "
+"Україні"
+msgstr ""
+
+#: templates/pages/partners.html:272
+msgid ""
+"Партнерство з провідними проєктними та інжиніринговими компаніями України та "
+"СНД"
+msgstr ""
+
+#: templates/pages/partners.html:280
+msgid "Міжнародні проекти"
+msgstr "Международные проекты"
+
+#: templates/pages/partners.html:282
+msgid ""
+"Участь у міжнародних проектах, експорт обладнання в країни Європи та Азії"
+msgstr ""
+
+#: templates/pages/partners.html:295
+msgid "Готові розпочати"
+msgstr "Готовы начать"
+
+#: templates/pages/partners.html:296
+msgid "співпрацю?"
+msgstr "сотрудничество?"
+
+#: templates/pages/partners.html:299
+msgid ""
+"Залишіте заявку і наш менеджер зв'яжеться з вами протягом години для "
+"обговорення умов партнерства"
+msgstr ""
+
+#: templates/pages/partners.html:303
+msgid "Подати заявку на партнерство"
+msgstr "Подать заявку на партнёрство"
+
+#: templates/pages/partners.html:306
+msgid "Зв'язатися з менеджером"
+msgstr "Связаться с менеджером"
+
+#: templates/pages/products.html:4 templates/pages/products.html:5
+msgid "Сфери застосування - Adiabatic"
+msgstr "Сферы применения - Adiabatic"
+
+#: templates/pages/products.html:6
+msgid ""
+"Сфери застосування теплообмінного обладнання Adiabatic: нафтогазова галузь, "
+"енергетика, хімічна промисловість, металургія та інші."
+msgstr ""
+
+#: templates/pages/products.html:25
+msgid "Професійні рішення для різних галузей промисловості"
+msgstr ""
+
+#: templates/pages/products.html:29
+msgid "Консультація"
+msgstr ""
+
+#: templates/pages/products.html:39
+msgid "Галузі промисловості"
+msgstr "Отрасли промышленности"
+
+#: templates/pages/products.html:41
+msgid "Наші основні"
+msgstr "Наши основные"
+
+#: templates/pages/products.html:42
+msgid "напрямки"
+msgstr "направления"
+
+#: templates/pages/products.html:53
+msgid ""
+"Комплексні рішення для нафтопереробних заводів, газопереробних підприємств, "
+"хімічних комбінатів. Обладнання для роботи з агресивними середовищами."
+msgstr ""
+
+#: templates/pages/products.html:64
+msgid "Енергетична галузь"
+msgstr "Энергетическая отрасль"
+
+#: templates/pages/products.html:66
+msgid ""
+"Теплообмінне обладнання для ТЕС, АЕС, когенераційних установок, "
+"відновлювальної енергетики та систем централізованого теплопостачання."
+msgstr ""
+
+#: templates/pages/products.html:79
+msgid ""
+"Спеціалізовані теплообмінники для хімічних процесів, реакторів, "
+"дистиляційних установок та виробництва полімерів."
+msgstr ""
+
+#: templates/pages/products.html:90
+msgid "Металургійна галузь"
+msgstr "Металлургическая отрасль"
+
+#: templates/pages/products.html:92
+msgid ""
+"Системи охолодження для металургійних печей, прокатних станів, утилізації "
+"тепла та очищення газів."
+msgstr ""
+
+#: templates/pages/products.html:105
+msgid ""
+"Пастеризатори, охолоджувачі, випарники для молочної, м'ясної, пивної та "
+"кондитерської промисловості."
+msgstr ""
+
+#: templates/pages/products.html:116
+msgid "Морське та суднове обладнання"
+msgstr "Морское и судовое оборудование"
+
+#: templates/pages/products.html:118
+msgid ""
+"Теплообмінники для суднових двигунів, опріснювальних установок, морських "
+"платформ та портового обладнання."
+msgstr ""
+
+#: templates/pages/products.html:135
+msgid "Рішення для"
+msgstr "Решения для"
+
+#: templates/pages/products.html:136
+msgid "нафтогазової промисловості"
+msgstr "нефтегазовой промышленности"
+
+#: templates/pages/products.html:143
+msgid ""
+"Наше обладнання успішно працює на великих нафтопереробних заводах, "
+"газопереробних підприємствах та хімічних комбінатах. Ми маємо досвід роботи "
+"з найскладнішими технологічними процесами."
+msgstr ""
+
+#: templates/pages/products.html:154
+msgid "Нафтопереробка"
+msgstr "Нефтепереработка"
+
+#: templates/pages/products.html:156
+msgid "• Конденсатори та випарники для дистиляційних колон"
+msgstr "• Конденсаторы и испарители для дистилляционных колонн"
+
+#: templates/pages/products.html:157
+msgid "• Теплообмінники для установок каталітичного крекінгу"
+msgstr "• Теплообменники для установок каталитического крекинга"
+
+#: templates/pages/products.html:158
+msgid "• Охолоджувачі продуктів та сировини"
+msgstr "• Охладители продуктов и сырья"
+
+#: templates/pages/products.html:159
+msgid "• Утилізатори тепла димових газів"
+msgstr "• Утилизаторы тепла дымовых газов"
+
+#: templates/pages/products.html:167
+msgid "Газопереробка"
+msgstr "Газопереработка"
+
+#: templates/pages/products.html:169
+msgid "• Теплообмінники для низькотемпературної сепарації"
+msgstr "• Теплообменники для низкотемпературной сепарации"
+
+#: templates/pages/products.html:170
+msgid "• Конденсатори для установок зрідження газу"
+msgstr "• Конденсаторы для установок сжижения газа"
+
+#: templates/pages/products.html:171
+msgid "• Регенератори тепла в циклах очищення"
+msgstr "• Регенераторы тепла в циклах очистки"
+
+#: templates/pages/products.html:172
+msgid "• Охолоджувачі компресорних станцій"
+msgstr "• Охладители компрессорных станций"
+
+#: templates/pages/products.html:180
+msgid "Хімічні процеси"
+msgstr "Химические процессы"
+
+#: templates/pages/products.html:182
+msgid "• Реактори з теплообмінними рубашками"
+msgstr "• Реакторы с теплообменными рубашками"
+
+#: templates/pages/products.html:183
+msgid "• Конденсатори для ректифікаційних колон"
+msgstr "• Конденсаторы для ректификационных колонн"
+
+#: templates/pages/products.html:184
+msgid "• Охолоджувачі для полімеризації"
+msgstr "• Охладители для полимеризации"
+
+#: templates/pages/products.html:185
+msgid "• Випарники для концентрування розчинів"
+msgstr "• Испарители для концентрирования растворов"
+
+#: templates/pages/products.html:193
+msgid "Спеціальні вимоги"
+msgstr "Специальные требования"
+
+#: templates/pages/products.html:195
+msgid "• Корозійностійкі матеріали (Hastelloy, Inconel)"
+msgstr "• Коррозионностойкие материалы (Hastelloy, Inconel)"
+
+#: templates/pages/products.html:196
+msgid "• Високі температури (до 600°C) та тиски (до 100 бар)"
+msgstr "• Высокие температуры (до 600°C) и давления (до 100 бар)"
+
+#: templates/pages/products.html:197
+msgid "• Вибухозахищене виконання"
+msgstr "• Взрывозащищённое исполнение"
+
+#: templates/pages/products.html:198
+msgid "• Сертифікація за стандартами ASME, PED"
+msgstr "• Сертификация по стандартам ASME, PED"
+
+#: templates/pages/products.html:212
+msgid "Обладнання для"
+msgstr "Оборудование для"
+
+#: templates/pages/products.html:213
+msgid "енергетичної галузі"
+msgstr "энергетической отрасли"
+
+#: templates/pages/products.html:222
+msgid "Теплові електростанції"
+msgstr "Тепловые электростанции"
+
+#: templates/pages/products.html:224
+msgid "• Регенеративні підігрівачі живильної води"
+msgstr "• Регенеративные подогреватели питательной воды"
+
+#: templates/pages/products.html:225
+msgid "• Конденсатори парових турбін"
+msgstr "• Конденсаторы паровых турбин"
+
+#: templates/pages/products.html:226
+msgid "• Охолоджувачі генераторного газу"
+msgstr "• Охладители генераторного газа"
+
+#: templates/pages/products.html:227
+msgid "• Підігрівачі паливного газу"
+msgstr "• Подогреватели топливного газа"
+
+#: templates/pages/products.html:235
+msgid "Атомні електростанції"
+msgstr "Атомные электростанции"
+
+#: templates/pages/products.html:237
+msgid "• Парогенератори допоміжних систем"
+msgstr "• Парогенераторы вспомогательных систем"
+
+#: templates/pages/products.html:238
+msgid "• Теплообмінники систем безпеки"
+msgstr "• Теплообменники систем безопасности"
+
+#: templates/pages/products.html:239
+msgid "• Охолоджувачі басейнів витримки"
+msgstr "• Охладители бассейнов выдержки"
+
+#: templates/pages/products.html:240
+msgid "• Вентиляційні охолоджувачі"
+msgstr "• Вентиляционные охладители"
+
+#: templates/pages/products.html:248
+msgid "Когенерація"
+msgstr "Когенерация"
+
+#: templates/pages/products.html:250
+msgid "• Утилізатори тепла відхідних газів"
+msgstr "• Утилизаторы тепла отходящих газов"
+
+#: templates/pages/products.html:251
+msgid "• Теплообмінники для тригенерації"
+msgstr "• Теплообменники для тригенерации"
+
+#: templates/pages/products.html:252
+msgid "• Абсорбційні холодильні машини"
+msgstr "• Абсорбционные холодильные машины"
+
+#: templates/pages/products.html:253
+msgid "• Системи акумулювання тепла"
+msgstr "• Системы аккумулирования тепла"
+
+#: templates/pages/products.html:261
+msgid "Відновлювальна енергетика"
+msgstr "Возобновляемая энергетика"
+
+#: templates/pages/products.html:263
+msgid "• Теплообмінники для геотермальних систем"
+msgstr "• Теплообменники для геотермальных систем"
+
+#: templates/pages/products.html:264
+msgid "• Охолоджувачі для сонячних електростанцій"
+msgstr "• Охладители для солнечных электростанций"
+
+#: templates/pages/products.html:265
+msgid "• Системи акумулювання енергії"
+msgstr "• Системы аккумулирования энергии"
+
+#: templates/pages/products.html:266
+msgid "• Теплові насоси великої потужності"
+msgstr "• Тепловые насосы большой мощности"
+
+#: templates/pages/products.html:278
+msgid "Приклади застосування"
+msgstr "Примеры применения"
+
+#: templates/pages/products.html:280
+msgid "Реалізовані"
+msgstr "Реализованные"
+
+#: templates/pages/products.html:281
+msgid "проекти"
+msgstr "проекты"
+
+#: templates/pages/products.html:290
+msgid "Лисичанський НПЗ"
+msgstr "Лисичанский НПЗ"
+
+#: templates/pages/products.html:292
+msgid ""
+"Модернізація установки первинної переробки нафти. Поставка 15 "
+"теплообмінників різних типів для технологічних процесів."
+msgstr ""
+
+#: templates/pages/products.html:295
+msgid "Потужність: 2.6 млн т/рік"
+msgstr "Мощность: 2.6 млн т/год"
+
+#: templates/pages/products.html:303
+msgid "Трипільська ТЕС"
+msgstr "Трипольская ТЭС"
+
+#: templates/pages/products.html:305
+#, python-format
+msgid ""
+"Заміна застарілих підігрівачів живильної води на енергоефективні моделі. "
+"Економія палива склала 8%%."
+msgstr ""
+
+#: templates/pages/products.html:308
+msgid "Потужність: 1800 МВт"
+msgstr "Мощность: 1800 МВт"
+
+#: templates/pages/products.html:316
+msgid "Концерн \\"
+msgstr ""
+
+#: templates/pages/products.html:318
+msgid ""
+"Постачання спеціалізованих теплообмінників для виробництва аміаку. Робота "
+"при температурі до 450°C."
+msgstr ""
+
+#: templates/pages/products.html:321
+msgid "Продуктивність: 1350 т/добу"
+msgstr "Производительность: 1350 т/сутки"
+
+#: templates/pages/products.html:329
+msgid "Кривий Ріг"
+msgstr "Кривой Рог"
+
+#: templates/pages/products.html:331
+#, python-format
+msgid ""
+"Система охолодження доменного газу та утилізації тепла. Підвищення "
+"енергоефективності на 12%%."
+msgstr ""
+
+#: templates/pages/products.html:334
+msgid "Виробництво: 6 млн т сталі/рік"
+msgstr "Производство: 6 млн т стали/год"
+
+#: templates/pages/products.html:346
+msgid "Технічні можливості"
+msgstr "Технические возможности"
+
+#: templates/pages/products.html:348
+msgid "Параметри"
+msgstr "Параметры"
+
+#: templates/pages/products.html:357
+msgid "Температура"
+msgstr "Температура"
+
+#: templates/pages/products.html:358
+msgid "до"
+msgstr "до"
+
+#: templates/pages/products.html:359
+msgid "Широкий діапазон робочих температур"
+msgstr "Широкий диапазон рабочих температур"
+
+#: templates/pages/products.html:364
+msgid "Тиск"
+msgstr "Давление"
+
+#: templates/pages/products.html:365
+msgid "до 100 бар"
+msgstr "до 100 бар"
+
+#: templates/pages/products.html:366
+msgid "Високонапірне обладнання"
+msgstr "Высоконапорное оборудование"
+
+#: templates/pages/products.html:371
+msgid "Потужність"
+msgstr ""
+
+#: templates/pages/products.html:372
+msgid "до 50 МВт"
+msgstr "до 50 МВт"
+
+#: templates/pages/products.html:373
+msgid "Високопродуктивні системи"
+msgstr "Высокопроизводительные системы"
+
+#: templates/pages/products.html:378
+msgid "Площа теплообміну"
+msgstr "Площадь теплообмена"
+
+#: templates/pages/products.html:379
+msgid "до 10,000 м²"
+msgstr "до 10 000 м²"
+
+#: templates/pages/products.html:380
+msgid "Великогабаритне обладнання"
+msgstr "Крупногабаритное оборудование"
+
+#: templates/pages/products.html:385
+msgid "Матеріали виготовлення:"
+msgstr "Материалы изготовления:"
+
+#: templates/pages/products.html:387
+msgid "Нержавіюча сталь 304, 316, 321"
+msgstr "Нержавеющая сталь 304, 316, 321"
+
+#: templates/pages/products.html:388
+msgid "Вуглецева сталь 20, 09Г2С"
+msgstr "Углеродистая сталь 20, 09Г2С"
+
+#: templates/pages/products.html:389
+msgid "Титан ВТ1-0, ВТ1-00"
+msgstr "Титан ВТ1-0, ВТ1-00"
+
+#: templates/pages/products.html:390
+msgid "Мідь та мідні сплави"
+msgstr "Медь и медные сплавы"
+
+#: templates/pages/products.html:392
+msgid "Дуплексні сталі"
+msgstr "Дуплексные стали"
+
+#: templates/pages/products.html:403
+msgid "Потрібне обладнання для"
+msgstr "Нужно оборудование для"
+
+#: templates/pages/products.html:404
+msgid "вашої галузі?"
+msgstr "вашей отрасли?"
+
+#: templates/pages/products.html:407
+msgid ""
+"Наші інженери розроблять оптимальне рішення для ваших технічних вимог та "
+"умов експлуатації"
+msgstr ""
+
+#: templates/pages/products.html:414
+msgid "Консультація інженера"
+msgstr "Консультация инженера"

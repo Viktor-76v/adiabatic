@@ -1,7 +1,15 @@
 from django.db import models
-from django.utils.translation import gettext_lazy as _
+from django.utils.translation import gettext_lazy as _, get_language
 from django.urls import reverse
 from django.utils.text import slugify
+
+
+def _active_lang(language_code: str | None = None) -> str:
+    """Return language code falling back to the currently active Django language."""
+    if language_code:
+        return language_code
+    lang = get_language() or 'uk'
+    return lang[:2]  # 'uk', 'ru', 'en' — strip potential region suffix
 
 
 class Page(models.Model):
@@ -65,21 +73,29 @@ class Page(models.Model):
         else:
             return reverse('pages:page_detail', kwargs={'slug': self.slug})
     
-    def get_title(self, language_code='uk'):
-        """Отримати заголовок для конкретної мови"""
-        return getattr(self, f'title_{language_code}', self.title_uk)
-    
-    def get_content(self, language_code='uk'):
-        """Отримати контент для конкретної мови"""
-        return getattr(self, f'content_{language_code}', self.content_uk)
-    
-    def get_meta_title(self, language_code='uk'):
-        """Отримати meta title для конкретної мови"""
-        return getattr(self, f'meta_title_{language_code}', self.title_uk)
-    
-    def get_meta_description(self, language_code='uk'):
-        """Отримати meta description для конкретної мови"""
-        return getattr(self, f'meta_description_{language_code}', self.content_uk[:160])
+    def get_title(self, language_code=None):
+        """Отримати заголовок для конкретної мови (або активної)."""
+        lang = _active_lang(language_code)
+        return getattr(self, f'title_{lang}', None) or self.title_uk
+
+    def get_content(self, language_code=None):
+        """Отримати контент для конкретної мови (або активної)."""
+        lang = _active_lang(language_code)
+        return getattr(self, f'content_{lang}', None) or self.content_uk
+
+    def get_meta_title(self, language_code=None):
+        """Отримати meta title для конкретної мови (або активної)."""
+        lang = _active_lang(language_code)
+        return getattr(self, f'meta_title_{lang}', None) or self.title_uk
+
+    def get_meta_description(self, language_code=None):
+        """Отримати meta description для конкретної мови (або активної)."""
+        lang = _active_lang(language_code)
+        return getattr(self, f'meta_description_{lang}', None) or self.content_uk[:160]
+
+    def get_meta_keywords(self, language_code=None):
+        """Stub — keywords fields not yet in DB; returns empty string."""
+        return ''
 
 
 class Section(models.Model):
@@ -142,17 +158,21 @@ class Hero(models.Model):
     def __str__(self):
         return f"Hero: {self.title_uk}"
     
-    def get_title(self, language_code='uk'):
-        return getattr(self, f'title_{language_code}', self.title_uk)
-    
-    def get_subtitle(self, language_code='uk'):
-        return getattr(self, f'subtitle_{language_code}', self.subtitle_uk)
-    
-    def get_description(self, language_code='uk'):
-        return getattr(self, f'description_{language_code}', self.description_uk)
-    
-    def get_cta_text(self, language_code='uk'):
-        return getattr(self, f'cta_text_{language_code}', self.cta_text_uk)
+    def get_title(self, language_code=None):
+        lang = _active_lang(language_code)
+        return getattr(self, f'title_{lang}', None) or self.title_uk
+
+    def get_subtitle(self, language_code=None):
+        lang = _active_lang(language_code)
+        return getattr(self, f'subtitle_{lang}', None) or self.subtitle_uk
+
+    def get_description(self, language_code=None):
+        lang = _active_lang(language_code)
+        return getattr(self, f'description_{lang}', None) or self.description_uk
+
+    def get_cta_text(self, language_code=None):
+        lang = _active_lang(language_code)
+        return getattr(self, f'cta_text_{lang}', None) or self.cta_text_uk
 
 
 class Partner(models.Model):
@@ -247,17 +267,22 @@ class Product(models.Model):
     def get_absolute_url(self):
         return reverse('pages:catalog') + f'#{self.slug}'
     
-    def get_title(self, language_code='uk'):
-        return getattr(self, f'title_{language_code}', self.title_uk)
-    
-    def get_short_description(self, language_code='uk'):
-        return getattr(self, f'short_description_{language_code}', self.short_description_uk)
-    
-    def get_full_description(self, language_code='uk'):
-        return getattr(self, f'full_description_{language_code}', self.full_description_uk)
-    
-    def get_advantages(self, language_code='uk'):
-        return getattr(self, f'advantages_{language_code}', self.advantages_uk)
-    
-    def get_applications(self, language_code='uk'):
-        return getattr(self, f'applications_{language_code}', self.applications_uk)
+    def get_title(self, language_code=None):
+        lang = _active_lang(language_code)
+        return getattr(self, f'title_{lang}', None) or self.title_uk
+
+    def get_short_description(self, language_code=None):
+        lang = _active_lang(language_code)
+        return getattr(self, f'short_description_{lang}', None) or self.short_description_uk
+
+    def get_full_description(self, language_code=None):
+        lang = _active_lang(language_code)
+        return getattr(self, f'full_description_{lang}', None) or self.full_description_uk
+
+    def get_advantages(self, language_code=None):
+        lang = _active_lang(language_code)
+        return getattr(self, f'advantages_{lang}', None) or self.advantages_uk
+
+    def get_applications(self, language_code=None):
+        lang = _active_lang(language_code)
+        return getattr(self, f'applications_{lang}', None) or self.applications_uk
