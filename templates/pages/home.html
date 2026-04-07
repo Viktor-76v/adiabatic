@@ -349,7 +349,9 @@
                 <p class="download-description">
                     {% trans "Заповніть опитувальний лист для точного розрахунку теплообмінника" %}
                 </p>
-                <a href="#" class="btn download-link" data-download="questionnaire.pdf">{% trans "Завантажити" %}</a>
+                <button class="btn" type="button" data-survey-open aria-haspopup="dialog">
+                    {% trans "Заповнити онлайн" %}
+                </button>
             </div>
 
             <div class="download-card">

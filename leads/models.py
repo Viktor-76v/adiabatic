@@ -1,3 +1,5 @@
+import uuid as _uuid_module
+
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.core.validators import RegexValidator
@@ -127,6 +129,116 @@ class Lead(models.Model):
         if len(self.message) <= length:
             return self.message
         return self.message[:length] + "..."
+
+
+class SurveySheet(models.Model):
+    """Опитувальний лист — технічна анкета для підбору теплообмінника."""
+
+    STATUS_CHOICES = (
+        ('new',         _('Нова')),
+        ('in_progress', _('Опрацьовується')),
+        ('responded',   _('Відповідь надана')),
+        ('closed',      _('Закрито')),
+    )
+
+    uuid = models.UUIDField(
+        _('UUID'), default=_uuid_module.uuid4, editable=False, unique=True
+    )
+
+    # ── Дані замовника ────────────────────────────────────────────────────────
+    company        = models.CharField(_('Компанія'),       max_length=200, blank=True)
+    address        = models.CharField(_('Адреса'),         max_length=300, blank=True)
+    phone          = models.CharField(_('Телефон'),        max_length=30)
+    email          = models.EmailField(_('Email'))
+    contact_person = models.CharField(_('Контактна особа'), max_length=100)
+
+    # ── Призначення ───────────────────────────────────────────────────────────
+    purpose = models.CharField(_('Призначення апарату'), max_length=300, blank=True)
+
+    # ── Гаряча сторона ────────────────────────────────────────────────────────
+    hot_medium       = models.CharField(_('Гар: середовище'),      max_length=100, blank=True)
+    hot_temp_in      = models.CharField(_('Гар: t° вхід (°C)'),    max_length=20,  blank=True)
+    hot_temp_out     = models.CharField(_('Гар: t° вихід (°C)'),   max_length=20,  blank=True)
+    hot_flow_in      = models.CharField(_('Гар: витрата вхід'),    max_length=20,  blank=True)
+    hot_flow_out     = models.CharField(_('Гар: витрата вихід'),   max_length=20,  blank=True)
+    hot_pressure_in  = models.CharField(_('Гар: тиск вхід'),       max_length=20,  blank=True)
+    hot_pressure_out = models.CharField(_('Гар: тиск вихід'),      max_length=20,  blank=True)
+    hot_pressure_drop= models.CharField(_('Гар: допуст. Δp (кПа)'),max_length=20,  blank=True)
+
+    # ── Холодна сторона ───────────────────────────────────────────────────────
+    cold_medium       = models.CharField(_('Хол: середовище'),      max_length=100, blank=True)
+    cold_temp_in      = models.CharField(_('Хол: t° вхід (°C)'),    max_length=20,  blank=True)
+    cold_temp_out     = models.CharField(_('Хол: t° вихід (°C)'),   max_length=20,  blank=True)
+    cold_flow_in      = models.CharField(_('Хол: витрата вхід'),    max_length=20,  blank=True)
+    cold_flow_out     = models.CharField(_('Хол: витрата вихід'),   max_length=20,  blank=True)
+    cold_pressure_in  = models.CharField(_('Хол: тиск вхід'),       max_length=20,  blank=True)
+    cold_pressure_out = models.CharField(_('Хол: тиск вихід'),      max_length=20,  blank=True)
+    cold_pressure_drop= models.CharField(_('Хол: допуст. Δp (кПа)'),max_length=20,  blank=True)
+
+    heat_load = models.CharField(_('Теплове навантаження (кВт)'), max_length=20, blank=True)
+
+    # ── Теплофізичні властивості ──────────────────────────────────────────────
+    hot_thermo_temp  = models.CharField(_('Гар: t° теплофіз.'),     max_length=20, blank=True)
+    hot_density      = models.CharField(_('Гар: густина кг/м³'),    max_length=20, blank=True)
+    hot_specific_heat= models.CharField(_('Гар: теплоємн. Дж/кг·K'),max_length=20, blank=True)
+    hot_conductivity = models.CharField(_('Гар: теплопров. Вт/м·K'),max_length=20, blank=True)
+    hot_viscosity    = models.CharField(_('Гар: в\'язкість сПз'),   max_length=20, blank=True)
+
+    cold_thermo_temp  = models.CharField(_('Хол: t° теплофіз.'),     max_length=20, blank=True)
+    cold_density      = models.CharField(_('Хол: густина кг/м³'),    max_length=20, blank=True)
+    cold_specific_heat= models.CharField(_('Хол: теплоємн. Дж/кг·K'),max_length=20, blank=True)
+    cold_conductivity = models.CharField(_('Хол: теплопров. Вт/м·K'),max_length=20, blank=True)
+    cold_viscosity    = models.CharField(_('Хол: в\'язкість сПз'),   max_length=20, blank=True)
+
+    # ── Конструкційні вимоги ──────────────────────────────────────────────────
+    plate_material      = models.CharField(_('Матеріал пластин'),        max_length=100, blank=True)
+    plate_material_unit = models.CharField(_('Розмір пластин (мм)'),     max_length=20,  blank=True)
+    connection_type     = models.CharField(_('Тип під\'єднань'),         max_length=100, blank=True)
+    design_pressure     = models.CharField(_('Розр. тиск (бар)'),        max_length=20,  blank=True)
+    flanges             = models.CharField(_('Зворотні фланці'),         max_length=100, blank=True)
+    flanges_count       = models.CharField(_('К-ть фланців (шт.)'),      max_length=20,  blank=True)
+
+    # ── Коментарі ─────────────────────────────────────────────────────────────
+    comments = models.TextField(_('Коментарі'), blank=True)
+
+    # ── Статус та примітки ────────────────────────────────────────────────────
+    status         = models.CharField(_('Статус'), max_length=20, choices=STATUS_CHOICES, default='new')
+    internal_notes = models.TextField(
+        _('Внутрішні примітки'), blank=True,
+        help_text=_('Нотатки для команди — не видимі замовнику')
+    )
+
+    # ── Метадані ──────────────────────────────────────────────────────────────
+    ip_address  = models.GenericIPAddressField(_('IP адреса'),       blank=True, null=True)
+    language    = models.CharField(_('Мова'),                        max_length=10, blank=True, default='uk')
+    source_page = models.CharField(_('Сторінка-джерело'),            max_length=500, blank=True)
+
+    created_at = models.DateTimeField(_('Дата подачі'), auto_now_add=True)
+    updated_at = models.DateTimeField(_('Оновлено'),    auto_now=True)
+
+    class Meta:
+        verbose_name        = _('Опитувальний лист')
+        verbose_name_plural = _('Опитувальні листи')
+        ordering = ['-created_at']
+        indexes = [
+            models.Index(fields=['status']),
+            models.Index(fields=['email']),
+            models.Index(fields=['created_at']),
+        ]
+
+    def __str__(self):
+        parts = [self.contact_person or self.email]
+        if self.company:
+            parts.append(f'({self.company})')
+        return f"{' '.join(parts)} — {self.created_at.strftime('%d.%m.%Y') if self.created_at else '…'}"
+
+    @property
+    def has_thermo_data(self):
+        """Чи заповнені теплофізичні властивості."""
+        return any([
+            self.hot_thermo_temp, self.hot_density, self.hot_specific_heat,
+            self.cold_thermo_temp, self.cold_density, self.cold_specific_heat,
+        ])
 
 
 class NotificationSettings(models.Model):

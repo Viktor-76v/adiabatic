@@ -50,6 +50,9 @@
     <link rel="stylesheet" href="/static/css/hero.css">
     <link rel="stylesheet" href="/static/css/footer.css">
 
+    <!-- Survey modal -->
+    <link rel="stylesheet" href="/static/css/survey-modal.css">
+
     <!-- Page specific CSS -->
     {% block page_css %}{% endblock %}
 
@@ -118,6 +121,12 @@
 
                 <!-- Header Actions -->
                 <div class="header-actions">
+                    <!-- Survey trigger (desktop) -->
+                    <button class="btn survey-trigger-btn desktop-only" type="button"
+                        data-survey-open aria-haspopup="dialog">
+                        {% trans "Опитувальний лист" %}
+                    </button>
+
                     <!-- Logo (positioned on the right on desktop) -->
                     <div class="logo">
                         <a href="{% url 'pages:home' %}" class="logo-link">
@@ -179,6 +188,10 @@
                         <a href="{% url 'leads:submit' %}" class="mobile-cta btn">
                             {% trans "Зворотний дзвінок" %}
                         </a>
+
+                        <button class="mobile-cta btn" type="button" data-survey-open aria-haspopup="dialog">
+                            {% trans "Опитувальний лист" %}
+                        </button>
                     </div>
                 </nav>
             </div>
@@ -268,12 +281,329 @@
         ↑
     </button>
 
+    <!-- Survey Modal -->
+    <div class="survey-modal" id="surveyModal" role="dialog" aria-modal="true"
+         aria-labelledby="surveyModalTitle" hidden>
+        <div class="survey-modal__dialog">
+            <button class="survey-modal__close" type="button"
+                data-survey-close aria-label="{% trans "Закрити" %}">&#x2715;</button>
+
+            <!-- Company header strip -->
+            <div class="survey-modal__top">
+                <div class="survey-modal__logo-wrap">
+                    <img src="/static/images/logo.png" alt="ADIABATIC">
+                    <span class="survey-modal__logo-name">{{ site_settings.site_name|default:'ADIABATIC' }}</span>
+                </div>
+                <div class="survey-modal__contacts">
+                    {% if site_settings.contact_phone %}
+                    <div class="survey-modal__ci">
+                        <span class="survey-modal__ci-icon">📞</span>
+                        <span>{{ site_settings.contact_phone }}</span>
+                    </div>
+                    {% endif %}
+                    {% if site_settings.contact_email %}
+                    <div class="survey-modal__ci">
+                        <span class="survey-modal__ci-icon">🌐</span>
+                        <span>{{ site_settings.contact_email }}</span>
+                    </div>
+                    {% endif %}
+                    {% if site_settings.address %}
+                    <div class="survey-modal__ci">
+                        <span class="survey-modal__ci-icon">📍</span>
+                        <span>{{ site_settings.address }}</span>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <h2 class="survey-modal__title" id="surveyModalTitle">{% trans "Опитувальний лист" %}</h2>
+
+            <div class="survey-modal__body">
+                <form id="surveyForm"
+                      method="post"
+                      action="{% url 'leads:survey' %}"
+                      novalidate>
+                    {% csrf_token %}
+
+                    <!-- ① Дані замовника -->
+                    <fieldset class="sf-section">
+                        <legend class="sf-section__legend">
+                            <span>👤</span> {% trans "Дані замовника:" %}
+                        </legend>
+                        <div class="sf-fields">
+                            <div class="sf-row">
+                                <label class="sf-label" for="sf-company">{% trans "Назва компанії" %}</label>
+                                <input class="sf-input" id="sf-company" type="text" name="company">
+                            </div>
+                            <div class="sf-row">
+                                <label class="sf-label" for="sf-address">{% trans "Адреса" %}</label>
+                                <input class="sf-input" id="sf-address" type="text" name="address">
+                            </div>
+                            <div class="sf-row">
+                                <label class="sf-label" for="sf-phone">{% trans "Конт. телефон" %} *</label>
+                                <input class="sf-input" id="sf-phone" type="tel" name="phone" required>
+                            </div>
+                            <div class="sf-row">
+                                <label class="sf-label" for="sf-email">{% trans "Email" %} *</label>
+                                <input class="sf-input" id="sf-email" type="email" name="email" required>
+                            </div>
+                            <div class="sf-row">
+                                <label class="sf-label" for="sf-person">{% trans "Конт. особа" %} *</label>
+                                <input class="sf-input" id="sf-person" type="text" name="contact_person" required>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- ② Робочі умови -->
+                    <fieldset class="sf-section">
+                        <legend class="sf-section__legend">
+                            <span>⚙️</span> {% trans "Робочі умови:" %}
+                        </legend>
+                        <div class="sf-fields">
+                            <div class="sf-row">
+                                <label class="sf-label" for="sf-purpose">{% trans "Призначення апарату" %}</label>
+                                <input class="sf-input" id="sf-purpose" type="text" name="purpose">
+                            </div>
+                        </div>
+
+                        <div class="sf-table-wrap">
+                            <table class="sf-table">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th colspan="3" class="sf-th-hot">{% trans "Гаряча сторона" %}</th>
+                                        <th colspan="3" class="sf-th-cold">{% trans "Холодна сторона" %}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="sf-td-label">
+                                            💧 {% trans "Робоче середовище" %}
+                                        </td>
+                                        <td colspan="2">
+                                            <input class="sf-input sf-input--full" type="text" name="hot_medium">
+                                        </td>
+                                        <td class="sf-td-unit"></td>
+                                        <td colspan="2">
+                                            <input class="sf-input sf-input--full" type="text" name="cold_medium">
+                                        </td>
+                                        <td class="sf-td-unit"></td>
+                                    </tr>
+                                    <tr class="sf-subhead">
+                                        <td></td>
+                                        <td>{% trans "Вхід" %}</td>
+                                        <td>{% trans "Вихід" %}</td>
+                                        <td></td>
+                                        <td>{% trans "Вхід" %}</td>
+                                        <td>{% trans "Вихід" %}</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sf-td-label">🌡️ {% trans "Робочі температури" %}</td>
+                                        <td><input class="sf-input" type="text" name="hot_temp_in"></td>
+                                        <td><input class="sf-input" type="text" name="hot_temp_out"></td>
+                                        <td class="sf-td-unit">°C</td>
+                                        <td><input class="sf-input" type="text" name="cold_temp_in"></td>
+                                        <td><input class="sf-input" type="text" name="cold_temp_out"></td>
+                                        <td class="sf-td-unit">°C</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sf-td-label">⇄ {% trans "Витрата" %}</td>
+                                        <td><input class="sf-input" type="text" name="hot_flow_in"></td>
+                                        <td><input class="sf-input" type="text" name="hot_flow_out"></td>
+                                        <td class="sf-td-unit">{% trans "кг/год" %}</td>
+                                        <td><input class="sf-input" type="text" name="cold_flow_in"></td>
+                                        <td><input class="sf-input" type="text" name="cold_flow_out"></td>
+                                        <td class="sf-td-unit">{% trans "кг/год" %}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sf-td-label">🔧 {% trans "Робочий тиск" %}</td>
+                                        <td><input class="sf-input" type="text" name="hot_pressure_in"></td>
+                                        <td><input class="sf-input" type="text" name="hot_pressure_out"></td>
+                                        <td class="sf-td-unit">{% trans "кг/см²" %}</td>
+                                        <td><input class="sf-input" type="text" name="cold_pressure_in"></td>
+                                        <td><input class="sf-input" type="text" name="cold_pressure_out"></td>
+                                        <td class="sf-td-unit">{% trans "кг/см²" %}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sf-td-label">⚠️ {% trans "Допустима втрата тиску" %}</td>
+                                        <td colspan="2">
+                                            <input class="sf-input sf-input--full" type="text" name="hot_pressure_drop">
+                                        </td>
+                                        <td class="sf-td-unit">{% trans "кПа" %}</td>
+                                        <td colspan="2">
+                                            <input class="sf-input sf-input--full" type="text" name="cold_pressure_drop">
+                                        </td>
+                                        <td class="sf-td-unit">{% trans "кПа" %}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sf-td-label">⚡ {% trans "Теплове навантаження" %}</td>
+                                        <td colspan="2">
+                                            <input class="sf-input sf-input--full" type="text" name="heat_load">
+                                        </td>
+                                        <td class="sf-td-unit">{% trans "кВт" %}</td>
+                                        <td colspan="3"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </fieldset>
+
+                    <!-- ③ Теплофізичні властивості -->
+                    <fieldset class="sf-section">
+                        <legend class="sf-section__legend">
+                            <span>🧪</span> {% trans "Теплофізичні властивості (для нестандартних середовищ):" %}
+                        </legend>
+                        <div class="sf-table-wrap">
+                            <table class="sf-table">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th colspan="2" class="sf-th-hot">{% trans "Гаряче середовище" %}</th>
+                                        <th colspan="2" class="sf-th-cold">{% trans "Холодне середовище" %}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="sf-td-label">🌡️ {% trans "Температура" %}</td>
+                                        <td><input class="sf-input" type="text" name="hot_thermo_temp"></td>
+                                        <td class="sf-td-unit">°C</td>
+                                        <td><input class="sf-input" type="text" name="cold_thermo_temp"></td>
+                                        <td class="sf-td-unit">°C</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sf-td-label">⚖️ {% trans "Густина" %}</td>
+                                        <td><input class="sf-input" type="text" name="hot_density"></td>
+                                        <td class="sf-td-unit">{% trans "кг/м³" %}</td>
+                                        <td><input class="sf-input" type="text" name="cold_density"></td>
+                                        <td class="sf-td-unit">{% trans "кг/м³" %}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sf-td-label">🔥 {% trans "Питома теплоємність" %}</td>
+                                        <td><input class="sf-input" type="text" name="hot_specific_heat"></td>
+                                        <td class="sf-td-unit">{% trans "Дж/кг·K" %}</td>
+                                        <td><input class="sf-input" type="text" name="cold_specific_heat"></td>
+                                        <td class="sf-td-unit">{% trans "Дж/кг·K" %}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sf-td-label">🌊 {% trans "Теплопровідність" %}</td>
+                                        <td><input class="sf-input" type="text" name="hot_conductivity"></td>
+                                        <td class="sf-td-unit">{% trans "Вт/м·K" %}</td>
+                                        <td><input class="sf-input" type="text" name="cold_conductivity"></td>
+                                        <td class="sf-td-unit">{% trans "Вт/м·K" %}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sf-td-label">💧 {% trans "В'язкість" %}</td>
+                                        <td><input class="sf-input" type="text" name="hot_viscosity"></td>
+                                        <td class="sf-td-unit">{% trans "сПз" %}</td>
+                                        <td><input class="sf-input" type="text" name="cold_viscosity"></td>
+                                        <td class="sf-td-unit">{% trans "сПз" %}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </fieldset>
+
+                    <!-- ④ Конструкційні вимоги -->
+                    <fieldset class="sf-section">
+                        <legend class="sf-section__legend">
+                            <span>🏗️</span> {% trans "Конструкційні вимоги (вказати/підкреслити якщо наявні):" %}
+                        </legend>
+                        <div class="sf-table-wrap">
+                            <table class="sf-design-table">
+                                <tbody>
+                                    <tr>
+                                        <td class="sf-td-label">
+                                            ✏️ {% trans "Матеріал пластин" %}
+                                        </td>
+                                        <td>
+                                            <input class="sf-input sf-input--full" type="text" name="plate_material">
+                                        </td>
+                                        <td class="sf-design-icon">✏️</td>
+                                        <td>
+                                            <input class="sf-input" type="text" name="plate_material_unit"
+                                                placeholder="—" style="width:60px">
+                                        </td>
+                                        <td class="sf-design-unit">{% trans "мм" %}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sf-td-label">
+                                            🔩 {% trans "Тип під'єднань" %}
+                                        </td>
+                                        <td>
+                                            <input class="sf-input sf-input--full" type="text" name="connection_type">
+                                        </td>
+                                        <td class="sf-design-icon">🔩</td>
+                                        <td>
+                                            <input class="sf-input" type="text" name="design_pressure"
+                                                placeholder="—" style="width:60px">
+                                        </td>
+                                        <td class="sf-design-unit">{% trans "бар" %}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sf-td-label">
+                                            🔄 {% trans "Зворотні фланці" %}
+                                        </td>
+                                        <td>
+                                            <input class="sf-input sf-input--full" type="text" name="flanges">
+                                        </td>
+                                        <td class="sf-design-icon">🔄</td>
+                                        <td>
+                                            <input class="sf-input" type="text" name="flanges_count"
+                                                placeholder="—" style="width:60px">
+                                        </td>
+                                        <td class="sf-design-unit">{% trans "шт." %}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </fieldset>
+
+                    <!-- ⑤ Коментарі -->
+                    <fieldset class="sf-section">
+                        <legend class="sf-section__legend">
+                            <span>💬</span> {% trans "Коментарі:" %}
+                        </legend>
+                        <div class="sf-fields">
+                            <textarea class="sf-textarea" name="comments" rows="3"
+                                placeholder="{% trans "Додаткові побажання або уточнення…" %}"></textarea>
+                        </div>
+                    </fieldset>
+
+                    <!-- Message output -->
+                    <div id="surveyFormMsg" class="sf-message" hidden></div>
+
+                    <!-- Submit -->
+                    <div class="sf-submit-row">
+                        <span class="sf-required-note">* — {% trans "обов'язкові поля" %}</span>
+                        <button class="btn btn--primary" type="submit">
+                            {% trans "Відправити" %}
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Footer strip -->
+            <div class="survey-modal__foot">
+                <span>{% trans "ТОВ «АДІАБАТІК»" %}</span>
+                <span class="survey-modal__foot-sep">|</span>
+                <span>{% trans "ЄДРПОУ:" %} 45668672</span>
+                <span class="survey-modal__foot-sep">|</span>
+                <span>{% trans "ІПН:" %} 456686726505</span>
+            </div>
+        </div>
+    </div>
+    <!-- /Survey Modal -->
+
     <!-- Base JavaScript -->
     <script src="/static/js/base.js" type="module" defer></script>
     <script src="/static/js/desktop-menu.js" type="module" defer></script>
     <script src="/static/js/form-validation.js" type="module"></script>
     <script src="/static/js/video.js" defer></script>
     <script src="/static/js/htmx-integration.js" defer></script>
+
+    <!-- Survey modal JS -->
+    <script src="/static/js/survey-modal.js" type="module" defer></script>
 
     <!-- Page specific JavaScript -->
     {% block page_js %}{% endblock %}

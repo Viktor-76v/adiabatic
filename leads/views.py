@@ -11,7 +11,7 @@ import json
 import logging
 
 # Product model removed with catalog app
-from .models import Lead, LeadSource, LeadActivity
+from .models import Lead, LeadSource, LeadActivity, SurveySheet
 from .forms import LeadForm, QuickQuoteForm, ContactForm
 
 logger = logging.getLogger(__name__)
@@ -246,6 +246,184 @@ def contact(request):
             'success': False,
             'message': 'Виникла помилка. Спробуйте пізніше.'
         })
+
+
+def _normalize_phone(raw: str) -> str:
+    """Нормалізує номер телефону до формату +380…"""
+    phone = raw.replace(' ', '').replace('-', '').replace('(', '').replace(')', '')
+    if not phone.startswith('+'):
+        phone = ('+' if phone.startswith('380') else '+38') + phone
+    return phone
+
+
+def _build_survey_notification(survey: 'SurveySheet') -> str:
+    """Форматує читабельне повідомлення для email/Telegram із об'єкта SurveySheet."""
+    def row(label, *vals):
+        filled = [v for v in vals if v]
+        return f'{label}: {" / ".join(filled)}' if filled else ''
+
+    lines = [
+        '📋 ОПИТУВАЛЬНИЙ ЛИСТ',
+        '',
+        f'👤 {survey.contact_person}  |  🏢 {survey.company or "—"}',
+        f'📞 {survey.phone}  |  ✉️  {survey.email}',
+        f'📍 {survey.address}' if survey.address else '',
+        '',
+        f'Призначення: {survey.purpose}' if survey.purpose else '',
+        '',
+        '── Гаряча сторона ──',
+        row('Середовище',     survey.hot_medium),
+        row('t° вх/вих °C',   survey.hot_temp_in, survey.hot_temp_out),
+        row('Витрата кг/год',  survey.hot_flow_in, survey.hot_flow_out),
+        row('Тиск кг/см²',    survey.hot_pressure_in, survey.hot_pressure_out),
+        row('Δp кПа',         survey.hot_pressure_drop),
+        '',
+        '── Холодна сторона ──',
+        row('Середовище',     survey.cold_medium),
+        row('t° вх/вих °C',   survey.cold_temp_in, survey.cold_temp_out),
+        row('Витрата кг/год',  survey.cold_flow_in, survey.cold_flow_out),
+        row('Тиск кг/см²',    survey.cold_pressure_in, survey.cold_pressure_out),
+        row('Δp кПа',         survey.cold_pressure_drop),
+        '',
+        row('Теплове навантаження кВт', survey.heat_load),
+        '',
+        '── Конструкційні вимоги ──',
+        row('Матеріал пластин', survey.plate_material, f'{survey.plate_material_unit} мм' if survey.plate_material_unit else ''),
+        row('Тип під\'єднань',  survey.connection_type, f'{survey.design_pressure} бар' if survey.design_pressure else ''),
+        row('Зворотні фланці', survey.flanges, f'{survey.flanges_count} шт.' if survey.flanges_count else ''),
+        '',
+        f'💬 {survey.comments}' if survey.comments else '',
+        '',
+        f'⏰ {survey.created_at.strftime("%d.%m.%Y %H:%M")}  |  IP: {survey.ip_address or "—"}',
+        f'🔗 {settings.SITE_URL}/admin/leads/surveysheet/{survey.pk}/change/',
+    ]
+    return '\n'.join(line for line in lines if line is not None)
+
+
+def _send_survey_notifications(survey: 'SurveySheet') -> None:
+    """Відправляє email та Telegram-нотифікацію про новий опитувальний лист."""
+    message = _build_survey_notification(survey)
+
+    # ── Email ──────────────────────────────────────────────────────────────────
+    try:
+        from django.core.mail import send_mail
+        from .models import NotificationSettings as NS
+        ns = NS.get_settings()
+        if ns.email_enabled and ns.email_recipients:
+            recipients = [e.strip() for e in ns.email_recipients.split(',') if e.strip()]
+            send_mail(
+                subject=f'Новий опитувальний лист — {survey.contact_person} ({survey.company or survey.email})',
+                message=message,
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=recipients,
+                fail_silently=True,
+            )
+    except Exception as exc:
+        logger.warning(f'Survey email notification failed: {exc}')
+
+    # ── Telegram ───────────────────────────────────────────────────────────────
+    try:
+        import requests as req
+        from .models import NotificationSettings as NS
+        ns = NS.get_settings()
+        if ns.telegram_enabled and ns.telegram_bot_token and ns.telegram_chat_id:
+            req.post(
+                f'https://api.telegram.org/bot{ns.telegram_bot_token}/sendMessage',
+                json={'chat_id': ns.telegram_chat_id, 'text': message},
+                timeout=8,
+            )
+    except Exception as exc:
+        logger.warning(f'Survey Telegram notification failed: {exc}')
+
+
+@require_http_methods(["POST"])
+def survey_submit(request):
+    """Зберігає опитувальний лист у таблицю SurveySheet і надсилає нотифікації."""
+    try:
+        d = request.POST
+
+        contact_person = d.get('contact_person', '').strip()
+        email          = d.get('email', '').strip()
+        raw_phone      = d.get('phone', '').strip()
+
+        if not contact_person or not email or not raw_phone:
+            return JsonResponse({
+                'success': False,
+                'message': 'Заповніть обов\'язкові поля: Конт. особа, Email, Телефон.',
+            }, status=400)
+
+        def v(k):
+            return d.get(k, '').strip()
+
+        survey = SurveySheet(
+            # Дані замовника
+            company        = v('company'),
+            address        = v('address'),
+            phone          = _normalize_phone(raw_phone),
+            email          = email,
+            contact_person = contact_person,
+            # Призначення
+            purpose        = v('purpose'),
+            # Гаряча сторона
+            hot_medium        = v('hot_medium'),
+            hot_temp_in       = v('hot_temp_in'),
+            hot_temp_out      = v('hot_temp_out'),
+            hot_flow_in       = v('hot_flow_in'),
+            hot_flow_out      = v('hot_flow_out'),
+            hot_pressure_in   = v('hot_pressure_in'),
+            hot_pressure_out  = v('hot_pressure_out'),
+            hot_pressure_drop = v('hot_pressure_drop'),
+            # Холодна сторона
+            cold_medium        = v('cold_medium'),
+            cold_temp_in       = v('cold_temp_in'),
+            cold_temp_out      = v('cold_temp_out'),
+            cold_flow_in       = v('cold_flow_in'),
+            cold_flow_out      = v('cold_flow_out'),
+            cold_pressure_in   = v('cold_pressure_in'),
+            cold_pressure_out  = v('cold_pressure_out'),
+            cold_pressure_drop = v('cold_pressure_drop'),
+            heat_load          = v('heat_load'),
+            # Теплофізичні властивості
+            hot_thermo_temp   = v('hot_thermo_temp'),
+            hot_density       = v('hot_density'),
+            hot_specific_heat = v('hot_specific_heat'),
+            hot_conductivity  = v('hot_conductivity'),
+            hot_viscosity     = v('hot_viscosity'),
+            cold_thermo_temp   = v('cold_thermo_temp'),
+            cold_density       = v('cold_density'),
+            cold_specific_heat = v('cold_specific_heat'),
+            cold_conductivity  = v('cold_conductivity'),
+            cold_viscosity     = v('cold_viscosity'),
+            # Конструкційні вимоги
+            plate_material      = v('plate_material'),
+            plate_material_unit = v('plate_material_unit'),
+            connection_type     = v('connection_type'),
+            design_pressure     = v('design_pressure'),
+            flanges             = v('flanges'),
+            flanges_count       = v('flanges_count'),
+            # Коментарі та мета
+            comments    = v('comments'),
+            ip_address  = get_client_ip(request),
+            language    = get_language(),
+            source_page = request.META.get('HTTP_REFERER', '')[:500],
+        )
+        survey.save()
+        _send_survey_notifications(survey)
+
+        logger.info(f'SurveySheet #{survey.pk} ({survey.uuid}) — {survey.email}')
+
+        return JsonResponse({
+            'success': True,
+            'message': 'Дякуємо! Опитувальний лист отримано. Ми зв\'яжемося з вами найближчим часом.',
+        })
+
+    except Exception as e:
+        logger.error(f'survey_submit error: {e}')
+        return JsonResponse({
+            'success': False,
+            'message': 'Виникла помилка. Будь ласка, спробуйте пізніше.',
+            'error': str(e) if settings.DEBUG else None,
+        }, status=500)
 
 
 def thank_you(request):

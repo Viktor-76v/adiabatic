@@ -1,0 +1,456 @@
+/* ===== SURVEY MODAL ===== */
+
+/* Overlay */
+.survey-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1100;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: var(--space-4) var(--space-4) var(--space-8);
+    overflow-y: auto;
+    background: rgb(0 0 0 / 55%);
+}
+
+.survey-modal[hidden] {
+    display: none;
+}
+
+/* Dialog */
+.survey-modal__dialog {
+    position: relative;
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: 0 24px 64px rgb(0 0 0 / 35%);
+    width: 100%;
+    max-width: 780px;
+    margin: auto;
+    animation: smd-in 0.22s ease;
+}
+
+@keyframes smd-in {
+    from { opacity: 0; transform: translateY(-16px) scale(0.98); }
+    to   { opacity: 1; transform: none; }
+}
+
+/* Close button */
+.survey-modal__close {
+    position: absolute;
+    top: var(--space-3);
+    right: var(--space-3);
+    width: 30px;
+    height: 30px;
+    background: rgb(255 255 255 / 70%);
+    border: 1px solid var(--gray-300);
+    border-radius: 50%;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    z-index: 10;
+    line-height: 1;
+    padding: 0;
+}
+
+.survey-modal__close:hover {
+    background: var(--secondary);
+    color: var(--white);
+    border-color: var(--secondary);
+}
+
+/* ===== MODAL HEADER (company info strip) ===== */
+.survey-modal__top {
+    background: #dde6ef;
+    padding: var(--space-3) var(--space-6);
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    border-radius: var(--radius) var(--radius) 0 0;
+    flex-wrap: wrap;
+}
+
+.survey-modal__logo-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    min-width: 80px;
+}
+
+.survey-modal__logo-wrap img {
+    height: 44px;
+    width: auto;
+}
+
+.survey-modal__logo-name {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.7rem;
+    color: var(--primary);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.survey-modal__contacts {
+    display: flex;
+    gap: var(--space-4);
+    flex: 1;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.survey-modal__ci {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    font-size: 0.78rem;
+    color: var(--primary);
+    line-height: 1.45;
+}
+
+.survey-modal__ci-icon {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    background: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary);
+    font-size: 0.85rem;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 12%);
+    margin-top: 1px;
+}
+
+/* ===== MODAL TITLE ===== */
+.survey-modal__title {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-align: center;
+    padding: var(--space-4) var(--space-6) var(--space-3);
+}
+
+/* ===== MODAL BODY ===== */
+.survey-modal__body {
+    padding: 0 var(--space-6) var(--space-4);
+    max-height: calc(100vh - 220px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+/* ===== MODAL FOOTER ===== */
+.survey-modal__foot {
+    background: var(--primary);
+    color: var(--white);
+    padding: var(--space-2) var(--space-6);
+    border-radius: 0 0 var(--radius) var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    font-size: 0.78rem;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.survey-modal__foot-sep {
+    color: rgb(255 255 255 / 35%);
+}
+
+/* ===== SURVEY FORM ===== */
+
+/* Section fieldset */
+.sf-section {
+    border: 1px solid var(--gray-300);
+    border-radius: 6px;
+    margin: var(--space-3) 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.sf-section__legend {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    width: 100%;
+    padding: var(--space-2) var(--space-3);
+    background: var(--gray-100);
+    border-bottom: 1px solid var(--gray-300);
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--primary);
+    float: left;
+}
+
+/* Customer fields grid */
+.sf-fields {
+    padding: var(--space-3);
+    display: grid;
+    gap: var(--space-2);
+}
+
+.sf-row {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.sf-label {
+    font-size: 0.8rem;
+    color: var(--gray-600);
+}
+
+/* Base input */
+.sf-input {
+    width: 100%;
+    padding: 3px var(--space-2);
+    border: 1px solid var(--gray-300);
+    border-radius: 3px;
+    font-size: 0.8rem;
+    font-family: var(--font-base);
+    color: var(--primary);
+    height: 26px;
+    background: var(--white);
+    transition: border-color 0.2s;
+}
+
+.sf-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgb(49 60 72 / 10%);
+}
+
+.sf-input--full {
+    width: 100%;
+}
+
+/* ===== WORKING CONDITIONS TABLE ===== */
+.sf-table-wrap {
+    overflow-x: auto;
+    padding: var(--space-2) var(--space-3);
+}
+
+.sf-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.78rem;
+    min-width: 540px;
+}
+
+.sf-table th,
+.sf-table td {
+    border: 1px solid var(--gray-300);
+    padding: 3px 5px;
+    vertical-align: middle;
+}
+
+/* Column headers */
+.sf-th-hot {
+    background: #c94040;
+    color: var(--white);
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.sf-th-cold {
+    background: #2e6da4;
+    color: var(--white);
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+/* Sub-header (Вхід/Вихід) */
+.sf-subhead td {
+    background: var(--gray-100);
+    text-align: center;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--gray-600);
+    padding: 2px 4px;
+}
+
+/* Row label cell */
+.sf-td-label {
+    background: var(--gray-50);
+    font-weight: 500;
+    color: var(--primary);
+    white-space: nowrap;
+    padding-left: var(--space-2);
+    min-width: 170px;
+}
+
+/* Unit cell */
+.sf-td-unit {
+    color: var(--gray-600);
+    font-size: 0.72rem;
+    white-space: nowrap;
+    background: var(--gray-50);
+    text-align: center;
+    padding: 2px 5px;
+}
+
+/* Input inside table */
+.sf-table .sf-input {
+    min-width: 52px;
+    width: 100%;
+    height: 22px;
+    padding: 2px 4px;
+}
+
+/* ===== DESIGN REQUIREMENTS TABLE ===== */
+.sf-design-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+}
+
+.sf-design-table td {
+    border: 1px solid var(--gray-300);
+    padding: 4px 6px;
+    vertical-align: middle;
+}
+
+.sf-design-table .sf-td-label {
+    min-width: 160px;
+}
+
+.sf-design-icon {
+    text-align: center;
+    width: 30px;
+    background: var(--gray-50);
+    font-size: 0.9rem;
+}
+
+.sf-design-unit {
+    text-align: center;
+    font-size: 0.72rem;
+    color: var(--gray-600);
+    white-space: nowrap;
+    background: var(--gray-50);
+    width: 36px;
+}
+
+/* ===== COMMENTS ===== */
+.sf-textarea {
+    width: 100%;
+    padding: var(--space-2);
+    border: 1px solid var(--gray-300);
+    border-radius: 3px;
+    font-size: 0.8rem;
+    font-family: var(--font-base);
+    color: var(--primary);
+    resize: vertical;
+    min-height: 64px;
+}
+
+.sf-textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+/* ===== SUBMIT AREA ===== */
+.sf-submit-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding: var(--space-3) 0 0;
+    flex-wrap: wrap;
+}
+
+.sf-required-note {
+    font-size: 0.75rem;
+    color: var(--gray-600);
+}
+
+/* Feedback message */
+.sf-message {
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius);
+    font-weight: 600;
+    text-align: center;
+    margin-top: var(--space-3);
+    font-size: 0.9rem;
+}
+
+.sf-message--success {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.sf-message--error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* ===== HEADER TRIGGER BUTTON ===== */
+.survey-trigger-btn {
+    background: transparent;
+    color: var(--white);
+    border: 1px solid rgb(255 255 255 / 50%);
+    font-size: 0.78rem;
+    padding: var(--space-2) var(--space-3);
+    min-height: 36px;
+    white-space: nowrap;
+}
+
+.survey-trigger-btn:hover {
+    background: var(--secondary);
+    border-color: var(--secondary);
+    color: var(--white);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (width <= 640px) {
+    .survey-modal {
+        padding: var(--space-2);
+        align-items: flex-start;
+    }
+
+    .survey-modal__top {
+        flex-direction: column;
+        gap: var(--space-3);
+        padding: var(--space-3);
+    }
+
+    .survey-modal__contacts {
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: var(--space-2);
+    }
+
+    .survey-modal__body {
+        max-height: calc(100dvh - 180px);
+        padding: 0 var(--space-3) var(--space-3);
+    }
+
+    .survey-modal__title {
+        font-size: 1.15rem;
+        padding: var(--space-3);
+    }
+
+    .sf-row {
+        grid-template-columns: 1fr;
+        gap: var(--space-1);
+    }
+
+    .survey-modal__foot {
+        flex-direction: column;
+        gap: var(--space-1);
+    }
+
+    .survey-modal__foot-sep {
+        display: none;
+    }
+}

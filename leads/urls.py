@@ -8,6 +8,7 @@ urlpatterns = [
     path('submit/', views.lead_form, name='submit'),
     
     # AJAX endpoints
+    path('survey/', views.survey_submit, name='survey'),
     path('submit-ajax/', views.submit_lead, name='submit_ajax'),
     path('quick-quote/', views.quick_quote, name='quick_quote'),
     path('contact/', views.contact, name='contact'),

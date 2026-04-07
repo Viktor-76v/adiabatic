@@ -3,7 +3,7 @@ from django.utils.translation import gettext_lazy as _
 from django.utils.html import format_html
 from django.urls import reverse
 from django.utils.safestring import mark_safe
-from .models import Lead, LeadSource, EmailTemplate, NotificationSettings, LeadActivity
+from .models import Lead, LeadSource, EmailTemplate, NotificationSettings, LeadActivity, SurveySheet
 
 
 class LeadActivityInline(admin.TabularInline):
@@ -157,6 +157,122 @@ class NotificationSettingsAdmin(admin.ModelAdmin):
     def has_delete_permission(self, request, obj=None):
         """Заборонити видалення"""
         return False
+
+
+@admin.register(SurveySheet)
+class SurveySheetAdmin(admin.ModelAdmin):
+    """Адмінка опитувальних листів."""
+
+    # ── List view ─────────────────────────────────────────────────────────────
+    list_display = [
+        'contact_person', 'company', 'phone', 'email',
+        'hot_medium', 'cold_medium',
+        'colored_status', 'created_at',
+    ]
+    list_filter  = ['status', 'language', 'created_at']
+    search_fields = [
+        'contact_person', 'company', 'email', 'phone',
+        'purpose', 'hot_medium', 'cold_medium', 'comments',
+    ]
+    list_editable = ['status'] if False else []   # ← керується через actions
+    date_hierarchy = 'created_at'
+    ordering = ['-created_at']
+
+    readonly_fields = [
+        'uuid', 'ip_address', 'language', 'source_page',
+        'created_at', 'updated_at',
+    ]
+
+    # ── Actions ───────────────────────────────────────────────────────────────
+    actions = ['mark_in_progress', 'mark_responded', 'mark_closed']
+
+    def mark_in_progress(self, request, qs):
+        n = qs.update(status='in_progress')
+        self.message_user(request, _(f'Статус змінено на «Опрацьовується» для {n} записів.'))
+    mark_in_progress.short_description = _('→ Опрацьовується')
+
+    def mark_responded(self, request, qs):
+        n = qs.update(status='responded')
+        self.message_user(request, _(f'Статус змінено на «Відповідь надана» для {n} записів.'))
+    mark_responded.short_description = _('→ Відповідь надана')
+
+    def mark_closed(self, request, qs):
+        n = qs.update(status='closed')
+        self.message_user(request, _(f'Статус змінено на «Закрито» для {n} записів.'))
+    mark_closed.short_description = _('→ Закрито')
+
+    # ── Colored badge ─────────────────────────────────────────────────────────
+    BADGE_COLORS = {
+        'new':         ('#b45309', '#fffbeb'),   # amber
+        'in_progress': ('#1d4ed8', '#eff6ff'),   # blue
+        'responded':   ('#15803d', '#f0fdf4'),   # green
+        'closed':      ('#6b7280', '#f9fafb'),   # gray
+    }
+
+    @admin.display(description=_('Статус'), ordering='status')
+    def colored_status(self, obj):
+        color, bg = self.BADGE_COLORS.get(obj.status, ('#000', '#fff'))
+        label = obj.get_status_display()
+        return format_html(
+            '<span style="background:{bg};color:{fg};padding:2px 8px;'
+            'border-radius:4px;font-size:0.8em;font-weight:600;">{label}</span>',
+            bg=bg, fg=color, label=label,
+        )
+
+    # ── Detail fieldsets ──────────────────────────────────────────────────────
+    fieldsets = (
+        (_('Дані замовника'), {
+            'fields': (
+                ('company', 'address'),
+                ('contact_person', 'phone', 'email'),
+            ),
+        }),
+        (_('Робочі умови'), {
+            'fields': (
+                'purpose',
+                ('hot_medium',       'cold_medium'),
+                ('hot_temp_in',      'hot_temp_out',
+                 'cold_temp_in',     'cold_temp_out'),
+                ('hot_flow_in',      'hot_flow_out',
+                 'cold_flow_in',     'cold_flow_out'),
+                ('hot_pressure_in',  'hot_pressure_out',
+                 'cold_pressure_in', 'cold_pressure_out'),
+                ('hot_pressure_drop','cold_pressure_drop'),
+                'heat_load',
+            ),
+        }),
+        (_('Теплофізичні властивості'), {
+            'classes': ('collapse',),
+            'fields': (
+                ('hot_thermo_temp',   'cold_thermo_temp'),
+                ('hot_density',       'cold_density'),
+                ('hot_specific_heat', 'cold_specific_heat'),
+                ('hot_conductivity',  'cold_conductivity'),
+                ('hot_viscosity',     'cold_viscosity'),
+            ),
+        }),
+        (_('Конструкційні вимоги'), {
+            'fields': (
+                ('plate_material',  'plate_material_unit'),
+                ('connection_type', 'design_pressure'),
+                ('flanges',         'flanges_count'),
+            ),
+        }),
+        (_('Коментарі'), {
+            'fields': ('comments',),
+        }),
+        (_('Опрацювання'), {
+            'fields': ('status', 'internal_notes'),
+        }),
+        (_('Метадані'), {
+            'classes': ('collapse',),
+            'fields': (
+                'uuid',
+                ('ip_address', 'language', 'source_page'),
+                ('created_at', 'updated_at'),
+            ),
+        }),
+    )
 
 
 @admin.register(LeadActivity)
