@@ -1,10 +1,11 @@
 /* ===== SURVEY MODAL ===== */
 
-/* Overlay */
+/* Overlay — above header (1000), burger (1001), mobile overlay (::before 1000), htmx overlays */
 .survey-modal {
     position: fixed;
     inset: 0;
-    z-index: 1100;
+    z-index: 15000;
+    isolation: isolate;
     display: flex;
     align-items: flex-start;
     justify-content: center;

@@ -98,20 +98,33 @@ function initMobileMenu() {
         }
     }, { passive: true });
 
+    document.addEventListener('adiabatic:close-mobile-nav', () => {
+        if (menu.classList.contains('open')) {
+            closeMenu();
+        }
+    });
+
+    function isSurveyModalOpen() {
+        const surveyModal = document.getElementById('surveyModal');
+        return Boolean(surveyModal && !surveyModal.hidden);
+    }
+
     function openMenu() {
         menu.classList.add('open');
         burgerBtn.classList.add('active');
         burgerBtn.setAttribute('aria-expanded', 'true');
 
-        // Prevent body scroll with iOS support
+        // Prevent body scroll with iOS support (avoid position:fixed on body while survey modal is open — it breaks stacking/clipping of the dialog)
         document.body.style.overflow = 'hidden';
-        document.body.style.position = 'fixed';
-        document.body.style.width = '100%';
+        if (!isSurveyModalOpen()) {
+            document.body.style.position = 'fixed';
+            document.body.style.width = '100%';
 
-        // iOS Safari viewport fix
-        if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
-            document.body.style.height = '100vh';
-            document.body.style.webkitOverflowScrolling = 'touch';
+            // iOS Safari viewport fix
+            if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+                document.body.style.height = '100vh';
+                document.body.style.webkitOverflowScrolling = 'touch';
+            }
         }
 
         // Focus first menu item for accessibility
@@ -128,8 +141,9 @@ function initMobileMenu() {
         burgerBtn.classList.remove('active');
         burgerBtn.setAttribute('aria-expanded', 'false');
 
-        // Restore body scroll
-        document.body.style.overflow = '';
+        // Restore body scroll; keep overflow hidden if survey dialog is still open
+        const surveyStillOpen = isSurveyModalOpen();
+        document.body.style.overflow = surveyStillOpen ? 'hidden' : '';
         document.body.style.position = '';
         document.body.style.width = '';
         document.body.style.height = '';

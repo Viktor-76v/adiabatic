@@ -10,6 +10,10 @@ const msgEl   = document.getElementById('surveyFormMsg');
 if (!modal) throw new Error('surveyModal element not found');
 
 const openModal = () => {
+    /* Close nav overlays first so body scroll-lock from the mobile menu does not stack under / clip the dialog */
+    document.dispatchEvent(new CustomEvent('adiabatic:close-mobile-nav'));
+    window.animatedDesktopMenu?.closeMenu?.(true);
+
     modal.hidden = false;
     document.body.style.overflow = 'hidden';
     modal.querySelector('.survey-modal__dialog')?.setAttribute('tabindex', '-1');

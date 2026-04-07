@@ -180,16 +180,27 @@
     gap: var(--space-6);
     align-items: center;
     margin-top: var(--space-4);
+    width: 100%;
 }
 
-.hero-actions .btn:last-child {
-    margin-bottom: 20px;
-}
-
-@media (width >= 768px) {
+/* Tablet/desktop: однакова ширина й висота кнопок у рядку (2 або 3 CTA) */
+@media (width >= 769px) {
     .hero-actions {
         flex-direction: row;
+        flex-wrap: wrap;
         justify-content: center;
+        align-items: stretch;
+        gap: var(--space-4);
+    }
+
+    .hero-actions .btn {
+        flex: 1 1 11.5rem;
+        max-width: 20rem;
+        min-width: min(11.5rem, 100%);
+        min-height: 3.125rem;
+        line-height: 1.2;
+        justify-content: center;
+        text-align: center;
     }
 }
 
@@ -265,6 +276,10 @@
         max-width: 280px;
         font-size: 0.9rem;
         padding: 0.75rem 1.5rem;
+        min-height: 2.875rem;
+        line-height: 1.2;
+        justify-content: center;
+        text-align: center;
     }
 }
 

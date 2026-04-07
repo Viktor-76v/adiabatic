@@ -59,54 +59,6 @@
     margin-right: 0.35rem;
 }
 
-/* Products Section */
-.downloads {
-    background: var(--gray-50);
-    padding: var(--space-16) 0;
-}
-
-.downloads-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--space-8);
-    margin-top: var(--space-12);
-}
-
-.download-card {
-    background: var(--white);
-    border-radius: var(--radius);
-    padding: var(--space-8);
-    text-align: center;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-}
-
-@media (hover: hover) {
-    .download-card:hover {
-        transform: translateY(-4px);
-        box-shadow: var(--shadow-lg);
-    }
-}
-
-.download-icon {
-    font-size: 3rem;
-    margin-bottom: var(--space-4);
-}
-
-.download-title {
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary);
-    margin-bottom: var(--space-3);
-}
-
-.download-description {
-    color: var(--gray-600);
-    line-height: 1.6;
-    margin-bottom: var(--space-6);
-}
-
 /* Tablet */
 @media (width <= 1024px) {
     .tech-capabilities {
@@ -122,11 +74,6 @@
 /* Mobile & iOS Safari */
 @media (width <= 768px) {
     /* Hero mobile styles are in hero.css - same as all other pages */
-
-    .downloads-grid {
-        grid-template-columns: 1fr;
-        gap: var(--space-6);
-    }
 
     .section--muted {
         padding-bottom: max(var(--space-16), env(safe-area-inset-bottom, 0px));
